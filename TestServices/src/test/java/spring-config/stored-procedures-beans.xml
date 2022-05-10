@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+                           http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.1.xsd">
+
+	<bean id="setProfileProcedure" class="com.eastnets.dao.common.procedure.SetProfileProcedure"
+		lazy-init="true">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="wdDeleteNotificationProcedure" lazy-init="true"
+		class="com.eastnets.dao.watchdog.procedure.WDDeleteNotificationProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="wdGetLastIDs21" class="com.eastnets.dao.watchdog.procedure.WDGetLastIDs21"
+		lazy-init="true">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="getUserSettingsProcedure" lazy-init="true"
+		class="com.eastnets.dao.common.procedure.GetUserSettingsProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="sCheckAdmitProcedure" class="com.eastnets.dao.common.procedure.SCheckAdmitProcedure"
+		lazy-init="true">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="vwSearchEAIProcedure" class="com.eastnets.dao.swing.procedure.VWSearchEAIProcedure"
+		lazy-init="true">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="vwGetCorrInfoProcedure" lazy-init="true"
+		class="com.eastnets.dao.common.procedure.VWGetCorrInfoProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="getActiveSyntaxVersionProcedure" lazy-init="true"
+		class="com.eastnets.dao.common.procedure.GetActiveSyntaxVersionProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="ldGetCountersProcedure" lazy-init="true"
+		class="com.eastnets.dao.monitoring.procedure.LoaderGetCountersProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+	<bean id="forceMessageUpdateProcedure" lazy-init="true"
+		class="com.eastnets.dao.viewer.procedure.ForceMessageUpdateProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+		<constructor-arg type="boolean" value="${Partitioned}" />
+	</bean>
+	<bean id="printInstanceTransmissionGetProcedure" lazy-init="true"
+		class="com.eastnets.dao.viewer.procedure.PrintInstanceTransmissionGetProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+		<constructor-arg type="boolean" value="${Partitioned}" />
+	</bean>
+	<bean id="mtExpantionGetProcedure" lazy-init="true"
+		class="com.eastnets.dao.viewer.procedure.MTExpantionGetProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+		<constructor-arg type="boolean" value="${Partitioned}" />
+	</bean>
+
+	<bean id="checkLicenseSP" lazy-init="true"
+		class="com.eastnets.dao.license.procedures.LicenseCheckLicenseProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="checkProductSP" lazy-init="true"
+		class="com.eastnets.dao.license.procedures.LicenseCheckProductProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="reportingAddReportSetProcedure" lazy-init="true"
+		class="com.eastnets.dao.reporting.procedure.ReportingAddReportSetProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="reportingAddReportSetValuesProcedure" lazy-init="true"
+		class="com.eastnets.dao.reporting.procedure.ReportingAddReportSetValuesProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="reportingDeleteReportSetProcedure" lazy-init="true"
+		class="com.eastnets.dao.reporting.procedure.ReportingDeleteReportSetProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+
+	<bean id="reportingISNGapProcedure" lazy-init="true"
+		class="com.eastnets.dao.reporting.procedure.ReportingISNGapProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+	<bean id="reportingOSNGapProcedure" lazy-init="true"
+		class="com.eastnets.dao.reporting.procedure.ReportingOSNGapProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+	<bean id="checkUserApprovalStatusProcedure" lazy-init="true"
+		class="com.eastnets.dao.security.procedure.CheckUserApprovalStatusProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+	
+	<bean id="adminHelperUserProcedure" lazy-init="true"
+		class="com.eastnets.dao.admin.procedure.AdminHelperUserProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+	
+	<bean id="adminInsertConnectionProcedure" lazy-init="true"
+		class="com.eastnets.dao.admin.procedure.AdminInsertConnectionProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+	<bean id="adminRevokeDBAccessProcedure" lazy-init="true"
+		class="com.eastnets.dao.admin.procedure.AdminRevokeDBAccessProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+	<bean id="adminRevokeLoginProcedure" lazy-init="true"
+		class="com.eastnets.dao.admin.procedure.AdminRevokeLoginProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+	<bean id="adminDropLoginProcedure" lazy-init="true"
+		class="com.eastnets.dao.admin.procedure.AdminDropLoginProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+	<bean id="adminGrantLoginProcedure" lazy-init="true"
+		class="com.eastnets.dao.admin.procedure.AdminGrantLoginProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+	<bean id="adminDefaultDBProcedure" lazy-init="true"
+		class="com.eastnets.dao.admin.procedure.AdminDefaultDBProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+	<bean id="adminAddLoginProcedure" lazy-init="true"
+		class="com.eastnets.dao.admin.procedure.AdminAddLoginProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+		<property name="config" ref="config" />
+	</bean>
+	
+	<bean id="insertSepaMsg" lazy-init="true"
+		class="com.eastnets.dao.filepayload.procedure.InsertSepaMessage">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+	
+	<bean id="insertUpdateBICLoader" lazy-init="true"
+		class="com.eastnets.dao.bicloader.procedure.InsertUpdateBICLoader">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+		
+	<bean id="adminGrantDBAccessProcedure" lazy-init="true"
+		class="com.eastnets.dao.admin.procedure.AdminGrantDBAccessProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+	<bean id="adminAddSRVRoleMemberProcedure" lazy-init="true"
+		class="com.eastnets.dao.admin.procedure.AdminAddSRVRoleMemberProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+	<bean id="adminAddRoleMemberProcedure" lazy-init="true"
+		class="com.eastnets.dao.admin.procedure.AdminAddRoleMemberProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+	<bean id="adminDropRoleMemberProcedure" lazy-init="true"
+		class="com.eastnets.dao.admin.procedure.AdminDropRoleMemberProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+	<bean id="adminDropSRVRoleMemberProcedure" lazy-init="true"
+		class="com.eastnets.dao.admin.procedure.AdminDropSRVRoleMemberProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>
+	<bean id="adminHelperSRVRoleMemberProcedure" lazy-init="true"
+		class="com.eastnets.dao.admin.procedure.AdminHelperSRVRoleMemberProcedure">
+		<constructor-arg ref="jdbcTemplate" />
+	</bean>	
+</beans>

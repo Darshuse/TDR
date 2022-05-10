@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="confirmNotifaction" class="com.eastnets.enGpiNotifer.Notifaction.ConfirmNotifaction">
+		<property name="appConfigBean" ref="appConfigBean" />
+		<property name="serviceLocator" ref="serviceLocator" />
+		<property name="loaderDAO" ref="LoaderDAO" />
+	</bean>
+
+
+	<bean id="mailNotifaction" class="com.eastnets.enGpiNotifer.Notifaction.MailNotifaction">
+		<property name="appConfigBean" ref="appConfigBean" />
+		<property name="serviceLocator" ref="serviceLocator" />
+		<property name="loaderDAO" ref="LoaderDAO" />
+	</bean>
+
+</beans>

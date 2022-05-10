@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+  http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<bean id="commonConfigBean" class="com.eastnets.config.DBConfiguration"
+		lazy-init="true">
+		<property name="dbConfig" ref="dbConfig" />
+	</bean>
+
+
+	<bean id="dbConfig" class="com.eastnets.config.DBConfiguration"
+		lazy-init="true">
+		<property name="serverName" value="${dbServerName}" />
+		<property name="port" value="${dbPort}" />
+		<property name="dbType" value="${dbType}" />
+		<property name="serviceName" value="${dbServiceName}" />
+		<property name="instanceName" value="${dbInstanceName}" />
+		<property name="username" value="${dbUserName}" />
+		<property name="password" value="${dbPassword}" />
+		<property name="dbUrl" value="${dbUrl}" />
+	</bean>
+
+
+
+
+</beans>

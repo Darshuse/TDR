@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+                           http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.1.xsd">
+
+	<import resource="classpath:/spring-config/applicationContext.xml" />
+	<import resource="ibm-jms-source.xml" />
+	<import resource="notifactionType.xml" />
+	<!-- <import resource="apache-jms-source.xml" /> -->
+	<bean id="appConfigBean" class="com.eastnets.enGpiNotifer.config.AppConfigBean"
+		lazy-init="true">
+		<property name="databaseName" value="${databaseName}" />
+		<property name="schemaName" value="${schemaName}" />
+		<property name="tableSpace" value="${tableSpace}" />
+		<property name="serverName" value="${serverName}" />
+		<property name="portNumber" value="${portNumber}" />
+		<property name="username" value="${username}" />
+		<property name="password" value="${password}" />
+		<property name="enableDebugMode" value="${enableDebugMode}" />
+		<property name="instanceName" value="${instanceName}" />
+		<property name="aid" value="${aid}" />
+		<property name="dbConfigFilePath" value="${dbConfigFilePath}" />
+		<property name="dbServiceName" value="${DBServiceName}"></property>
+		<property name="mailTo" value="${mailTo}"></property>
+		<property name="mailSubject" value="${mailSubject}"></property>
+	</bean>
+	<bean id="LoaderDAO" class="com.eastnets.enGpiNotifer.DAO.Loader${DBType}DAOImp"
+		lazy-init="true">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="namedJdbcTemplate" ref="namedJdbcTemplate" />
+		<property name="dbPortabilityHandler" ref="dbPortabilityHandler" />
+	</bean>
+
+	<bean id="serviceLauncher" class="com.eastnets.enGpiNotifierBoot.ServiceLauncher"
+		init-method="init" lazy-init="true">
+		<property name="appConfigBean" ref="appConfigBean" />
+	</bean>
+
+
+	<bean id="saaSource" class="com.eastnets.enGpiNotifer.source.SaaSource"
+		init-method="init" lazy-init="true">
+		<property name="appConfigBean" ref="appConfigBean" />
+		<property name="serviceLocator" ref="serviceLocator" />
+		<property name="loaderDAO" ref="LoaderDAO" />
+		<property name="notifaction" ref="notifaction" />
+		<property name="permissionHandler" ref="permissionHandler" />
+		
+	</bean>
+
+
+	<bean id="mqSource" class="com.eastnets.enGpiNotifer.source.MqSource"
+		lazy-init="true">
+		<property name="appConfigBean" ref="appConfigBean" />
+		<property name="serviceLocator" ref="serviceLocator" />
+		<property name="loaderDAO" ref="LoaderDAO" />
+		<property name="jmsBrowse" ref="jmsBrowse" />
+		<property name="notifaction" ref="notifaction" />
+		<property name="permissionHandler" ref="permissionHandler" />
+	</bean>
+	<bean id="extDB" class="com.eastnets.enGpiNotifer.source.ExternalDBSource"
+		lazy-init="true">
+		<property name="appConfigBean" ref="appConfigBean" />
+		<property name="loaderDAO" ref="LoaderDAO" />
+		<property name="notifaction" ref="notifaction" />
+			<property name="serviceLocator" ref="serviceLocator" />
+			<property name="permissionHandler" ref="permissionHandler" />
+	</bean>
+
+	<bean id="namedJdbcTemplate"
+		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg ref="dataSource"></constructor-arg>
+	</bean> 
+
+	<bean id="notifaction"
+		class="com.eastnets.enGpiNotifer.Notifaction.Notifaction"> 
+		<property name="mailNotifaction" ref="mailNotifaction" />
+		<property name="confirmNotifaction" ref="confirmNotifaction" />
+		
+	</bean>
+	
+	
+	 <bean id="permissionHandler"
+		class="com.eastnets.enGpiNotifer.utility.PermissionHandler">  
+	</bean>
+
+
+
+
+</beans>

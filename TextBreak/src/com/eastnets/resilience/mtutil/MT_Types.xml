@@ -1,0 +1,1488 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<JREMessage>
+	<mt id="101">
+		<amtField>SeqB.F32B</amtField>
+		<ccyField>SeqB.F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="102">
+		<amtField>SeqC.F32A</amtField>
+		<ccyField>SeqC.F32A</ccyField>
+		<valueDateField>SeqC.F32A</valueDateField>
+	</mt>
+	<mt id="102">
+		<amtField>SeqC.F32A</amtField>
+		<ccyField>SeqC.F32A</ccyField>
+		<valueDateField>SeqC.F32A</valueDateField>
+	</mt>
+	<mt id="102.STP">
+		<amtField>SeqC.F32A</amtField>
+		<ccyField>SeqC.F32A</ccyField>
+		<valueDateField>SeqC.F32A</valueDateField>
+	</mt>
+	<mt id="102.STP">
+		<amtField>SeqC.F32A</amtField>
+		<ccyField>SeqC.F32A</ccyField>
+		<valueDateField>SeqC.F32A</valueDateField>
+	</mt>
+	<mt id="103">
+		<amtField>F32A</amtField>
+		<ccyField>F32A</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="103">
+		<amtField>F32A</amtField>
+		<ccyField>F32A</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="103.REMIT">
+		<amtField>F32A</amtField>
+		<ccyField>F32A</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="103.REMIT">
+		<amtField>F32A</amtField>
+		<ccyField>F32A</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="103.STP">
+		<amtField>F32A</amtField>
+		<ccyField>F32A</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="103.STP">
+		<amtField>F32A</amtField>
+		<ccyField>F32A</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="104">
+		<amtField>SeqC.F19</amtField>
+		<ccyField>SeqC.F32B</ccyField>
+		<valueDateField>F30</valueDateField>
+	</mt>
+	<mt id="104">
+		<amtField>SeqC.F19</amtField>
+		<ccyField>SeqC.F32B</ccyField>
+		<valueDateField>F30</valueDateField>
+	</mt>
+	<mt id="105">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="107">
+		<amtField>SeqC.F19</amtField>
+		<ccyField>SeqB.F32B</ccyField>
+		<valueDateField>F30</valueDateField>
+	</mt>
+	<mt id="107">
+		<amtField>SeqC.F19</amtField>
+		<ccyField>SeqB.F32B</ccyField>
+		<valueDateField>F30</valueDateField>
+	</mt>
+	<mt id="110">
+		<amtField>F32A,F32B</amtField>
+		<ccyField>F32A,F32B</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="111">
+		<amtField>F32A,F32B</amtField>
+		<ccyField>F32A,F32B</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="112">
+		<amtField>F32A,F32B</amtField>
+		<ccyField>F32A,F32B</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="190">
+		<amtField>F32C,F32D</amtField>
+		<ccyField>F32C,F32D</ccyField>
+		<valueDateField>F32C,F32D</valueDateField>
+	</mt>
+	<mt id="191">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="192">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="195">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="196">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="198">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="199">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="200">
+		<amtField>F32A</amtField>
+		<ccyField>F32A</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="201">
+		<amtField>F19</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>F30</valueDateField>
+	</mt>
+	<mt id="202">
+		<amtField>F32A</amtField>
+		<ccyField>F32A</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="202.COV">
+		<amtField>F32A</amtField>
+		<ccyField>F32A</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="203">
+		<amtField>F19</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>F30</valueDateField>
+	</mt>
+	<mt id="204">
+		<amtField>SeqA.F19</amtField>
+		<ccyField>SeqB.F32B</ccyField>
+		<valueDateField>SeqA.F30</valueDateField>
+	</mt>
+	<mt id="205">
+		<amtField>F32A</amtField>
+		<ccyField>F32A</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="205.COV">
+		<amtField>F32A</amtField>
+		<ccyField>F32A</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="207">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>F30</valueDateField>
+	</mt>
+	<mt id="210">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>F30</valueDateField>
+	</mt>
+	<mt id="256">
+		<amtField>SeqC.F32A</amtField>
+		<ccyField>SeqC.F32A</ccyField>
+		<valueDateField>SeqC.F32A</valueDateField>
+	</mt>
+	<mt id="256">
+		<amtField>SeqC.F32A</amtField>
+		<ccyField>SeqC.F32A</ccyField>
+		<valueDateField>SeqC.F32A</valueDateField>
+	</mt>
+	<mt id="256">
+		<amtField>SeqC.F32A</amtField>
+		<ccyField>SeqC.F32A</ccyField>
+		<valueDateField>SeqC.F32A</valueDateField>
+	</mt>
+	<mt id="290">
+		<amtField>F32C,F32D</amtField>
+		<ccyField>F32C,F32D</ccyField>
+		<valueDateField>F32C,F32D</valueDateField>
+	</mt>
+	<mt id="291">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="292">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="295">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="296">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="298">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="299">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="300">
+		<amtField>SeqB1.F32B</amtField>
+		<ccyField>SeqB1.F32B</ccyField>
+		<valueDateField>SeqB.F30V</valueDateField>
+	</mt>
+	<mt id="303">
+		<amtField>SeqB.F32B</amtField>
+		<ccyField>SeqB.F32B</ccyField>
+		<valueDateField>SeqB.F30V</valueDateField>
+	</mt>
+	<mt id="303">
+		<amtField>SeqB.F32B</amtField>
+		<ccyField>SeqB.F32B</ccyField>
+		<valueDateField>SeqB.F30V</valueDateField>
+	</mt>
+	<mt id="304">
+		<amtField>SeqB1.F32B</amtField>
+		<ccyField>SeqB1.F32B</ccyField>
+		<valueDateField>SeqB.F30V</valueDateField>
+	</mt>
+	<mt id="305">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="305">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="306">
+		<amtField>SeqB1.F34B</amtField>
+		<ccyField>SeqB1.F34B</ccyField>
+		<valueDateField>SeqB.F30X</valueDateField>
+	</mt>
+	<mt id="306">
+		<amtField>SeqB1.F34B</amtField>
+		<ccyField>SeqB1.F34B</ccyField>
+		<valueDateField>SeqB.F30X</valueDateField>
+	</mt>
+	<mt id="307">
+		<amtField>SeqB3.F19B</amtField>
+		<ccyField>SeqB3.F19B</ccyField>
+		<valueDateField>SeqB.F98A:VALU</valueDateField>
+	</mt>
+	<mt id="320">
+		<amtField>SeqB.F32B</amtField>
+		<ccyField>SeqB.F32B</ccyField>
+		<valueDateField>SeqB.F30V</valueDateField>
+	</mt>
+	<mt id="320">
+		<amtField>SeqB.F32B</amtField>
+		<ccyField>SeqB.F32B</ccyField>
+		<valueDateField>SeqB.F30V</valueDateField>
+	</mt>
+	<mt id="321">
+		<amtField>SeqB.F19A:PRIN,SeqB.F19A:NINT</amtField>
+		<ccyField>SeqB.F19A:PRIN,SeqB.F19A:NINT</ccyField>
+		<valueDateField>SeqB.F98A:VALU</valueDateField>
+	</mt>
+	<mt id="330">
+		<amtField>SeqB.F32B</amtField>
+		<ccyField>SeqB.F32B</ccyField>
+		<valueDateField>SeqB.F30V</valueDateField>
+	</mt>
+	<mt id="330">
+		<amtField>SeqB.F32H</amtField>
+		<ccyField>SeqB.F32H</ccyField>
+		<valueDateField>SeqB.F30V</valueDateField>
+	</mt>
+	<mt id="340">
+		<amtField>SeqB.F32B</amtField>
+		<ccyField>SeqB.F32B</ccyField>
+		<valueDateField>SeqB.F30F</valueDateField>
+	</mt>
+	<mt id="341">
+		<amtField>SeqB.F32B</amtField>
+		<ccyField>SeqB.F32B</ccyField>
+		<valueDateField>SeqB.F30F</valueDateField>
+	</mt>
+	<mt id="350">
+		<amtField>SeqB.F32B</amtField>
+		<ccyField>SeqB.F32B</ccyField>
+		<valueDateField>SeqB.F30V</valueDateField>
+	</mt>
+	<mt id="350">
+		<amtField>SeqB.F32B</amtField>
+		<ccyField>SeqB.F32B</ccyField>
+		<valueDateField>SeqB.F30V</valueDateField>
+	</mt>
+	<mt id="360">
+		<amtField>SeqA.F32B</amtField>
+		<ccyField>SeqA.F32B</ccyField>
+		<valueDateField>SeqA.F30V</valueDateField>
+	</mt>
+	<mt id="360">
+		<amtField>SeqA.F32B</amtField>
+		<ccyField>SeqA.F32B</ccyField>
+		<valueDateField>SeqA.F30V</valueDateField>
+	</mt>
+	<mt id="361">
+		<amtField>SeqA.F32B</amtField>
+		<ccyField>SeqA.F32B</ccyField>
+		<valueDateField>SeqA.F30V</valueDateField>
+	</mt>
+	<mt id="361">
+		<amtField>SeqA.F32B</amtField>
+		<ccyField>SeqA.F32B</ccyField>
+		<valueDateField>SeqA.F30V</valueDateField>
+	</mt>
+	<mt id="362">
+		<amtField>SeqB.F33F</amtField>
+		<ccyField>SeqB.F33F</ccyField>
+		<valueDateField>SeqA.F30V</valueDateField>
+	</mt>
+	<mt id="null">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="364">
+		<amtField>SeqA.F32B</amtField>
+		<ccyField>SeqA.F32B</ccyField>
+		<valueDateField>SeqA.F30V</valueDateField>
+	</mt>
+	<mt id="365">
+		<amtField>SeqA.F32B</amtField>
+		<ccyField>SeqA.F32B</ccyField>
+		<valueDateField>SeqA.F30V</valueDateField>
+	</mt>
+	<mt id="365">
+		<amtField>SeqA.F32B</amtField>
+		<ccyField>SeqA.F32B</ccyField>
+		<valueDateField>SeqA.F30V</valueDateField>
+	</mt>
+	<mt id="370">
+		<amtField>SeqB.F19A</amtField>
+		<ccyField>SeqB.F19A</ccyField>
+		<valueDateField>SeqB.F98A</valueDateField>
+	</mt>
+	<mt id="380">
+		<amtField>SeqB.F19B</amtField>
+		<ccyField>SeqB.F19B</ccyField>
+		<valueDateField>SeqB.F98A:RVAL</valueDateField>
+	</mt>
+	<mt id="381">
+		<amtField>SeqB.F19B</amtField>
+		<ccyField>SeqB.F19B</ccyField>
+		<valueDateField>SeqB.F98A:VALU</valueDateField>
+	</mt>
+	<mt id="390">
+		<amtField>F32C,F32D</amtField>
+		<ccyField>F32C,F32D</ccyField>
+		<valueDateField>F32C,F32D</valueDateField>
+	</mt>
+	<mt id="391">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="392">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="395">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="396">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="398">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="399">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="400">
+		<amtField>F32A,F32B,F32K</amtField>
+		<ccyField>F32A,F32B,F32K</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="400">
+		<amtField>F32A,F32B,F32K</amtField>
+		<ccyField>F32A,F32B,F32K</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="410">
+		<amtField>F32A,F32B,F32K</amtField>
+		<ccyField>F32A,F32B,F32K</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="412">
+		<amtField>F32A</amtField>
+		<ccyField>F32A</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="416">
+		<amtField>SeqB.F32A</amtField>
+		<ccyField>SeqB.F32A</ccyField>
+		<valueDateField>SeqB.F32A</valueDateField>
+	</mt>
+	<mt id="416">
+		<amtField>SeqB.F32B</amtField>
+		<ccyField>SeqB.F32B</ccyField>
+		<valueDateField>SeqB.F32A</valueDateField>
+	</mt>
+	<mt id="416">
+		<amtField>SeqB.F32K</amtField>
+		<ccyField>SeqB.F32K</ccyField>
+		<valueDateField>SeqB.F32A</valueDateField>
+	</mt>
+	<mt id="420">
+		<amtField>F32A,F32B</amtField>
+		<ccyField>F32A,F32B,F32K</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="420">
+		<amtField>F32K</amtField>
+		<ccyField>F32A,F32B,F32K</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="422">
+		<amtField>F32A,F32B,F32K</amtField>
+		<ccyField>F32A,F32B,F32K</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="430">
+		<amtField>SeqA.F32A</amtField>
+		<ccyField>SeqA.F32A</ccyField>
+		<valueDateField>SeqA.F32A</valueDateField>
+	</mt>
+	<mt id="null">
+		<amtField>SeqA.F32K</amtField>
+		<ccyField>SeqA.F32K</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="null">
+		<amtField>SeqA.F33A</amtField>
+		<ccyField>SeqA.F33A</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="null">
+		<amtField>SeqA.F33K</amtField>
+		<ccyField>SeqA.F33K</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="450">
+		<amtField>F32A</amtField>
+		<ccyField>F32A</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="455">
+		<amtField>F32A</amtField>
+		<ccyField>F32A</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="456">
+		<amtField>F32A,F32B</amtField>
+		<ccyField>F32A,F32B</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="490">
+		<amtField>F32C,F32D</amtField>
+		<ccyField>F32C,F32D</ccyField>
+		<valueDateField>F32C,F32D</valueDateField>
+	</mt>
+	<mt id="491">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="492">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="495">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="496">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="498">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="499">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="500">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>SeqB.F98A</valueDateField>
+	</mt>
+	<mt id="500">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>SeqB.F98C</valueDateField>
+	</mt>
+	<mt id="501">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>SeqB.F98A</valueDateField>
+	</mt>
+	<mt id="501">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>SeqB.F98C</valueDateField>
+	</mt>
+	<mt id="502">
+		<amtField>SeqB.F19A:ORDR,SeqB.F19A:CANC</amtField>
+		<ccyField>SeqB.F19A:ORDR,SeqB.F19A:CANC</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="502">
+		<amtField>(*)</amtField>
+		<ccyField>(*)</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="503">
+		<amtField>SeqB.F19B:COVA</amtField>
+		<ccyField>SeqB.F19B:COVA</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="504">
+		<amtField>SeqB.F19B:COVA</amtField>
+		<ccyField>SeqB.F19B:COVA</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="505">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="506">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="507">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="508">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="509">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="510">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>SeqB.F98A:RREG</valueDateField>
+	</mt>
+	<mt id="510">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>SeqB.F98C:RREG</valueDateField>
+	</mt>
+	<mt id="513">
+		<amtField>SeqC.19A</amtField>
+		<ccyField>SeqC.19A</ccyField>
+		<valueDateField>SeqC.F98A:TRAD</valueDateField>
+	</mt>
+	<mt id="513">
+		<amtField>SeqD3.F19A:SETT</amtField>
+		<ccyField>SeqD3.F19A:SETT</ccyField>
+		<valueDateField>SeqC.F98C:TRAD,SeqC.F98E:TRAD</valueDateField>
+	</mt>
+	<mt id="514">
+		<amtField>SeqB.F19A:SETT</amtField>
+		<ccyField>SeqB.F19A:SETT</ccyField>
+		<valueDateField>SeqB.F98A:TRAD</valueDateField>
+	</mt>
+	<mt id="514">
+		<amtField>SeqC3.F19A:SETT</amtField>
+		<ccyField>SeqC3.F19A:SETT</ccyField>
+		<valueDateField>SeqB.F98C:TRAD,SeqB.F98E:TRAD</valueDateField>
+	</mt>
+	<mt id="515">
+		<amtField>SeqC.F19A</amtField>
+		<ccyField>SeqC.F19A</ccyField>
+		<valueDateField>SeqC.F98A:SETT,SeqC.F98C:SETT</valueDateField>
+	</mt>
+	<mt id="515">
+		<amtField>SeqD3.F19A:SETT</amtField>
+		<ccyField>SeqD3.F19A:SETT</ccyField>
+		<valueDateField>SeqC.F98A:SETT,SeqC.F98C:SETT</valueDateField>
+	</mt>
+	<mt id="516">
+		<amtField>SeqB.F32A</amtField>
+		<ccyField>SeqB.F32A</ccyField>
+		<valueDateField>SeqB.F32A</valueDateField>
+	</mt>
+	<mt id="516">
+		<amtField>SeqB.F32B</amtField>
+		<ccyField>SeqB.F32B</ccyField>
+		<valueDateField>SeqB.F32A</valueDateField>
+	</mt>
+	<mt id="517">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="518">
+		<amtField>SeqB.F19A</amtField>
+		<ccyField>SeqB.F19A</ccyField>
+		<valueDateField>SeqB.F98A:SETT,SeqB.F98C:SETT</valueDateField>
+	</mt>
+	<mt id="null">
+		<amtField>SeqC3.F19A:SETT</amtField>
+		<ccyField>SeqC3.F19A:SETT</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="519">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>SeqB.F98A</valueDateField>
+	</mt>
+	<mt id="519">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>SeqB.F98C</valueDateField>
+	</mt>
+	<mt id="524">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>SeqB.F98A</valueDateField>
+	</mt>
+	<mt id="524">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>SeqB.F98C</valueDateField>
+	</mt>
+	<mt id="526">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="527">
+		<amtField>SeqB.F19A:TRAA</amtField>
+		<ccyField>SeqB.F19A:TRAA</ccyField>
+		<valueDateField>SeqA.F98A:EXRQ</valueDateField>
+	</mt>
+	<mt id="527">
+		<amtField>SeqB.F19A:TRAA</amtField>
+		<ccyField>SeqB.F19A:TRAA</ccyField>
+		<valueDateField>SeqA.F98C:EXRQ</valueDateField>
+	</mt>
+	<mt id="530">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="535">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="536">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="537">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="538">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="540">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>SeqB.F98A:SETT</valueDateField>
+	</mt>
+	<mt id="540">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>SeqB.F98C:SETT</valueDateField>
+	</mt>
+	<mt id="541">
+		<amtField>SeqE3.F19A:SETT</amtField>
+		<ccyField>SeqE3.F19A:SETT</ccyField>
+		<valueDateField>SeqB.F98A:SETT</valueDateField>
+	</mt>
+	<mt id="541">
+		<amtField>SeqE3.F19A:SETT</amtField>
+		<ccyField>SeqE3.F19A:SETT</ccyField>
+		<valueDateField>SeqB.F98C:SETT</valueDateField>
+	</mt>
+	<mt id="542">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>SeqB.F98A:SETT</valueDateField>
+	</mt>
+	<mt id="542">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>SeqB.F98C:SETT</valueDateField>
+	</mt>
+	<mt id="543">
+		<amtField>SeqE3.F19A:SETT</amtField>
+		<ccyField>SeqE3.F19A:SETT</ccyField>
+		<valueDateField>SeqB.F98A:SETT</valueDateField>
+	</mt>
+	<mt id="543">
+		<amtField>SeqE3.F19A:SETT</amtField>
+		<ccyField>SeqE3.F19A:SETT</ccyField>
+		<valueDateField>SeqB.F98C:SETT</valueDateField>
+	</mt>
+	<mt id="544">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>SeqB.F98A:ESET,SeqB.F98C:ESET</valueDateField>
+	</mt>
+	<mt id="545">
+		<amtField>SeqE3.F19A:ESTT</amtField>
+		<ccyField>SeqE3.F19A:ESTT</ccyField>
+		<valueDateField>SeqB.F98A:ESET,SeqB.F98C:ESET</valueDateField>
+	</mt>
+	<mt id="546">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>SeqB.F98A:ESET,SeqB.F98C:ESET</valueDateField>
+	</mt>
+	<mt id="547">
+		<amtField>SeqE3.F19A:ESTT</amtField>
+		<ccyField>SeqE3.F19A:ESTT</ccyField>
+		<valueDateField>SeqB.F98A:ESET,SeqB.F98C:ESET</valueDateField>
+	</mt>
+	<mt id="548">
+		<amtField>SeqB.F19A:SETT</amtField>
+		<ccyField>SeqB.F19A:SETT</ccyField>
+		<valueDateField>SeqB.F98A:SETT,SeqB.F98C:SETT</valueDateField>
+	</mt>
+	<mt id="549">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="558">
+		<amtField>SeqB.F19A:TRAA</amtField>
+		<ccyField>SeqB.F19A:TRAA</ccyField>
+		<valueDateField>SeqA.F98A:EXRQ</valueDateField>
+	</mt>
+	<mt id="558">
+		<amtField>SeqB.F19A:TRAA</amtField>
+		<ccyField>SeqB.F19A:TRAA</ccyField>
+		<valueDateField>SeqA.F98C:EXRQ</valueDateField>
+	</mt>
+	<mt id="559">
+		<amtField>F19</amtField>
+		<ccyField>F34A</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="559">
+		<amtField>F19</amtField>
+		<ccyField>F34A</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="564">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="565">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>SeqD.F98A</valueDateField>
+	</mt>
+	<mt id="565">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>SeqD.F98C</valueDateField>
+	</mt>
+	<mt id="566">
+		<amtField>SeqD2.F19B:PSTA</amtField>
+		<ccyField>SeqD2.F19B:PSTA</ccyField>
+		<valueDateField>SeqD1.F98A:POST</valueDateField>
+	</mt>
+	<mt id="566">
+		<amtField>SeqD2.F19B:PSTA</amtField>
+		<ccyField>SeqD2.F19B:PSTA</ccyField>
+		<valueDateField>SeqD1.F98C:POST</valueDateField>
+	</mt>
+	<mt id="567">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="568">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="569">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="574.IRSLST">
+		<amtField>SeqB2.F19A:GRSS</amtField>
+		<ccyField>SeqB2.F19A:GRSS</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="574.W8BENO">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="575">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="576">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="577">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="578">
+		<amtField>SeqE3.F19A:SETT</amtField>
+		<ccyField>SeqE3.F19A:SETT</ccyField>
+		<valueDateField>SeqB.F98A:SETT</valueDateField>
+	</mt>
+	<mt id="578">
+		<amtField>SeqE3.F19A:SETT</amtField>
+		<ccyField>SeqE3.F19A:SETT</ccyField>
+		<valueDateField>SeqB.F98C:SETT</valueDateField>
+	</mt>
+	<mt id="579">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="581">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="586">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="590">
+		<amtField>F32C,F32D</amtField>
+		<ccyField>F32C,F32D</ccyField>
+		<valueDateField>F32C,F32D</valueDateField>
+	</mt>
+	<mt id="591">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="592">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="595">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="596">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="598">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="599">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="600">
+		<amtField>F33G</amtField>
+		<ccyField>F33G</ccyField>
+		<valueDateField>SeqB.F34P</valueDateField>
+	</mt>
+	<mt id="601">
+		<amtField>F32F</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>F31G</valueDateField>
+	</mt>
+	<mt id="601">
+		<amtField>F32F</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>F31G</valueDateField>
+	</mt>
+	<mt id="604">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>F30</valueDateField>
+	</mt>
+	<mt id="605">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>F30</valueDateField>
+	</mt>
+	<mt id="606">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>F30</valueDateField>
+	</mt>
+	<mt id="607">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>F30</valueDateField>
+	</mt>
+	<mt id="608">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="609">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="620">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>F30V</valueDateField>
+	</mt>
+	<mt id="643">
+		<amtField>SeqA.F32A</amtField>
+		<ccyField>SeqA.F32A</ccyField>
+		<valueDateField>SeqA.F32A</valueDateField>
+	</mt>
+	<mt id="643">
+		<amtField>SeqA.F32A</amtField>
+		<ccyField>SeqA.F32A</ccyField>
+		<valueDateField>SeqA.F32A</valueDateField>
+	</mt>
+	<mt id="643">
+		<amtField>SeqA.F32A</amtField>
+		<ccyField>SeqA.F32A</ccyField>
+		<valueDateField>SeqA.F32A</valueDateField>
+	</mt>
+	<mt id="644">
+		<amtField>SeqA.F32A</amtField>
+		<ccyField>SeqA.F32A</ccyField>
+		<valueDateField>SeqA.F32A</valueDateField>
+	</mt>
+	<mt id="644">
+		<amtField>SeqA.F32A</amtField>
+		<ccyField>SeqA.F32A</ccyField>
+		<valueDateField>SeqA.F32A</valueDateField>
+	</mt>
+	<mt id="646">
+		<amtField>SeqA.F32A</amtField>
+		<ccyField>SeqA.F32A</ccyField>
+		<valueDateField>SeqA.F32A</valueDateField>
+	</mt>
+	<mt id="646">
+		<amtField>SeqA.F32A</amtField>
+		<ccyField>SeqA.F32A</ccyField>
+		<valueDateField>SeqA.F32A</valueDateField>
+	</mt>
+	<mt id="646">
+		<amtField>SeqA.F32A</amtField>
+		<ccyField>SeqA.F32A</ccyField>
+		<valueDateField>SeqA.F32A</valueDateField>
+	</mt>
+	<mt id="649">
+		<amtField>F32A,F32B</amtField>
+		<ccyField>F32A,F32B</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="670">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="671">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="690">
+		<amtField>F32C,F32D</amtField>
+		<ccyField>F32C,F32D</ccyField>
+		<valueDateField>F32C,F32D</valueDateField>
+	</mt>
+	<mt id="691">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="692">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="695">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="696">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="698">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="699">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="700">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="701">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="705">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="707">
+		<amtField>F32B,F33B,F34B</amtField>
+		<ccyField>F32B,F33B,F34B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="708">
+		<amtField>F32B,F33B,F34B</amtField>
+		<ccyField>F32B,F33B,F34B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="710">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="711">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="720">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="721">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="730">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="732">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="734">
+		<amtField>F32A</amtField>
+		<ccyField>F32A</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="740">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="742">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="744">
+		<amtField>F32B,F33B,F34B</amtField>
+		<ccyField>F32B,F33B,F34B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="742">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="747">
+		<amtField>F32B,F33B,F34B</amtField>
+		<ccyField>F32B,F33B,F34B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="747">
+		<amtField>F32B,F33B,F34B</amtField>
+		<ccyField>F32B,F33B,F34B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="750">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="752">
+		<amtField>F32B,F33A,F33B</amtField>
+		<ccyField>F32B,F33A,F33B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="754">
+		<amtField>F32A,F32B</amtField>
+		<ccyField>F32A,F32B</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="754">
+		<amtField>F32A,F32B</amtField>
+		<ccyField>F32A,F32B</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="756">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="759">
+		<amtField>F32B,F33B,F34B</amtField>
+		<ccyField>F32B,F33B,F34B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="760">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="767">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="768">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="769">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="769">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="790">
+		<amtField>F32C,F32D</amtField>
+		<ccyField>F32C,F32D</ccyField>
+		<valueDateField>F32C,F32D</valueDateField>
+	</mt>
+	<mt id="791">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="792">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="795">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="796">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="798">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	
+	
+	<mt id="761">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	
+	<mt id="775">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	
+	<mt id="785">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	
+	<mt id="787">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+ 
+
+	<mt id="765">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+
+	<mt id="786">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+
+
+	<mt id="799">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="800">
+		<amtField>SeqB.F32A</amtField>
+		<ccyField>SeqB.F32A</ccyField>
+		<valueDateField>SeqB.F32A</valueDateField>
+	</mt>
+	<mt id="801">
+		<amtField>F33B</amtField>
+		<ccyField>F33B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="802">
+		<amtField>F32A</amtField>
+		<ccyField>F32A</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="824">
+		<amtField>F19</amtField>
+		<ccyField>F68A</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="890">
+		<amtField>F32C,F32D</amtField>
+		<ccyField>F32C,F32D</ccyField>
+		<valueDateField>F32C,F32D</valueDateField>
+	</mt>
+	<mt id="891">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="892">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="895">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="896">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="898">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="899">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="900">
+		<amtField>F32A</amtField>
+		<ccyField>F32A</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="910">
+		<amtField>F32A</amtField>
+		<ccyField>F32A</ccyField>
+		<valueDateField>F32A</valueDateField>
+	</mt>
+	<mt id="920">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="935">
+		<amtField>F37H</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>F30</valueDateField>
+	</mt>
+	<mt id="940">
+		<amtField>F62F,F62M</amtField>
+		<ccyField>F62F,F62M</ccyField>
+		<valueDateField>F62F,F62M</valueDateField>
+	</mt>
+	<mt id="940">
+		<amtField>F62F,F62M</amtField>
+		<ccyField>F62F,F62M</ccyField>
+		<valueDateField>F62F,F62M</valueDateField>
+	</mt>
+	<mt id="941">
+		<amtField>F62F</amtField>
+		<ccyField>F62F</ccyField>
+		<valueDateField>F62F</valueDateField>
+	</mt>
+	<mt id="null">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="942">
+		<amtField>F34F</amtField>
+		<ccyField>F34F</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="950">
+		<amtField>F62F,F62M</amtField>
+		<ccyField>F62F,F62M</ccyField>
+		<valueDateField>F62F,F62M</valueDateField>
+	</mt>
+	<mt id="950">
+		<amtField>F62F,F62M</amtField>
+		<ccyField>F62F,F62M</ccyField>
+		<valueDateField>F62F,F62M</valueDateField>
+	</mt>
+	<mt id="970">
+		<amtField>F62F,F62M</amtField>
+		<ccyField>F62F,F62M</ccyField>
+		<valueDateField>F62F,F62M</valueDateField>
+	</mt>
+	<mt id="970">
+		<amtField>F62F,F62M</amtField>
+		<ccyField>F62F,F62M</ccyField>
+		<valueDateField>F62F,F62M</valueDateField>
+	</mt>
+	<mt id="971">
+		<amtField>F62F</amtField>
+		<ccyField>F62F</ccyField>
+		<valueDateField>F62F</valueDateField>
+	</mt>
+	<mt id="972">
+		<amtField>F62F,F62M</amtField>
+		<ccyField>F62F,F62M</ccyField>
+		<valueDateField>F62F,F62M</valueDateField>
+	</mt>
+	<mt id="972">
+		<amtField>F62F,F62M</amtField>
+		<ccyField>F62F,F62M</ccyField>
+		<valueDateField>F62F,F62M</valueDateField>
+	</mt>
+	<mt id="973">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="985">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="986">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="990">
+		<amtField>F32C,F32D</amtField>
+		<ccyField>F32C,F32D</ccyField>
+		<valueDateField>F32C,F32D</valueDateField>
+	</mt>
+	<mt id="991">
+		<amtField>F32B</amtField>
+		<ccyField>F32B</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="992">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="995">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="996">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="998">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+	<mt id="999">
+		<amtField>null</amtField>
+		<ccyField>null</ccyField>
+		<valueDateField>null</valueDateField>
+	</mt>
+</JREMessage>

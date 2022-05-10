@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "RTEXT")
 public class Text implements Serializable {
-	// adding comment
+
 	private static final long serialVersionUID = -9070400619994537863L;
 
 	@EmbeddedId
@@ -30,6 +30,11 @@ public class Text implements Serializable {
 
 	@Column(name = "TEXT_DATA_LAST")
 	private BigDecimal textDataLast;
+	
+	@Column(name = "parsing_status")
+	private String parsingStatus;
+
+
 
 	@Column(name = "TEXT_SWIFT_BLOCK_5")
 	private String textSwiftBlock5;
@@ -46,7 +51,8 @@ public class Text implements Serializable {
 	@Column(name = "X_TEXT_CHECKSUM")
 	private BigDecimal xTextChecksum = BigDecimal.ZERO;
 	@OneToOne
-	@JoinColumns({ @JoinColumn(name = "AID", referencedColumnName = "AID", insertable = false, updatable = false), @JoinColumn(name = "TEXT_S_UMIDH", referencedColumnName = "MESG_S_UMIDH", insertable = false, updatable = false),
+	@JoinColumns({ @JoinColumn(name = "AID", referencedColumnName = "AID", insertable = false, updatable = false),
+			@JoinColumn(name = "TEXT_S_UMIDH", referencedColumnName = "MESG_S_UMIDH", insertable = false, updatable = false),
 			@JoinColumn(name = "TEXT_S_UMIDL", referencedColumnName = "MESG_S_UMIDL", insertable = false, updatable = false) })
 
 	private Mesg mesg;
@@ -138,6 +144,16 @@ public class Text implements Serializable {
 		return serialVersionUID;
 	}
 
+	
+	public String getParsingStatus() {
+		return parsingStatus;
+	}
+
+	public void setParsingStatus(String parsingStatus) {
+		this.parsingStatus = parsingStatus;
+	}
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -216,11 +232,15 @@ public class Text implements Serializable {
 			return false;
 		return true;
 	}
+	
+	
 
 	@Override
 	public String toString() {
-		return "Text [id=" + id + ", textDataBlock=" + textDataBlock + ", textDataBlockLen=" + textDataBlockLen + ", textDataLast=" + textDataLast + ", textSwiftBlock5=" + textSwiftBlock5 + ", textSwiftBlockU=" + textSwiftBlockU
-				+ ", textSwiftPrompted=" + textSwiftPrompted + ", textToken=" + textToken + ", xTextChecksum=" + xTextChecksum + ", message=" + mesg + "]";
+		return "Text [id=" + id + ", textDataBlock=" + textDataBlock + ", textDataBlockLen=" + textDataBlockLen
+				+ ", textDataLast=" + textDataLast + ", textSwiftBlock5=" + textSwiftBlock5 + ", textSwiftBlockU="
+				+ textSwiftBlockU + ", textSwiftPrompted=" + textSwiftPrompted + ", textToken=" + textToken
+				+ ", xTextChecksum=" + xTextChecksum + ", message=" + mesg + "]";
 	}
 
 }

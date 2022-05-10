@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+                           http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.1.xsd">
+
+	<bean id="dataSource" class="com.eastnets.common.SecureDataSource"
+		lazy-init="true" destroy-method="close">
+		<property name="driverClassName"
+			value="#{'${DBType}'=='Sql' ? 'com.microsoft.sqlserver.jdbc.SQLServerDriver': 'oracle.jdbc.driver.OracleDriver'}" />
+		<property name="url"
+			value="#{'${DBType}'=='Sql' ? 'jdbc:sqlserver://${serverName}:${portNumber};databaseName=${databaseName};instanceName=${instanceName}'  : '${DBServiceName}'!='' ?
+        								'jdbc:oracle:thin:@${serverName}:${portNumber}/${DBServiceName}':'jdbc:oracle:thin:@${serverName}:${portNumber}:${databaseName}'}" />
+		<property name="username" value="${username}" />
+		<property name="password" value="${password}" />
+		<property name="maxActive" value="${connectionPoolMaxActiveConnections}" />
+        <property name="initialSize" value="${connectionPoolInitialConnectionCount}" />
+        <property name="maxIdle" value="${connectionPoolMaxIdleConnections}" />
+        <property name="minIdle" value="${connectionPoolMinIdleConnections}" />
+        <property name="maxWait" value="${connectionPoolMaxWait}" />
+        <property name="minEvictableIdleTimeMillis" value="${connectionPoolConnectionMinIdleTimeMillis}" />
+
+		<property name="schema" value="${schemaName}" />
+		<property name="dbType" value="${DBType}" />
+		<property name="initializeConnectionSql" value="dummy" />
+	</bean>
+
+	<bean id="configBean" class="com.eastnets.config.ConfigBean"
+		lazy-init="true" />
+
+	<bean id="nativeJdbcExtractor"
+		class="org.springframework.jdbc.support.nativejdbc.CommonsDbcpNativeJdbcExtractor"
+		lazy-init="true" />
+
+	<bean id="lobHandler" class="org.springframework.jdbc.support.lob.OracleLobHandler"
+		lazy-init="true">
+		<property name="nativeJdbcExtractor" ref="nativeJdbcExtractor" />
+	</bean>
+
+	<bean id="config" class="com.eastnets.domain.Config" lazy-init="true">
+		<property name="databaseName" value="${databaseName}" />
+		<property name="schemaName" value="${schemaName}" />
+		<property name="tableSpace" value="${tableSpace}" />
+		<property name="serverName" value="${serverName}" />
+		<property name="instanceName" value="${instanceName}" />
+		<property name="databaseProtNumber" value="${portNumber}" />
+
+		<property name="viewerProcedureDebug" value="${viewerProcedureDebug}" />
+		<property name="reportMaxFetchSize" value="${reportMaxFetchSize}" />
+		<property name="reportsDirectoryPath" value="${reportsDirectoryPath}" />
+		<property name="defaultUserRoles" value="${defaultUserRoles}" />
+	</bean>
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"
+		lazy-init="true">
+		<property name="dataSource" ref="dataSource" />
+        <property name="fetchSize" value="${connectionPoolFetchSize}"/>
+	</bean>
+
+	<bean id="dbPortabilityHandler" class="com.eastnets.dao.common.DBPortabilityHandler"
+		lazy-init="true">
+		<property name="dbTypeString" value="${DBType}" />
+		<property name="partitioned" value="${Partitioned}"/>
+		
+	</bean>
+
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+		lazy-init="true">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<tx:annotation-driven transaction-manager="txManager" />
+
+	<bean id="saaVersionsList" class="java.util.ArrayList" lazy-init="true">
+		<constructor-arg>
+			<list>
+				<value>6.0</value>
+				<value>6.2</value>
+				<value>6.3</value>
+				<value>7.0</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="applicationFeatures" class="com.eastnets.dao.common.ApplicationFeatures">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+</beans>
