@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+  http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- <context:annotation-config />
+	<context:component-scan base-package="com.eastnets.*" />
+
+
+	<bean id="sysProperties" lazy-init="true"
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetClass" value="java.lang.System" />
+		<property name="targetMethod" value="getProperties" />
+	</bean>
+
+
+
+	<import resource="config.xml" />
+	<import resource="reader-beans.xml" />
+	<import resource="checker-beans.xml" />
+	<import resource="dumper-beans.xml" />
+	<import resource="workFlow-queues.xml" />
+	<import resource="service.xml" />
+	<import resource="dataSourceConfigEclipsLinkVendor.xml" />
+	<import resource="mail-beans.xml" />
+ -->
+</beans>

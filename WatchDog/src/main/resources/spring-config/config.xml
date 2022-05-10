@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+  http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!-- 
+	<bean id="wdConfigBean" class="com.eastnets.watchdog.config.WatchdogConfiguration"
+		lazy-init="true">
+		<property name="mqConfig" ref="mqConfig" />
+		<property name="dbConfig" ref="dbConfig" />
+		<property name="mailConfig" ref="mailConfig" />
+		<property name="mode" value="${mode}" />
+		<property name="includeText" value="${includeText}" />
+		<property name="delay" value="${delay}" />
+		<property name="maxThreadCount" value="${maxThreadCount}" />
+	</bean>
+
+	<bean id="mqConfig" class="com.eastnets.watchdog.config.MQConfiguration"
+		lazy-init="true">
+		<property name="serverName" value="${mqServerName}" />
+		<property name="channelName" value="${mqChannelName}" />
+		<property name="port" value="${mqPort}" />
+	</bean>
+
+	<bean id="dbConfig" class="com.eastnets.watchdog.config.DBConfiguration"
+		lazy-init="true">
+		<property name="serverName" value="${dbServerName}" />
+		<property name="port" value="${dbPort}" />
+		<property name="dbType" value="${dbType}" />
+		<property name="serviceName" value="${dbServiceName}" />
+		<property name="instanceName" value="${dbInstanceName}" />
+		<property name="username" value="${dbUserName}" />
+		<property name="password" value="${dbPassword}" />
+		<property name="dbUrl" value="${dbUrl}" />
+	</bean>
+
+
+	<bean id="mailConfig" class="com.eastnets.watchdog.config.MailConfiguration"
+		lazy-init="true">
+		<property name="mailServer" value="${mailServer}" />
+		<property name="port" value="${mailPort}" />
+		<property name="mailFrom" value="${mailFrom}" />
+		<property name="mailTo" value="${mailTo}" />
+		<property name="password" value="${mailPassword}" />
+		<property name="mailSubject" value="${mailSubject}"></property>
+	</bean>
+ -->
+
+</beans>
