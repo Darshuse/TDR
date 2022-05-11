@@ -3,6 +3,7 @@ package com.eastnets.resultbean;
 import java.util.Date;
 
 public class TextBreakResultBean {
+	// add comment
 
 	private Date mesgCreaDateTime;
 	private Integer aid;
