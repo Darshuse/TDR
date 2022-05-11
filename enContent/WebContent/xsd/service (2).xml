@@ -1,0 +1,1217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Services>
+	<Service>
+		<Name>EuroclearFranceESES</Name>
+		<Description>Euroclear France ESES Release 3.0</Description>
+		<CreationDate>2020-09-08</CreationDate>
+		<ServiceCode>euroclearfr.iso.iast</ServiceCode>
+		<MessageFormat>MX</MessageFormat>
+		<ApplicationHeader>
+			<Schema>head.001.001.01.xsd</Schema>
+			<Expansions>head.001.001.01</Expansions>
+			<Mandatory>true</Mandatory>
+		</ApplicationHeader>
+		<Header application="SAA">
+			<Schema>XMLHeaderSchemaMandatoryAppHeader.xsd</Schema>
+			<Expansions>XMLHeaderSchemaMandatoryAppHeader</Expansions>
+		</Header>
+		<PresentationFile>MX_mappings.xml</PresentationFile>
+		<MessageTypes>
+			<MessageType>
+				<UID>admi.007.001</UID>
+				<DisplayName>ReceiptAcknowledgementV01</DisplayName>
+				<Description>Receipt Acknowledgement V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>admi.007.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:admi.007.001.01</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:RctAck/d:Rpt/d:RltdRef/d:Ref</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>a:AppHdr/a:CreDt</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:admi.007.001.01</Namespace>
+				<Schema>admi.007.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>camt.025.001</UID>
+				<DisplayName>ReceiptV05</DisplayName>
+				<Description>Receipt V05</Description>
+				<VariantID>001</VariantID>
+				<Version>05</Version>
+				<RequestType>camt.025.001.05</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:camt.025.001.05</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:Rct/d:RctDtls/d:OrgnlMsgId/d:MsgId</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:Rct/d:MsgHdr/d:ReqTp/d:Prtry/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:camt.025.001.05</Namespace>
+				<Schema>camt.025.001.05.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>camt.050.001</UID>
+				<DisplayName>LiquidityCreditTransferV05</DisplayName>
+				<Description>Liquidity Credit Transfer V05</Description>
+				<VariantID>001</VariantID>
+				<Version>05</Version>
+				<RequestType>camt.050.001.05</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:camt.050.001.05</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:LqdtyCdtTrf/d:LqdtyCdtTrf/d:LqdtyTrfId/d:EndToEndId</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:LqdtyCdtTrf/d:LqdtyCdtTrf/d:TrfdAmt/d:AmtWthCcy</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:camt.050.001.05</Namespace>
+				<Schema>camt.050.001.05.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>camt.052.001</UID>
+				<DisplayName>BankToCustomerAccountReportV08</DisplayName>
+				<Description>Bank To Customer Account Report V08</Description>
+				<VariantID>001</VariantID>
+				<Version>08</Version>
+				<RequestType>camt.052.001.08</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:camt.052.001.08</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:BkToCstmrAcctRpt/d:GrpHdr/d:MsgId</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:BkToCstmrAcctRpt/d:Rpt/d:Acct/d:Id/d:Othr/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:camt.052.001.08</Namespace>
+				<Schema>camt.052.001.08.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>camt.053.001</UID>
+				<DisplayName>BankToCustomerStatementV08</DisplayName>
+				<Description>Bank To Customer Statement V08</Description>
+				<VariantID>001</VariantID>
+				<Version>08</Version>
+				<RequestType>camt.053.001.08</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:camt.053.001.08</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:BkToCstmrStmt/d:Stmt/d:Ntry/d:NtryRef</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:BkToCstmrStmt/d:Stmt/d:Ntry/d:Amt</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:camt.053.001.08</Namespace>
+				<Schema>camt.053.001.08.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>camt.054.001</UID>
+				<DisplayName>BankToCustomerDebitCreditNotificationV08</DisplayName>
+				<Description>Bank To Customer Debit Credit Notification V08</Description>
+				<VariantID>001</VariantID>
+				<Version>08</Version>
+				<RequestType>camt.054.001.08</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:camt.054.001.08</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:BkToCstmrDbtCdtNtfctn/d:Ntfctn/d:Ntry/d:NtryDtls/d:TxDtls/d:Refs/d:InstrId</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:BkToCstmrDbtCdtNtfctn/d:Ntfctn/d:Ntry/d:Amt</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:camt.054.001.08</Namespace>
+				<Schema>camt.054.001.08.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>camt.066.001</UID>
+				<DisplayName>IntraBalanceMovementInstructionV01</DisplayName>
+				<Description>Intra Balance Movement Instruction V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>camt.066.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4camt.066.001.01</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:IntraBalMvmntInstr/d:CshAcct/d:Id/d:Othr/d:Id</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:IntraBalMvmntInstr/d:Id/d:TxId</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4camt.066.001.01</Namespace>
+				<Schema>DRAFT4camt.066.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>camt.067.001</UID>
+				<DisplayName>IntraBalanceMovementStatusAdviceV01</DisplayName>
+				<Description>Intra Balance Movement Status Advice V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>camt.067.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4camt.067.001.01</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:IntraBalMvmntStsAdvc/d:CshAcct/d:Id/d:Othr/d:Id</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:IntraBalMvmntStsAdvc/d:Id/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4camt.067.001.01</Namespace>
+				<Schema>DRAFT4camt.067.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>camt.068.001</UID>
+				<DisplayName>IntraBalanceMovementConfirmationV01</DisplayName>
+				<Description>Intra Balance Movement Confirmation V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>camt.068.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4camt.068.001.01</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:IntraBalMvmntConf/d:CshAcct/d:Id/d:Othr/d:Id</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:IntraBalMvmntConf/d:Id/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4camt.068.001.01</Namespace>
+				<Schema>DRAFT4camt.068.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>camt.072.001</UID>
+				<DisplayName>IntraBalanceMovementModificationRequestV01</DisplayName>
+				<Description>Intra Balance Movement Modification Request V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>camt.072.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4camt.072.001.01</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:IntraBalMvmntModReq/d:CshAcct/d:Id/d:Othr/d:Id</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:IntraBalMvmntModReq/d:Id/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4camt.072.001.01</Namespace>
+				<Schema>DRAFT4camt.072.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>camt.073.001</UID>
+				<DisplayName>IntraBalanceMovementModificationRequestStatusAdviceV01</DisplayName>
+				<Description>Intra Balance Movement Modification Request Status Advice V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>camt.073.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4camt.073.001.01</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:IntraBalMvmntModReqStsAdvc/d:CshAcct/d:Id/d:Othr/d:Id</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:IntraBalMvmntModReqStsAdvc/d:ReqRef/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4camt.073.001.01</Namespace>
+				<Schema>DRAFT4camt.073.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>camt.074.001</UID>
+				<DisplayName>IntraBalanceMovementCancellationRequestV01</DisplayName>
+				<Description>Intra Balance Movement Cancellation Request V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>camt.074.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4camt.074.001.01</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:IntraBalMvmntCxlReq/d:CshAcct/d:Id/d:Othr/d:Id</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:IntraBalMvmntCxlReq/d:Id/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4camt.074.001.01</Namespace>
+				<Schema>DRAFT4camt.074.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>camt.075.001</UID>
+				<DisplayName>IntraBalanceMovementCancellationRequestStatusAdviceV01</DisplayName>
+				<Description>Intra Balance Movement Cancellation Request Status Advice V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>camt.075.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4camt.075.001.01</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:IntraBalMvmntCxlReqStsAdvc/d:CshAcct/d:Id/d:Othr/d:Id</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:IntraBalMvmntCxlReqStsAdvc/d:Id/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4camt.075.001.01</Namespace>
+				<Schema>DRAFT4camt.075.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>camt.078.001</UID>
+				<DisplayName>IntraBalanceMovementQueryV01</DisplayName>
+				<Description>Intra Balance Movement Query V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>camt.078.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT3camt.078.001.01</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:IntraBalMvmntQry/d:QryDef/d:SchCrit/d:CshAcct/d:EQ/d:Othr/d:Id</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:IntraBalMvmntQry/d:QryDef/d:QryTp</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT3camt.078.001.01</Namespace>
+				<Schema>DRAFT3camt.078.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>camt.079.001</UID>
+				<DisplayName>IntraBalanceMovementQueryResponseV01</DisplayName>
+				<Description>Intra Balance Movement Query Response V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>camt.079.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4camt.079.001.01</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:IntraBalMvmntQryRspn/d:RptGnlDtls/d:QryRef</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:IntraBalMvmntQryRspn/d:RptOrErr/d:Mvmnts/d:Mvmnt/d:AcctOwnrTxId</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4camt.079.001.01</Namespace>
+				<Schema>DRAFT4camt.079.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>colr.001.001</UID>
+				<DisplayName>CollateralValueQueryV01</DisplayName>
+				<Description>Collateral Value Query V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>colr.001.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4colr.001.001.01</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:CollValQry/d:MsgHdr/d:ReqTp/d:Prtry/d:Id</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:CollValQry/d:CollValQryDef/d:NewCrit/d:SchCrit/d:AcctId/d:Othr/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4colr.001.001.01</Namespace>
+				<Schema>DRAFT4colr.001.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>colr.002.001</UID>
+				<DisplayName>CollateralValueReportV01</DisplayName>
+				<Description>Collateral Value Report V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>colr.002.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4colr.002.001.01</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:CollValRpt/d:MsgHdr/d:OrgnlBizQry/d:MsgId</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:CollValRpt/d:RptOrErr/d:BizRpt/d:Acct/d:Id/d:Othr/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4colr.002.001.01</Namespace>
+				<Schema>DRAFT4colr.002.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>semt.002.001</UID>
+				<DisplayName>SecuritiesBalanceCustodyReportV10</DisplayName>
+				<Description>Securities Balance Custody Report V10</Description>
+				<VariantID>001</VariantID>
+				<Version>10</Version>
+				<RequestType>semt.002.001.10</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:semt.002.001.10</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:SctiesBalCtdyRpt/d:StmtGnlDtls/d:StmtId</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:SctiesBalCtdyRpt/d:SfkpgAcct/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:semt.002.001.10</Namespace>
+				<Schema>semt.002.001.10.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>semt.017.001</UID>
+				<DisplayName>SecuritiesTransactionPostingReportV09</DisplayName>
+				<Description>Securities Transaction Posting Report V09</Description>
+				<VariantID>001</VariantID>
+				<Version>09</Version>
+				<RequestType>semt.017.001.09</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:semt.017.001.09</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:SctiesTxPstngRpt/d:AcctOwnr/d:Id/d:AnyBIC</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:SctiesTxPstngRpt/d:SfkpgAcct/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:semt.017.001.09</Namespace>
+				<Schema>semt.017.001.09.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>semt.018.001</UID>
+				<DisplayName>SecuritiesTransactionPendingReportV10</DisplayName>
+				<Description>Securities Transaction Pending Report V10</Description>
+				<VariantID>001</VariantID>
+				<Version>10</Version>
+				<RequestType>semt.018.001.10</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:semt.018.001.10</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:SctiesTxPdgRpt/d:AcctOwnr/d:Id/d:AnyBIC</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:SctiesTxPdgRpt/d:SfkpgAcct/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:semt.018.001.10</Namespace>
+				<Schema>semt.018.001.10.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>semt.019.001</UID>
+				<DisplayName>SecuritiesSettlementTransactionAllegementReportV08</DisplayName>
+				<Description>Securities Settlement Transaction Allegement Report V08</Description>
+				<VariantID>001</VariantID>
+				<Version>08</Version>
+				<RequestType>semt.019.001.08</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:semt.019.001.08</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:SctiesSttlmTxAllgmtRpt/d:AcctOwnr/d:Id/d:AnyBIC</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:SctiesSttlmTxAllgmtRpt/d:SfkpgAcct/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:semt.019.001.08</Namespace>
+				<Schema>semt.019.001.08.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>semt.020.001</UID>
+				<DisplayName>SecuritiesMessageCancellationAdviceV05</DisplayName>
+				<Description>Securities Message Cancellation Advice V05</Description>
+				<VariantID>001</VariantID>
+				<Version>05</Version>
+				<RequestType>semt.020.001.05</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:semt.020.001.05</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:SctiesMsgCxlAdvc/d:AcctOwnr/d:Id/d:AnyBIC</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:SctiesMsgCxlAdvc/d:SfkpgAcct/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:semt.020.001.05</Namespace>
+				<Schema>semt.020.001.05.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>semt.033.001</UID>
+				<DisplayName>SecuritiesTransactionCancellationRequestReportV01</DisplayName>
+				<Description>Securities Transaction Cancellation Request Report V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>semt.033.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT3semt.033.001.01</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:SctiesTxCxlReqRpt/d:RptGnlDtls/d:QryRef</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:SctiesTxCxlReqRpt/d:RptGnlDtls/d:QryTp</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT3semt.033.001.01</Namespace>
+				<Schema>DRAFT3semt.033.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>semt.044.001</UID>
+				<DisplayName>SecuritiesTransactionPenaltiesReportV01</DisplayName>
+				<Description>Securities Transaction Penalties Report V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>semt.044.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4semt.044.001.01</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:SctiesTxPnltiesRpt/d:AcctSvcr/d:Id/d:AnyBIC</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:DRAFT4semt.044.001.01</Namespace>
+				<Schema>DRAFT4semt.044.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>sese.020.001</UID>
+				<DisplayName>SecuritiesTransactionCancellationRequestV06</DisplayName>
+				<Description>Securities Transaction Cancellation Request V06</Description>
+				<VariantID>001</VariantID>
+				<Version>06</Version>
+				<RequestType>sese.020.001.06</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.020.001.06</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:SctiesTxCxlReq/d:SfkpgAcct/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.020.001.06</Namespace>
+				<Schema>sese.020.001.06.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>sese.023.001</UID>
+				<DisplayName>SecuritiesSettlementTransactionInstructionV09</DisplayName>
+				<Description>Securities Settlement Transaction Instruction V09</Description>
+				<VariantID>001</VariantID>
+				<Version>09</Version>
+				<RequestType>sese.023.001.09</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.023.001.09</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:SctiesSttlmTxInstr/d:TxId</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:SctiesSttlmTxInstr/d:QtyAndAcctDtls/d:SfkpgAcct/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.023.001.09</Namespace>
+				<Schema>sese.023.001.09.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>sese.024.001</UID>
+				<DisplayName>SecuritiesSettlementTransactionStatusAdviceV10</DisplayName>
+				<Description>Securities Settlement Transaction Status Advice V10</Description>
+				<VariantID>001</VariantID>
+				<Version>10</Version>
+				<RequestType>sese.024.001.10</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.024.001.10</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:SctiesSttlmTxStsAdvc/d:TxId/d:AcctOwnrTxId</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:SctiesSttlmTxStsAdvc/d:TxDtls/d:SfkpgAcct/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.024.001.10</Namespace>
+				<Schema>sese.024.001.10.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>sese.025.001</UID>
+				<DisplayName>SecuritiesSettlementTransactionConfirmationV09</DisplayName>
+				<Description>Securities Settlement Transaction Confirmation V09</Description>
+				<VariantID>001</VariantID>
+				<Version>09</Version>
+				<RequestType>sese.025.001.09</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.025.001.09</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:SctiesSttlmTxConf/d:TxIdDtls/d:AcctOwnrTxId</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:SctiesSttlmTxConf/d:QtyAndAcctDtls/d:SfkpgAcct/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.025.001.09</Namespace>
+				<Schema>sese.025.001.09.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>sese.027.001</UID>
+				<DisplayName>SecuritiesTransactionCancellationRequestStatusAdviceV05</DisplayName>
+				<Description>Securities Transaction Cancellation Request Status Advice V05</Description>
+				<VariantID>001</VariantID>
+				<Version>05</Version>
+				<RequestType>sese.027.001.05</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.027.001.05</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:SctiesTxCxlReqStsAdvc/d:CxlReqRef/d:Id</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:SctiesTxCxlReqStsAdvc/d:TxDtls/d:SfkpgAcct/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.027.001.05</Namespace>
+				<Schema>sese.027.001.05.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>sese.028.001</UID>
+				<DisplayName>SecuritiesSettlementTransactionAllegementNotificationV08</DisplayName>
+				<Description>Securities Settlement Transaction Allegement Notification V08</Description>
+				<VariantID>001</VariantID>
+				<Version>08</Version>
+				<RequestType>sese.028.001.08</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.028.001.08</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:SctiesSttlmTxAllgmtNtfctn/d:TxId</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:SctiesSttlmTxAllgmtNtfctn/d:QtyAndAcctDtls/d:SfkpgAcct/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.028.001.08</Namespace>
+				<Schema>sese.028.001.08.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>sese.029.001</UID>
+				<DisplayName>SecuritiesSettlementAllegementRemovalAdviceV04</DisplayName>
+				<Description>Securities Settlement Allegement Removal Advice V04</Description>
+				<VariantID>001</VariantID>
+				<Version>04</Version>
+				<RequestType>sese.029.001.04</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.029.001.04</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:SctiesSttlmAllgmtRmvlAdvc/d:AcctSvcrTxId/d:TxId</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:SctiesSttlmAllgmtRmvlAdvc/d:SfkpgAcct/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.029.001.04</Namespace>
+				<Schema>sese.029.001.04.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>sese.030.001</UID>
+				<DisplayName>SecuritiesSettlementConditionsModificationRequestV08</DisplayName>
+				<Description>Securities Settlement Conditions Modification Request V08</Description>
+				<VariantID>001</VariantID>
+				<Version>08</Version>
+				<RequestType>sese.030.001.08</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.030.001.08</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:SctiesSttlmCondsModReq/d:AcctOwnr/d:Id/d:AnyBIC</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:SctiesSttlmCondsModReq/d:SfkpgAcct/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.030.001.08</Namespace>
+				<Schema>sese.030.001.08.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>sese.031.001</UID>
+				<DisplayName>SecuritiesSettlementConditionModificationStatusAdviceV08</DisplayName>
+				<Description>Securities Settlement Condition Modification Status Advice V08</Description>
+				<VariantID>001</VariantID>
+				<Version>08</Version>
+				<RequestType>sese.031.001.08</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.031.001.08</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:SctiesSttlmCondModStsAdvc/d:ReqRef/d:Id</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:SctiesSttlmCondModStsAdvc/d:SfkpgAcct/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.031.001.08</Namespace>
+				<Schema>sese.031.001.08.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>sese.032.001</UID>
+				<DisplayName>SecuritiesSettlementTransactionGenerationNotificationV09</DisplayName>
+				<Description>Securities Settlement Transaction Generation Notification V09</Description>
+				<VariantID>001</VariantID>
+				<Version>09</Version>
+				<RequestType>sese.032.001.09</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>true</NonRepudiation>
+				<Signed>true</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.032.001.09</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>a</Prefix>
+						<Namespace>urn:iso:std:iso:20022:tech:xsd:head.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1">
+						<Path>a:AppHdr/a:BizMsgIdr</Path>
+					</Keyword>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:SctiesSttlmTxGnrtnNtfctn/d:TxIdDtls/d:MktInfrstrctrTxId</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3">
+						<Path>d:Document/d:SctiesSttlmTxGnrtnNtfctn/d:QtyAndAcctDtls/d:SfkpgAcct/d:Id</Path>
+					</Keyword>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:iso:std:iso:20022:tech:xsd:sese.032.001.09</Namespace>
+				<Schema>sese.032.001.09.xsd</Schema>
+			</MessageType>
+		</MessageTypes>
+		<References>
+			<ImportedSchemas>
+				<ImportedSchema>
+					<Schema>supl.021.001.01.xsd</Schema>
+					<SchemaLocation>supl.021.001.01.xsd</SchemaLocation>
+					<Namespace>urn:eurosystem:xsd:DRAFT2supl.021.001.01</Namespace>
+				</ImportedSchema>
+			</ImportedSchemas>
+		</References>
+	</Service>
+</Services>

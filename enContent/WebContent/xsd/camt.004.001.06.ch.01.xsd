@@ -1,0 +1,1216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+(C) Copyright 2016, SIX Interbank Clearing Ltd
+XML Schema used in the Swiss Interbank space:
+	Suffix part 1: .ch:	Identification as a Swiss (CH) version
+	Suffix part 2: .01:   Version of this scheme
+
+This schema is a customised schema for the specific requirements of SIC4, and is not the official SWIFT schema. 
+The full SWIFT schema may be found on www.swift.com
+
+For comments and suggestions please contact pm@six-group.com
+-->
+<xs:schema xmlns="http://www.six-interbank-clearing.com/de/camt.004.001.06.ch.01"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.six-interbank-clearing.com/de/camt.004.001.06.ch.01"
+    elementFormDefault="qualified">
+  <xs:element name="Document" type="Document_CH_camt004"/>
+  <xs:complexType name="AccountIdentification4Choice">
+    <xs:choice>
+      <xs:element name="IBAN" type="IBAN2007Identifier"/>
+      <xs:element name="Othr" type="GenericAccountIdentification1"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="AccountIdentification4Choice_CH_camt004">
+    
+        <xs:choice>
+          <xs:element name="Othr" type="GenericAccountIdentification1_CH_camt004"/>
+        </xs:choice>
+      
+  </xs:complexType>
+  <xs:complexType name="AccountOrBusinessError2Choice">
+    <xs:choice>
+      <xs:element name="Acct" type="CashAccount23"/>
+      <xs:element name="BizErr" type="ErrorHandling4" maxOccurs="unbounded"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="AccountOrBusinessError2Choice_CH_camt004">
+    
+        <xs:choice>
+          <xs:element name="Acct" type="CashAccount23_CH_camt004">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Account Information</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Kontoinformationen</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition"/>
+              <xs:documentation xml:lang="EN" source="Definition"/>
+            </xs:annotation>
+          </xs:element>
+        </xs:choice>
+      
+  </xs:complexType>
+  <xs:complexType name="AccountOrOperationalError2Choice">
+    <xs:choice>
+      <xs:element name="AcctRpt" type="AccountReport17" maxOccurs="unbounded"/>
+      <xs:element name="OprlErr" type="ErrorHandling4" maxOccurs="unbounded"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="AccountOrOperationalError2Choice_CH_camt004">
+    
+        <xs:choice>
+          <xs:element name="AcctRpt" type="AccountReport17_CH_camt004">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Account Report</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Positive Abfrageantwort</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition">Die Abfrageantwort liefert Kontoinformationen, die den Abfragekriterien entsprechen.</xs:documentation>
+              <xs:documentation xml:lang="EN" source="Definition">The response message returns account information matching the query criteria.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="OprlErr" type="ErrorHandling4_CH_camt004">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Operational Error</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Negative Abfrageantwort</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition">Wenn die Abfrage nicht ausgeführt werden kann oder keine Zahlungen den Abfragekriterien entsprechen, wird ein Fehler zurückgemeldet.</xs:documentation>
+              <xs:documentation xml:lang="EN" source="Definition">If the query can not be performed for any reason or no transaction matches the search criteria, an error will be returned.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:choice>
+      
+  </xs:complexType>
+  <xs:complexType name="AccountReport17">
+    <xs:sequence>
+      <xs:element name="AcctId" type="AccountIdentification4Choice"/>
+      <xs:element name="AcctOrErr" type="AccountOrBusinessError2Choice"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AccountReport17_CH_camt004">
+    
+        <xs:sequence>
+          <xs:element name="AcctId" type="AccountIdentification4Choice_CH_camt004">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Settlement Account Identification</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Identifikation des Verrechnungskontos</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition"/>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AcctOrErr" type="AccountOrBusinessError2Choice_CH_camt004"/>
+        </xs:sequence>
+      
+  </xs:complexType>
+  <xs:complexType name="AccountSchemeName1Choice">
+    <xs:choice>
+      <xs:element name="Cd" type="ExternalAccountIdentification1Code"/>
+      <xs:element name="Prtry" type="Max35Text"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="ActiveCurrencyAndAmount">
+    <xs:simpleContent>
+      <xs:extension base="ActiveCurrencyAndAmount_SimpleType">
+        <xs:attribute name="Ccy" type="ActiveCurrencyCode" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ActiveCurrencyAndAmount_SimpleType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+      <xs:totalDigits value="18"/>
+      <xs:fractionDigits value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ActiveCurrencyCode">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{3,3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ActiveOrHistoricCurrencyCode">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{3,3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AddressType2Code">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ADDR"/>
+      <xs:enumeration value="BIZZ"/>
+      <xs:enumeration value="DLVY"/>
+      <xs:enumeration value="HOME"/>
+      <xs:enumeration value="MLTO"/>
+      <xs:enumeration value="PBOX"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Amount2Choice">
+    <xs:choice>
+      <xs:element name="AmtWthtCcy" type="ImpliedCurrencyAndAmount"/>
+      <xs:element name="AmtWthCcy" type="ActiveCurrencyAndAmount"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:simpleType name="AnyBICIdentifier">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BalanceRestrictionType1">
+    <xs:sequence>
+      <xs:element name="Tp" type="GenericIdentification1"/>
+      <xs:element name="Desc" type="Max140Text" minOccurs="0"/>
+      <xs:element name="PrcgTp" type="ProcessingType1Choice" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="BalanceStatus1Code">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PDNG"/>
+      <xs:enumeration value="STLD"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BalanceType8Choice">
+    <xs:choice>
+      <xs:element name="Cd" type="SystemBalanceType1Code"/>
+      <xs:element name="Prtry" type="Max35Text"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="BalanceType8Choice_CH_camt004">
+    
+        <xs:choice>
+          <xs:element name="Cd" type="SystemBalanceType1Code">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Generic Balance Type Code</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Allgemeiner Saldotyp Code</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition">
+Folgende Codes sind definiert:
+PYMT = Verrechnete Ein-/Ausgänge
+BLCK = Liquiditätsreservation Systemmanager
+AVLB = Kontosaldo 1
+REST = Liquiditätsreservation Teilnehmer
+CRRT = Kontosaldo 2
+XCRD = Nicht verrechnete Eingänge
+LRLD = Nicht verrechnete Ausgänge mit Reservationsbeanspruchung
+XDBT = Nicht verrechnete Ausgänge ohne Reservationsbeanspruchung
+DPBL = Pendente Ausgänge mit Reservationsbeanspruchung
+FUTB = Pendente Ausgänge ohne Reservationsbeanspruchung
+XPCD = Disposaldo
+              </xs:documentation>
+              <xs:documentation xml:lang="EN" source="Definition">
+Following codes are defined:
+PYMT = Settled incoming or outgoing payments
+BLCK = Liquidity reservation by the system manager
+AVLB = Account balance 1
+REST = Liquidity reservation by the participant
+CRRT = Account balance 2
+XCRD = Unsettled incoming payments
+LRLD = Unsettled outgoing payments with reservation requirement
+XDBT = Unsettled outgoing payments without reservation requirement
+DPBL = Pending outgoing payments with reservation requirement
+FUTB = Pending outgoing payments without reservation requirement
+XPCD = Forecast balance
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Prtry" type="Max35Text">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Payment Type</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Zahlungsart</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition">
+Eindeutige Identifikation der Zahlungsart, folgende Codewerte für Zahlungsarten sind definiert:
+ESRPMT = ESR-Zahlung
+ESRDEB = ESR-Zahlung aus Lastschrift
+IPIDEB = IPI-Zahlung aus Lastschrift
+SEPPMT = SEPA-Zahlung (nur EUR)
+SLRPMT = Salärzahlung
+CSTPMT = Kundenzahlung allgemein
+F2FPMT = FI-an-FI-Zahlung
+CMPPMT = Ausgleichszahlung
+COVPMT = Deckungszahlung
+PPTTSD = Übertrag an Girokonto durch Teilnehmer
+SECSTM = Verrechnung SECOM
+EUXSTM = Verrechnung Eurex
+REPSTM = Verrechnung Repo
+BCMSTM = Verrechnung Bancomat
+TCMSTM = Verrechnung Tancomat
+POSSTM = Verrechnung POS
+STVSTM = Verrechnung Terravis
+VISSTM = Verrechnung Viseca
+CSTRTN = Normale Rückzahlung
+SEPRTN = SEPA-Rückzahlung (nur EUR)
+SMTTSD = Übertrag an Girokonto durch Systemmanager
+SMTFSD = Übertrag von Girokonto
+              </xs:documentation>
+              <xs:documentation xml:lang="EN" source="Definition">
+Unambiguous identification of the payment type, the following code values for payment types are defined:
+ESRPMT = ISR payment
+ESRDEB = ISR payment resulting from a direct debit
+IPIDEB = IPI payment resulting from a direct debit
+SEPPMT = SEPA payment (EUR only)
+SLRPMT = Salary payment
+CSTPMT = Generic customer payment
+F2FPMT = FI-to-FI-payment
+CMPPMT = Compensation payment
+COVPMT = Cover payment
+PPTTSD = Sight deposit account transfer by the participant
+SECSTM = SECOM settlement
+EUXSTM = Eurex settlement
+REPSTM = Repo settlement
+BCMSTM = Bancomat settlement
+TCMSTM = Tancomat settlement
+POSSTM = EFT/POS settlement
+STVSTM = Terravis settlement
+VISSTM = Viseca settlement
+CSTRTN = Normal payment return 
+SEPRTN = SEPA payment return (EUR only)
+SMTTSD = Sight deposit account transfer by the system manager
+SMTFSD = Transfer from sight deposit account
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:choice>
+      
+  </xs:complexType>
+  <xs:complexType name="BalanceType9Choice">
+    <xs:choice>
+      <xs:element name="Cd" type="SystemBalanceType2Code"/>
+      <xs:element name="Prtry" type="Max35Text"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:simpleType name="BICFIIdentifier">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BilateralLimit1">
+    <xs:sequence>
+      <xs:element name="CtrPtyId" type="BranchAndFinancialInstitutionIdentification5"/>
+      <xs:element name="LmtAmt" type="Amount2Choice"/>
+      <xs:element name="CdtDbtInd" type="CreditDebitCode"/>
+      <xs:element name="BilBal" type="CashBalance6" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BranchAndFinancialInstitutionIdentification5">
+    <xs:sequence>
+      <xs:element name="FinInstnId" type="FinancialInstitutionIdentification8"/>
+      <xs:element name="BrnchId" type="BranchData2" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BranchData2">
+    <xs:sequence>
+      <xs:element name="Id" type="Max35Text" minOccurs="0"/>
+      <xs:element name="Nm" type="Max140Text" minOccurs="0"/>
+      <xs:element name="PstlAdr" type="PostalAddress6" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CashAccount23">
+    <xs:sequence>
+      <xs:element name="Nm" type="Max70Text" minOccurs="0"/>
+      <xs:element name="Tp" type="CashAccountType2Choice" minOccurs="0"/>
+      <xs:element name="Ccy" type="ActiveOrHistoricCurrencyCode" minOccurs="0"/>
+      <xs:element name="CurMulLmt" type="Limit5" minOccurs="0"/>
+      <xs:element name="Ownr" type="PartyIdentification43" minOccurs="0"/>
+      <xs:element name="Svcr" type="BranchAndFinancialInstitutionIdentification5" minOccurs="0"/>
+      <xs:element name="MulBal" type="CashBalance5" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="CurBilLmt" type="BilateralLimit1" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="StgOrdr" type="StandingOrder2" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CashAccount23_CH_camt004">
+    
+        <xs:sequence>
+          <xs:element name="Tp" type="CashAccountType2Choice_CH_camt004" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Result Type</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Resultattyp</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition">Wenn geliefert, stellen die bereitgestellten Zahlen konsolidierte Werte über das Haupt- und das zugehörige Nebenkonto dar.</xs:documentation>
+              <xs:documentation xml:lang="EN" source="Definition">If provided the result set contains the consolidated values of the settlement account and it's sub-account.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="MulBal" type="CashBalance5_CH_camt004" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Balance Information</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Saldoinformationen</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition">
+Liefert für jeden auf dem Konto geführten Saldo sowie für jede verarbeitete Zahlungsart die aktuelle Summe der Belastungen bzw. Gutschriften. Liegen für einen Saldo keine entsprechenden Werte vor, wird ein Nullwert (0) geliefert (nur ACCQRY).
+Es werden jedoch nur Zahlungsarten geliefert, für die zumindest eine verarbeitete Zahlung vorliegt (nur PMTQRY).
+              </xs:documentation>
+              <xs:documentation xml:lang="EN" source="Definition">
+Provides the sum of debits and the sum of credits for every balance type recorded on the account as well as for every processed payment type. If there is no value available for a specific balance type the value zero (0) is provided instead (ACCQRY only).
+Only payment types with at least one processed transaction will be reported (PMTQRY only).
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      
+  </xs:complexType>
+  <xs:complexType name="CashAccount24">
+    <xs:sequence>
+      <xs:element name="Id" type="AccountIdentification4Choice"/>
+      <xs:element name="Tp" type="CashAccountType2Choice" minOccurs="0"/>
+      <xs:element name="Ccy" type="ActiveOrHistoricCurrencyCode" minOccurs="0"/>
+      <xs:element name="Nm" type="Max70Text" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CashAccountType2Choice">
+    <xs:choice>
+      <xs:element name="Cd" type="ExternalCashAccountType1Code"/>
+      <xs:element name="Prtry" type="Max35Text"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="CashAccountType2Choice_CH_camt004">
+    
+        <xs:choice>
+          <xs:element name="Prtry" type="Max35Text">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Result Type Code</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Resultattyp Code</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition">
+Kennzeichnet konsolidierte Informationen.
+Folgender Code ist definiert:
+SUBAC - Konsolidierte Werte aus Haupt- und Nebenkonto
+              </xs:documentation>
+              <xs:documentation xml:lang="EN" source="Definition">
+Flag for consolidated information.
+The following code is defined:
+SUBAC - Consolidated values of settlement account and it's sub-account
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:choice>
+      
+  </xs:complexType>
+  <xs:complexType name="CashBalance5">
+    <xs:sequence>
+      <xs:element name="Amt" type="ImpliedCurrencyAndAmount"/>
+      <xs:element name="CdtDbtInd" type="CreditDebitCode"/>
+      <xs:element name="Tp" type="BalanceType8Choice" minOccurs="0"/>
+      <xs:element name="Sts" type="BalanceStatus1Code" minOccurs="0"/>
+      <xs:element name="ValDt" type="DateAndDateTimeChoice" minOccurs="0"/>
+      <xs:element name="NbOfPmts" type="Number" minOccurs="0"/>
+      <xs:element name="RstrctnTp" type="BalanceRestrictionType1" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CashBalance5_CH_camt004">
+    
+        <xs:sequence>
+          <xs:element name="Amt" type="ImpliedCurrencyAndAmount">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Amount</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Betrag</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition"/>
+              <xs:documentation xml:lang="EN" source="Definition"/>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CdtDbtInd" type="CreditDebitCode">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Credit Debit Indicator</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Saldokennzeichen</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition">Qualifiziert den Betrag im Element &lt;Amt&gt; als Guthaben oder Belastung bzw. den Saldo als positiven oder negativen Saldo.</xs:documentation>
+              <xs:documentation xml:lang="EN" source="Definition">Qualifies the amount provided in the &lt;Amt&gt; element as a credit or debit amount.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Tp" type="BalanceType8Choice_CH_camt004">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Balance Type</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Saldotyp</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition">
+Fachliche Qualifikation des ausgewiesenen Betrags.
+Entweder ein Saldotyp bei Abfragetyp ACCQRY (in Element &lt;Cd&gt;) oder eine Zahlungsart bei Abfragetyp PMTQRY (in Element &lt;Prtry&gt;) wird geliefert.
+              </xs:documentation>
+              <xs:documentation xml:lang="EN" source="Definition">
+Functional attribution of the provided amount.
+Either a balance type for query type ACCQRY (in element &lt;Cd&gt;) or a payment type for query type PMTQRY (in element &lt;Prtry&gt;) code is provided.
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Sts" type="BalanceStatus1Code" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Status Code</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Statuscode</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition">
+Status der Zahlung. Wird nur für den Abfragetyp PMTQRY geliefert.
+Folgende Codes sind definiert:
+STLD = Verrechnet
+PDNG = Nicht verrechnet
+              </xs:documentation>
+              <xs:documentation xml:lang="EN" source="Definition">
+Status of the payment. Only provided for query type PMTQRY.
+The following codes are defined:
+STLD = settled
+PDNG = pending
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ValDt" type="DateAndDateTimeChoice_CH_camt004"/>
+          <xs:element name="NbOfPmts" type="Number">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Number of Payments</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Anzahl Zahlungen</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition">
+Gibt die Anzahl der Zahlungen an, die für den ausgewiesenen Betrag berücksichtigt wurden.
+Für die Saldotypen BLCK, AVLB, REST, CRRT und XPCT wird immer der Wert 1 geliefert (ACCQRY).
+              </xs:documentation>
+              <xs:documentation xml:lang="EN" source="Definition">
+Provides the number of payments included in the stated amount.
+For balance type codes BLCK, AVLB, REST, CRRT and XPCT the provided value is always 1 (ACCQRY).
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      
+  </xs:complexType>
+  <xs:complexType name="CashBalance6">
+    <xs:sequence>
+      <xs:element name="Amt" type="ImpliedCurrencyAndAmount"/>
+      <xs:element name="CdtDbtInd" type="CreditDebitCode"/>
+      <xs:element name="Tp" type="BalanceType9Choice" minOccurs="0"/>
+      <xs:element name="Sts" type="BalanceStatus1Code" minOccurs="0"/>
+      <xs:element name="ValDt" type="DateAndDateTimeChoice" minOccurs="0"/>
+      <xs:element name="NbOfPmts" type="Number" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ClearingSystemIdentification2Choice">
+    <xs:choice>
+      <xs:element name="Cd" type="ExternalClearingSystemIdentification1Code"/>
+      <xs:element name="Prtry" type="Max35Text"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="ClearingSystemMemberIdentification2">
+    <xs:sequence>
+      <xs:element name="ClrSysId" type="ClearingSystemIdentification2Choice" minOccurs="0"/>
+      <xs:element name="MmbId" type="Max35Text"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ContactDetails2">
+    <xs:sequence>
+      <xs:element name="NmPrfx" type="NamePrefix1Code" minOccurs="0"/>
+      <xs:element name="Nm" type="Max140Text" minOccurs="0"/>
+      <xs:element name="PhneNb" type="PhoneNumber" minOccurs="0"/>
+      <xs:element name="MobNb" type="PhoneNumber" minOccurs="0"/>
+      <xs:element name="FaxNb" type="PhoneNumber" minOccurs="0"/>
+      <xs:element name="EmailAdr" type="Max2048Text" minOccurs="0"/>
+      <xs:element name="Othr" type="Max35Text" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="CountryCode">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{2,2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CreditDebitCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CRDT"/>
+      <xs:enumeration value="DBIT"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DateAndDateTimeChoice">
+    <xs:choice>
+      <xs:element name="Dt" type="ISODate"/>
+      <xs:element name="DtTm" type="ISODateTime"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="DateAndDateTimeChoice_CH_camt004">
+    
+        <xs:choice>
+          <xs:element name="Dt" type="ISODate">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Settlement Date</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Verrechnungsdatum</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition">Es werden alle verfügbaren Salden des abgefragten Verrechnungsdatums geliefert.</xs:documentation>
+              <xs:documentation xml:lang="EN" source="Definition">All available balances for the specified date will be provided.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:choice>
+      
+  </xs:complexType>
+  <xs:complexType name="DateAndPlaceOfBirth">
+    <xs:sequence>
+      <xs:element name="BirthDt" type="ISODate"/>
+      <xs:element name="PrvcOfBirth" type="Max35Text" minOccurs="0"/>
+      <xs:element name="CityOfBirth" type="Max35Text"/>
+      <xs:element name="CtryOfBirth" type="CountryCode"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DatePeriodDetails1">
+    <xs:sequence>
+      <xs:element name="FrDt" type="ISODate"/>
+      <xs:element name="ToDt" type="ISODate" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element name="RtrAcct" type="ReturnAccountV06"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Document_CH_camt004">
+    
+        <xs:sequence>
+          <xs:element name="RtrAcct" type="ReturnAccountV06_CH_camt004"/>
+        </xs:sequence>
+      
+  </xs:complexType>
+  <xs:simpleType name="ErrorHandling1Code">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="X020"/>
+      <xs:enumeration value="X030"/>
+      <xs:enumeration value="X050"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ErrorHandling2Choice">
+    <xs:choice>
+      <xs:element name="Cd" type="ErrorHandling1Code"/>
+      <xs:element name="Prtry" type="Max35Text"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="ErrorHandling2Choice_CH_camt004">
+    
+        <xs:choice>
+          <xs:element name="Prtry" type="Max35Text">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Error Code (proprietary)</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Fehlercode (proprietär)</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition">
+In diesem Element wird ein Fehlercode in Form eines proprietären Codes geliefert.
+Folgende Fehlercodes sind definiert:
+NRSLT: Es wurden keine den Abfragekriterien entsprechenden Zahlungen gefunden (nur PMTQRY)
+NAUTH: Abfrage ist nicht zugelassen
+QYINV: Abfragekriterien ungültig
+              </xs:documentation>
+              <xs:documentation xml:lang="EN" source="Definition">
+The reason for the error is specified by a proprietary error code.
+The following error codes are defined:
+NRSLT: No payments matching the query criteria were found (PMTQRY only)
+NAUTH: Query is not permitted
+QYINV: Invalid query criteria
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:choice>
+      
+  </xs:complexType>
+  <xs:complexType name="ErrorHandling4">
+    <xs:sequence>
+      <xs:element name="Err" type="ErrorHandling2Choice"/>
+      <xs:element name="Desc" type="Max140Text" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ErrorHandling4_CH_camt004">
+    
+        <xs:sequence>
+          <xs:element name="Err" type="ErrorHandling2Choice_CH_camt004">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Error</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Fehler</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition"/>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      
+  </xs:complexType>
+  <xs:complexType name="EventType1Choice">
+    <xs:choice>
+      <xs:element name="Cd" type="ExternalSystemEventType1Code"/>
+      <xs:element name="Prtry" type="Max35Text"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="ExecutionType1Choice">
+    <xs:choice>
+      <xs:element name="Tm" type="ISOTime"/>
+      <xs:element name="Evt" type="EventType1Choice"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:simpleType name="ExternalAccountIdentification1Code">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ExternalCashAccountType1Code">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ExternalClearingSystemIdentification1Code">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ExternalFinancialInstitutionIdentification1Code">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ExternalOrganisationIdentification1Code">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ExternalPersonIdentification1Code">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ExternalSystemEventType1Code">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="FinancialIdentificationSchemeName1Choice">
+    <xs:choice>
+      <xs:element name="Cd" type="ExternalFinancialInstitutionIdentification1Code"/>
+      <xs:element name="Prtry" type="Max35Text"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="FinancialInstitutionIdentification8">
+    <xs:sequence>
+      <xs:element name="BICFI" type="BICFIIdentifier" minOccurs="0"/>
+      <xs:element name="ClrSysMmbId" type="ClearingSystemMemberIdentification2" minOccurs="0"/>
+      <xs:element name="Nm" type="Max140Text" minOccurs="0"/>
+      <xs:element name="PstlAdr" type="PostalAddress6" minOccurs="0"/>
+      <xs:element name="Othr" type="GenericFinancialIdentification1" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Frequency2Code">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ADHO"/>
+      <xs:enumeration value="DAIL"/>
+      <xs:enumeration value="INDA"/>
+      <xs:enumeration value="MIAN"/>
+      <xs:enumeration value="MNTH"/>
+      <xs:enumeration value="OVNG"/>
+      <xs:enumeration value="QURT"/>
+      <xs:enumeration value="WEEK"/>
+      <xs:enumeration value="YEAR"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="GenericAccountIdentification1">
+    <xs:sequence>
+      <xs:element name="Id" type="Max34Text"/>
+      <xs:element name="SchmeNm" type="AccountSchemeName1Choice" minOccurs="0"/>
+      <xs:element name="Issr" type="Max35Text" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GenericAccountIdentification1_CH_camt004">
+    
+        <xs:sequence>
+          <xs:element name="Id" type="Max34Text">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Settlement Account</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Verrechnungskonto</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition"/>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      
+  </xs:complexType>
+  <xs:complexType name="GenericFinancialIdentification1">
+    <xs:sequence>
+      <xs:element name="Id" type="Max35Text"/>
+      <xs:element name="SchmeNm" type="FinancialIdentificationSchemeName1Choice" minOccurs="0"/>
+      <xs:element name="Issr" type="Max35Text" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GenericIdentification1">
+    <xs:sequence>
+      <xs:element name="Id" type="Max35Text"/>
+      <xs:element name="SchmeNm" type="Max35Text" minOccurs="0"/>
+      <xs:element name="Issr" type="Max35Text" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GenericIdentification1_CH_camt004">
+    
+        <xs:sequence>
+          <xs:element name="Id" type="Max35Text">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">RTGS Code</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Identifikationscode des RTGS</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition">Fix «CSC» für SIC, «CEC» für euroSIC.</xs:documentation>
+              <xs:documentation xml:lang="EN" source="Definition">Fix "CSC" for SIC, "CEC" for euroSIC.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      
+  </xs:complexType>
+  <xs:complexType name="GenericOrganisationIdentification1">
+    <xs:sequence>
+      <xs:element name="Id" type="Max35Text"/>
+      <xs:element name="SchmeNm" type="OrganisationIdentificationSchemeName1Choice" minOccurs="0"/>
+      <xs:element name="Issr" type="Max35Text" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GenericPersonIdentification1">
+    <xs:sequence>
+      <xs:element name="Id" type="Max35Text"/>
+      <xs:element name="SchmeNm" type="PersonIdentificationSchemeName1Choice" minOccurs="0"/>
+      <xs:element name="Issr" type="Max35Text" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="IBAN2007Identifier">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ImpliedCurrencyAndAmount">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+      <xs:totalDigits value="18"/>
+      <xs:fractionDigits value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ISODate">
+    <xs:restriction base="xs:date"/>
+  </xs:simpleType>
+  <xs:simpleType name="ISODateTime">
+    <xs:restriction base="xs:dateTime"/>
+  </xs:simpleType>
+  <xs:simpleType name="ISOTime">
+    <xs:restriction base="xs:time"/>
+  </xs:simpleType>
+  <xs:complexType name="Limit5">
+    <xs:sequence>
+      <xs:element name="Amt" type="Amount2Choice"/>
+      <xs:element name="CdtDbtInd" type="CreditDebitCode"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Max140Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="140"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max16Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="16"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max2048Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="2048"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max34Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="34"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max35Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="35"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max70Text">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="70"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MessageHeader3">
+    <xs:sequence>
+      <xs:element name="MsgId" type="Max35Text"/>
+      <xs:element name="CreDtTm" type="ISODateTime" minOccurs="0"/>
+      <xs:element name="ReqTp" type="RequestType2Choice" minOccurs="0"/>
+      <xs:element name="OrgnlBizQry" type="OriginalBusinessQuery1" minOccurs="0"/>
+      <xs:element name="QryNm" type="Max35Text" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MessageHeader3_CH_camt004">
+    
+        <xs:sequence>
+          <xs:element name="MsgId" type="Max35Text">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Message Identification</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Meldungsidentifikation</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition">Für dieses Element ist nur der SWIFT-Zeichensatz ohne Leerzeichen zugelassen.</xs:documentation>
+              <xs:documentation xml:lang="EN" source="Definition">Only the SWIFT character set excluding spaces is permitted for this element.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CreDtTm" type="ISODateTime">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Creation Date Time</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Erstellungszeitpunkt der Meldung</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition"/>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReqTp" type="RequestType2Choice_CH_camt004"/>
+          <xs:element name="OrgnlBizQry" type="OriginalBusinessQuery1_CH_camt004"/>
+          <xs:element name="QryNm" type="Max35Text">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Query Type</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Abfragetyp</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition">
+Muss zwingend verwendet werden zur eindeutigen Identifizierung des Abfragetyps.
+Folgende Codes sind definiert:
+ACCQRY - Saldenabfrage Verrechnungskonto
+PMTQRY - Saldenabfrage Zahlungsarten
+              </xs:documentation>
+              <xs:documentation xml:lang="EN" source="Definition">
+Must be used to identify the query type.
+The following codes are defined:
+ACCQRY - Settlement account balances query
+PMTQRY - Payment type balances query
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      
+  </xs:complexType>
+  <xs:simpleType name="NamePrefix1Code">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DOCT"/>
+      <xs:enumeration value="MADM"/>
+      <xs:enumeration value="MISS"/>
+      <xs:enumeration value="MIST"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Number">
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="18"/>
+      <xs:fractionDigits value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="OrganisationIdentification8">
+    <xs:sequence>
+      <xs:element name="AnyBIC" type="AnyBICIdentifier" minOccurs="0"/>
+      <xs:element name="Othr" type="GenericOrganisationIdentification1" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrganisationIdentificationSchemeName1Choice">
+    <xs:choice>
+      <xs:element name="Cd" type="ExternalOrganisationIdentification1Code"/>
+      <xs:element name="Prtry" type="Max35Text"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="OriginalBusinessQuery1">
+    <xs:sequence>
+      <xs:element name="MsgId" type="Max35Text"/>
+      <xs:element name="MsgNmId" type="Max35Text" minOccurs="0"/>
+      <xs:element name="CreDtTm" type="ISODateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OriginalBusinessQuery1_CH_camt004">
+    
+        <xs:sequence>
+          <xs:element name="MsgId" type="Max35Text">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Original Message Identification</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Meldungsidentifikation der Abfragemeldung</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition"/>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      
+  </xs:complexType>
+  <xs:complexType name="Party11Choice">
+    <xs:choice>
+      <xs:element name="OrgId" type="OrganisationIdentification8"/>
+      <xs:element name="PrvtId" type="PersonIdentification5"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="PartyIdentification43">
+    <xs:sequence>
+      <xs:element name="Nm" type="Max140Text" minOccurs="0"/>
+      <xs:element name="PstlAdr" type="PostalAddress6" minOccurs="0"/>
+      <xs:element name="Id" type="Party11Choice" minOccurs="0"/>
+      <xs:element name="CtryOfRes" type="CountryCode" minOccurs="0"/>
+      <xs:element name="CtctDtls" type="ContactDetails2" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PersonIdentification5">
+    <xs:sequence>
+      <xs:element name="DtAndPlcOfBirth" type="DateAndPlaceOfBirth" minOccurs="0"/>
+      <xs:element name="Othr" type="GenericPersonIdentification1" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PersonIdentificationSchemeName1Choice">
+    <xs:choice>
+      <xs:element name="Cd" type="ExternalPersonIdentification1Code"/>
+      <xs:element name="Prtry" type="Max35Text"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:simpleType name="PhoneNumber">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\+[0-9]{1,3}-[0-9()+\-]{1,30}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PostalAddress6">
+    <xs:sequence>
+      <xs:element name="AdrTp" type="AddressType2Code" minOccurs="0"/>
+      <xs:element name="Dept" type="Max70Text" minOccurs="0"/>
+      <xs:element name="SubDept" type="Max70Text" minOccurs="0"/>
+      <xs:element name="StrtNm" type="Max70Text" minOccurs="0"/>
+      <xs:element name="BldgNb" type="Max16Text" minOccurs="0"/>
+      <xs:element name="PstCd" type="Max16Text" minOccurs="0"/>
+      <xs:element name="TwnNm" type="Max35Text" minOccurs="0"/>
+      <xs:element name="CtrySubDvsn" type="Max35Text" minOccurs="0"/>
+      <xs:element name="Ctry" type="CountryCode" minOccurs="0"/>
+      <xs:element name="AdrLine" type="Max70Text" minOccurs="0" maxOccurs="7"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProcessingType1Choice">
+    <xs:choice>
+      <xs:element name="Cd" type="ProcessingType1Code"/>
+      <xs:element name="Prtry" type="Max35Text"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:simpleType name="ProcessingType1Code">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BLCK"/>
+      <xs:enumeration value="COLD"/>
+      <xs:enumeration value="CSDB"/>
+      <xs:enumeration value="CVHD"/>
+      <xs:enumeration value="DLVR"/>
+      <xs:enumeration value="EARM"/>
+      <xs:enumeration value="EFAC"/>
+      <xs:enumeration value="RJCT"/>
+      <xs:enumeration value="RSVT"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RequestType1Code">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RT01"/>
+      <xs:enumeration value="RT02"/>
+      <xs:enumeration value="RT03"/>
+      <xs:enumeration value="RT04"/>
+      <xs:enumeration value="RT05"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RequestType2Choice">
+    <xs:choice>
+      <xs:element name="PmtCtrl" type="RequestType1Code"/>
+      <xs:element name="Enqry" type="RequestType2Code"/>
+      <xs:element name="Prtry" type="GenericIdentification1"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="RequestType2Choice_CH_camt004">
+    
+        <xs:choice>
+          <xs:element name="Prtry" type="GenericIdentification1_CH_camt004"/>
+        </xs:choice>
+      
+  </xs:complexType>
+  <xs:simpleType name="RequestType2Code">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RT11"/>
+      <xs:enumeration value="RT12"/>
+      <xs:enumeration value="RT13"/>
+      <xs:enumeration value="RT14"/>
+      <xs:enumeration value="RT15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ReturnAccountV06">
+    <xs:sequence>
+      <xs:element name="MsgHdr" type="MessageHeader3"/>
+      <xs:element name="RptOrErr" type="AccountOrOperationalError2Choice"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReturnAccountV06_CH_camt004">
+    
+        <xs:sequence>
+          <xs:element name="MsgHdr" type="MessageHeader3_CH_camt004"/>
+          <xs:element name="RptOrErr" type="AccountOrOperationalError2Choice_CH_camt004">
+            <xs:annotation>
+              <xs:documentation source="Name" xml:lang="EN">Report or Error</xs:documentation>
+              <xs:documentation source="Name" xml:lang="DE">Abfrageantwort</xs:documentation>
+              <xs:documentation xml:lang="DE" source="Definition">Es wird entweder ein Element &lt;AcctRpt&gt; mit Kontoinformationen geliefert, die den Abfragekriterien entsprechen, oder ein Element &lt;OprlErr&gt; mit Fehlerinformationen.</xs:documentation>
+              <xs:documentation xml:lang="EN" source="Definition">Either an element &lt;AcctRpt&gt; returning account information that matches the query criteria or an &lt;OprlErr&gt;element containing error information will be delivered.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      
+  </xs:complexType>
+  <xs:complexType name="StandingOrder2">
+    <xs:sequence>
+      <xs:element name="Amt" type="Amount2Choice"/>
+      <xs:element name="CdtDbtInd" type="CreditDebitCode"/>
+      <xs:element name="Ccy" type="ActiveCurrencyCode" minOccurs="0"/>
+      <xs:element name="Tp" type="StandingOrderType1Choice" minOccurs="0"/>
+      <xs:element name="AssoctdPoolAcct" type="AccountIdentification4Choice" minOccurs="0"/>
+      <xs:element name="Ref" type="Max35Text" minOccurs="0"/>
+      <xs:element name="Frqcy" type="Frequency2Code" minOccurs="0"/>
+      <xs:element name="VldtyPrd" type="DatePeriodDetails1" minOccurs="0"/>
+      <xs:element name="SysMmb" type="BranchAndFinancialInstitutionIdentification5" minOccurs="0"/>
+      <xs:element name="RspnsblPty" type="BranchAndFinancialInstitutionIdentification5" minOccurs="0"/>
+      <xs:element name="LkSetId" type="Max35Text" minOccurs="0"/>
+      <xs:element name="LkSetOrdrId" type="Max35Text" minOccurs="0"/>
+      <xs:element name="LkSetOrdrSeq" type="Number" minOccurs="0"/>
+      <xs:element name="ExctnTp" type="ExecutionType1Choice" minOccurs="0"/>
+      <xs:element name="CdtrAcct" type="CashAccount24" minOccurs="0"/>
+      <xs:element name="DbtrAcct" type="CashAccount24" minOccurs="0"/>
+      <xs:element name="TtlsPerStgOrdr" type="StandingOrderTotalAmount1" minOccurs="0"/>
+      <xs:element name="ZeroSweepInd" type="TrueFalseIndicator" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StandingOrderTotalAmount1">
+    <xs:sequence>
+      <xs:element name="SetPrdfndOrdr" type="TotalAmountAndCurrency1"/>
+      <xs:element name="PdgPrdfndOrdr" type="TotalAmountAndCurrency1"/>
+      <xs:element name="SetStgOrdr" type="TotalAmountAndCurrency1"/>
+      <xs:element name="PdgStgOrdr" type="TotalAmountAndCurrency1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StandingOrderType1Choice">
+    <xs:choice>
+      <xs:element name="Cd" type="StandingOrderType1Code"/>
+      <xs:element name="Prtry" type="GenericIdentification1"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:simpleType name="StandingOrderType1Code">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PSTO"/>
+      <xs:enumeration value="USTO"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="SystemBalanceType1Code">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ADJT"/>
+      <xs:enumeration value="ADWR"/>
+      <xs:enumeration value="AIDR"/>
+      <xs:enumeration value="AVLB"/>
+      <xs:enumeration value="BLCK"/>
+      <xs:enumeration value="BLOC"/>
+      <xs:enumeration value="BOOK"/>
+      <xs:enumeration value="BSCC"/>
+      <xs:enumeration value="BSCD"/>
+      <xs:enumeration value="CCPS"/>
+      <xs:enumeration value="CLSG"/>
+      <xs:enumeration value="COHB"/>
+      <xs:enumeration value="COLC"/>
+      <xs:enumeration value="CPBL"/>
+      <xs:enumeration value="CRDT"/>
+      <xs:enumeration value="CRRT"/>
+      <xs:enumeration value="CUSA"/>
+      <xs:enumeration value="CUST"/>
+      <xs:enumeration value="DBIT"/>
+      <xs:enumeration value="DLOD"/>
+      <xs:enumeration value="DOHB"/>
+      <xs:enumeration value="DPBL"/>
+      <xs:enumeration value="DSET"/>
+      <xs:enumeration value="DWRD"/>
+      <xs:enumeration value="EAST"/>
+      <xs:enumeration value="FCOL"/>
+      <xs:enumeration value="FCOU"/>
+      <xs:enumeration value="FORC"/>
+      <xs:enumeration value="FSET"/>
+      <xs:enumeration value="FUND"/>
+      <xs:enumeration value="FUTB"/>
+      <xs:enumeration value="INTM"/>
+      <xs:enumeration value="IRDR"/>
+      <xs:enumeration value="IRLT"/>
+      <xs:enumeration value="LACK"/>
+      <xs:enumeration value="LRLD"/>
+      <xs:enumeration value="LTSF"/>
+      <xs:enumeration value="MSTR"/>
+      <xs:enumeration value="NOTE"/>
+      <xs:enumeration value="NSET"/>
+      <xs:enumeration value="OPNG"/>
+      <xs:enumeration value="OTCC"/>
+      <xs:enumeration value="OTCG"/>
+      <xs:enumeration value="OTCN"/>
+      <xs:enumeration value="OTHB"/>
+      <xs:enumeration value="PDNG"/>
+      <xs:enumeration value="PIPO"/>
+      <xs:enumeration value="PRAV"/>
+      <xs:enumeration value="PYMT"/>
+      <xs:enumeration value="REJB"/>
+      <xs:enumeration value="REPC"/>
+      <xs:enumeration value="REPD"/>
+      <xs:enumeration value="REST"/>
+      <xs:enumeration value="SAPC"/>
+      <xs:enumeration value="SAPD"/>
+      <xs:enumeration value="SAPP"/>
+      <xs:enumeration value="SCOL"/>
+      <xs:enumeration value="SCOU"/>
+      <xs:enumeration value="SELF"/>
+      <xs:enumeration value="THRE"/>
+      <xs:enumeration value="TOHB"/>
+      <xs:enumeration value="TPBL"/>
+      <xs:enumeration value="XCHC"/>
+      <xs:enumeration value="XCHG"/>
+      <xs:enumeration value="XCHN"/>
+      <xs:enumeration value="XCRD"/>
+      <xs:enumeration value="XDBT"/>
+      <xs:enumeration value="XPCD"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="SystemBalanceType2Code">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ADJT"/>
+      <xs:enumeration value="ADWR"/>
+      <xs:enumeration value="AIDR"/>
+      <xs:enumeration value="AVLB"/>
+      <xs:enumeration value="BLCK"/>
+      <xs:enumeration value="BLOC"/>
+      <xs:enumeration value="BOOK"/>
+      <xs:enumeration value="BSCC"/>
+      <xs:enumeration value="BSCD"/>
+      <xs:enumeration value="CCPS"/>
+      <xs:enumeration value="CLSG"/>
+      <xs:enumeration value="COHB"/>
+      <xs:enumeration value="COLC"/>
+      <xs:enumeration value="CPBL"/>
+      <xs:enumeration value="CRDT"/>
+      <xs:enumeration value="CRRT"/>
+      <xs:enumeration value="CUSA"/>
+      <xs:enumeration value="CUST"/>
+      <xs:enumeration value="DBIT"/>
+      <xs:enumeration value="DLOD"/>
+      <xs:enumeration value="DOHB"/>
+      <xs:enumeration value="DPBL"/>
+      <xs:enumeration value="DSET"/>
+      <xs:enumeration value="DWRD"/>
+      <xs:enumeration value="EAST"/>
+      <xs:enumeration value="FCOL"/>
+      <xs:enumeration value="FCOU"/>
+      <xs:enumeration value="FORC"/>
+      <xs:enumeration value="FSET"/>
+      <xs:enumeration value="FUND"/>
+      <xs:enumeration value="FUTB"/>
+      <xs:enumeration value="INTM"/>
+      <xs:enumeration value="IRDR"/>
+      <xs:enumeration value="IRLT"/>
+      <xs:enumeration value="LACK"/>
+      <xs:enumeration value="LRLD"/>
+      <xs:enumeration value="LTSF"/>
+      <xs:enumeration value="NOTE"/>
+      <xs:enumeration value="NSET"/>
+      <xs:enumeration value="OPNG"/>
+      <xs:enumeration value="OTCC"/>
+      <xs:enumeration value="OTCG"/>
+      <xs:enumeration value="OTCN"/>
+      <xs:enumeration value="OTHB"/>
+      <xs:enumeration value="PDNG"/>
+      <xs:enumeration value="PIPO"/>
+      <xs:enumeration value="PRAV"/>
+      <xs:enumeration value="PYMT"/>
+      <xs:enumeration value="REJB"/>
+      <xs:enumeration value="REPC"/>
+      <xs:enumeration value="REPD"/>
+      <xs:enumeration value="SAPC"/>
+      <xs:enumeration value="SAPD"/>
+      <xs:enumeration value="SAPP"/>
+      <xs:enumeration value="SCOL"/>
+      <xs:enumeration value="SCOU"/>
+      <xs:enumeration value="THRE"/>
+      <xs:enumeration value="TOHB"/>
+      <xs:enumeration value="TPBL"/>
+      <xs:enumeration value="XCHC"/>
+      <xs:enumeration value="XCHG"/>
+      <xs:enumeration value="XCHN"/>
+      <xs:enumeration value="XCRD"/>
+      <xs:enumeration value="XDBT"/>
+      <xs:enumeration value="XPCD"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TotalAmountAndCurrency1">
+    <xs:sequence>
+      <xs:element name="TtlAmt" type="ImpliedCurrencyAndAmount"/>
+      <xs:element name="CdtDbtInd" type="CreditDebitCode" minOccurs="0"/>
+      <xs:element name="Ccy" type="ActiveCurrencyCode" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TrueFalseIndicator">
+    <xs:restriction base="xs:boolean"/>
+  </xs:simpleType>
+</xs:schema>

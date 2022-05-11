@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<licparams>
+	<title>EastNets en.Reporting 3.0 License Uploader</title>
+	<products enabled="1">
+		<product id="01">Archive</product>
+		<product id="02">Loader</product>
+		<product id="03">Viewer</product>
+		<product id="04">Watchdog</product>
+		<product id="05">Reporting</product>
+		<product id="10">Recovery</product>
+		<product id="11">Events extract</product>
+		<product id="12">Events viewer</product>
+		<product id="14">RJEDump</product>
+		<product id="16">Dashboard</product>
+		<product id="17">XmlRestore</product>
+		<product id="18">FilePayload</product>
+	</products>
+	<traffics enabled="1">
+		<traffic id="13">MX Messages</traffic>
+		<traffic id="15">FILE Messages</traffic>
+		<!-- FIN MESSAGES SHOULD ALWAYS BE MANDATORY! DO NOT INCLUDE! <traffic id="00">FIN Messages</traffic> -->
+	</traffics>
+	<bics enabled="1" />
+	<servers enabled="1" />
+	<schemaname>SIDE</schemaname>
+</licparams>

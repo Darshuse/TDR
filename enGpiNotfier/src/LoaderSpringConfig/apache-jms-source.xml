@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL" value="tcp://localhost:61616" />
+	</bean>
+	<bean id="messageDestination" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg value="kassabQ" />
+	</bean>
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="connectionFactory" />
+		<property name="receiveTimeout" value="10000" />
+	</bean>
+
+	<bean id="jmsBrowse" class="com.eastnets.enGpiLoader.jms.JMSBrowse">
+		<property name="destination" ref="messageDestination" />
+		<property name="jmsTemplate" ref="jmsTemplate" />
+		<property name="queueName" value="kassabQ" /> 
+	</bean>
+ 
+</beans>

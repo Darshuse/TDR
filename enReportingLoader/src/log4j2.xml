@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+		<Console name="Console" target="STDOUT">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n" />
+		</Console>
+
+
+	</Appenders>
+	<Loggers>
+		<Root level="INFO">
+			<AppenderRef ref="Console" />
+		</Root>
+ 
+		<logger name="org.springframework" level="OFF">
+			<AppenderRef ref="Console" />
+		</logger>
+
+	</Loggers>
+</Configuration>

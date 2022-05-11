@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="bicLoader" class="com.eastnets.bicloader.app.BICLoaderApp"
+		lazy-init="true">
+		<property name="appConfigBean" ref="bicLoaderConfig" />
+		<property name="validator" ref="paramValidator" />
+
+	</bean>
+
+	<bean id="paramValidator"
+		class="com.eastnets.bicloader.loadervalidators.CommandParamValidator"
+		lazy-init="true">
+
+	</bean>
+
+	<bean id="bicLoaderConfig" class="com.eastnets.bicloader.app.BICLoaderConfig"
+		lazy-init="true">
+		<property name="debug" value="false"></property>
+		<property name="bUseTextBicFile" value="false"></property>
+		<property name="directory" value=""></property>
+		<property name="file" value=""></property>
+		<property name="files">
+			<list></list>
+		</property>
+		<property name="bUseDatBicFile" value="false"></property>
+		<property name="bUseXmlBicFile" value="false"></property>
+		<property name="gpiCorr" value="false"></property>
+		<property name="bankFile" value="false"></property>
+		<property name="deleteOld" value="false"></property>
+		<property name="autoFiles" value="false"></property>
+		<property name="bicdue" value="false"></property>
+		<property name="bankdirectory" value="false"></property>
+		<property name="fullFile" value="false"></property>
+		<property name="deltaFile" value="false"></property>
+
+	</bean>
+
+
+
+</beans>

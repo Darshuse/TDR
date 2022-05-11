@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<licparams>
+	<title>EastNets en.Reporting 3.0 License Generator</title>
+	<products enabled="1">
+		<product id="01">Archive</product>
+		<product id="02">Loader</product>
+		<product id="03">Viewer</product>
+		<product id="04">Watchdog</product>
+		<product id="05">Reporting</product>
+		<product id="10">Recovery</product>
+		<product id="11">Events extract</product>
+		<product id="12">Events viewer</product>
+		<product id="14">RJEDump</product>
+		<product id="16">Dashboard</product>
+		<product id="17">XmlRestore</product>
+		<product id="18">FilePayload</product>
+		<product id="19">ClientServerMonitor</product>
+		<product id="20">Dynamic Report</product>
+		<product id="21">Message Relationships</product>
+		<product id="22">Message Loader</product>
+		<product id="23">CSP Connector</product>
+		<product id="24">MQ Connector</product>
+		<product id="25">GPI transaction tracking</product>
+		<product id="26">GPI easy view</product>
+		<product id="27">Notification manager</product>
+		<product id="28">Analytics Viewer</product>
+		<product id="29">Analytics Designer</product>
+		<product id="30">MessageStoreAPI</product>
+		<product id="31">Mask Information</product>
+	</products>
+	<traffics enabled="1">
+		<traffic id="13">MX Messages</traffic>
+		<traffic id="15">FILE Messages</traffic>
+		<!-- FIN MESSAGES SHOULD ALWAYS BE MANDATORY! DO NOT INCLUDE! <traffic 
+			id="00">FIN Messages</traffic> -->
+	</traffics>
+	<bics enabled="1"/>
+	<servers enabled="1"/>
+</licparams>

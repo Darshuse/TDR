@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enreportingloader>
+
+	<dbreader> 
+		<queryconfig> 
+			<tablename>rMesg</tablename>
+			<wherestatment>  mesg_type='199' and mesg_e2e_transaction_reference= '84e87fa5-d393-4ab6-9c27-aac09dc6c010' and aid =1</wherestatment>
+		</queryconfig> 
+	</dbreader>
+</enreportingloader>

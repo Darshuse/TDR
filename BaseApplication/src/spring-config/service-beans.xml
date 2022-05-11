@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+                           http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.1.xsd">
+
+	<bean id="watchDogService" class="com.eastnets.service.watchdog.WatchDogServiceImp"
+		lazy-init="true">
+		<property name="watchDogDAO" ref="watchDogDAO" />
+		<property name="commonDAO" ref="commonDAO" />
+	</bean>
+
+	<bean id="bicLoaderService" class="com.eastnets.service.bicloader.BICLoaderServiceImp"
+		lazy-init="true">
+
+		<property name="bicLoaderDAO" ref="bicLoaderDAO" />
+	</bean>
+
+	<bean id="dbCheckService"
+		class="com.eastnets.service.dbcheck.DBCheckServiceImpl"
+		lazy-init="true">
+
+		<property name="dbconsistencycheckdao" ref="dbconsistencycheckDAO" />
+	</bean>
+
+	<bean id="commonService" class="com.eastnets.service.common.CommonServiceImp"
+		lazy-init="true">
+		<property name="commonDAO" ref="commonDAO" />
+		<property name="dbPortabilityHandler" ref="dbPortabilityHandler" />
+	</bean>
+
+	<bean id="swingService" class="com.eastnets.service.swing.SwingServiceImp"
+		lazy-init="true">
+		<property name="swingDAO" ref="swingDAO" />
+	</bean>
+
+
+	<bean id="passwordPolicyHandler" class="com.eastnets.service.common.PasswordPolicyHandler"
+		lazy-init="true">
+		<property name="securityDAO" ref="securityDAO" />
+	</bean>
+
+	<bean id="securityService" class="com.eastnets.service.security.SecurityServiceImp"
+		lazy-init="true">
+		<property name="securityDAO" ref="securityDAO" />
+		<property name="commonDAO" ref="commonDAO" />
+		<property name="adminDAO" ref="admin${DBType}DAO" />
+		<property name="applicationFeatures" ref="applicationFeatures" />
+		<property name="passwordPolicyHandler" ref="passwordPolicyHandler" />
+		<property name="authenticators">
+			<list>
+				<bean class="com.eastnets.service.security.auth.AuthenticatorDatabase">
+					<property name="securityDAO" ref="securityDAO" />
+					<property name="applicationFeatures" ref="applicationFeatures" />
+				</bean>
+
+				<bean id="authenticatorLDAP" class="com.eastnets.service.security.auth.AuthenticatorLDAP">
+					<property name="ldapAuthenticationHandler" ref="ldapAuthenticationHandler" />
+					<property name="securityDAO" ref="securityDAO" />
+					<property name="applicationFeatures" ref="applicationFeatures" />
+					<property name="config" ref="config" />
+				</bean>
+
+				<bean id="authenticatorReporting"
+					class="com.eastnets.service.security.auth.AuthenticatorReporting">
+					<property name="securityDAO" ref="securityDAO" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="viewerService" class="com.eastnets.service.viewer.ViewerServiceImp"
+		lazy-init="true" init-method="init">
+		<property name="viewerDAO" ref="viewerDAO" />
+		<property name="commonService" ref="commonService" />
+		<property name="commonDAO" ref="commonDAO" />
+		<property name="mailService" ref="mailService" />
+		<property name="dbPortabilityHandler" ref="dbPortabilityHandler" />
+		<property name="queryBuilder" ref="queryBuilder" />
+		<property name="debugSearch" value="${viewerProcedureDebug}" />
+
+	</bean>
+
+	<bean id="adminService" class="com.eastnets.service.admin.Admin${DBType}ServiceImp"
+		lazy-init="true">
+		<property name="adminDAO" ref="admin${DBType}DAO" />
+		<property name="licenseDAO" ref="licenseDAO" />
+		<property name="applicationFeatures" ref="applicationFeatures" />
+		<property name="securityDAO" ref="securityDAO" />
+	</bean>
+
+	<bean id="archiveService" class="com.eastnets.service.archive.Archive${DBType}ServiceImp"
+		lazy-init="true">
+		<property name="archiveDAO" ref="archive${DBType}DAO" />
+		<property name="commonDAO" ref="commonDAO" />
+		<property name="saaVersionsList" ref="saaVersionsList" />
+	</bean>
+
+	<bean id="monitoringService" class="com.eastnets.service.monitoring.MonitoringServiceImp"
+		lazy-init="true">
+		<property name="monitoringDAO" ref="monitoringDAO" />
+		<property name="monitoringConfig" ref="monitoringConfig" />
+		<property name="dbPortabilityHandler" ref="dbPortabilityHandler" />
+		<property name="commonDAO" ref="commonDAO" />
+	</bean>
+
+	<bean id="jrnlService" class="com.eastnets.service.jrnl.JrnlServiceImp"
+		lazy-init="true">
+		<property name="jrnlDAO" ref="jrnlDAO" />
+		<property name="commonDAO" ref="commonDAO" />
+	</bean>
+
+	<bean id="dashboardService" class="com.eastnets.service.dashboard.DashboardServiceImp"
+		lazy-init="true">
+		<property name="dashboardDAO" ref="dashboardDAO" />
+		<property name="messagesPerCountryChartProperties" ref="messagePerCountryProperties" />
+		<property name="messagesPerCurrencyChartProperties" ref="messagePerCurrencyProperties" />
+		<property name="amountPerCategoryChartProperties" ref="amountPerCategoryProperties" />
+		<property name="sentReceivedMessagesPerLogicalTerminalChartProperties"
+			ref="sentReceivedMessagesPerLogicalTerminalProperties" />
+		<property name="messagesCountPerCategoryChartProperties" ref="messagesCountPerValueDateProperties" />
+		<property name="notificationsChartProperties" ref="notificationsProperties" />
+		<property name="loaderNewMessagesChartProperties" ref="loaderNewMessagesProperties" />
+		<property name="loaderNewEventsChartProperties" ref="loaderNewEventsProperties" />
+		<property name="loaderUpdatedMessagesChartProperties" ref="loaderUpdatedMessagesProperties" />
+	</bean>
+
+
+	<bean id="reportingService" class="com.eastnets.service.reporting.ReportingServiceImpl"
+		lazy-init="true">
+		<property name="reportingDAO" ref="reportingDAO" />
+		<property name="commonDAO" ref="commonDAO" />
+		<property name="config" ref="config" />
+		<property name="reportParamtersFactory" ref="reportParamtersFactory" />
+
+	</bean>
+
+	<bean id="licenseService" class="com.eastnets.service.license.LicenseServiceImpl"
+		lazy-init="true">
+		<property name="licenseDAO" ref="licenseDAO" />
+		<property name="schemaName" value="${schemaName}" />
+		<property name="databaseName" value="${databaseName}" />
+	</bean>
+
+	<bean id="reportService" class="com.eastnets.service.common.SyncJasperReportServiceImp"
+		lazy-init="true">
+		<property name="dbPortabilityHandler" ref="dbPortabilityHandler" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="commonDAO" ref="commonDAO" />
+	</bean>
+
+
+	<bean id="filePayloadService" class="com.eastnets.service.filepayload.FilePayloadServiceImp"
+		lazy-init="true">
+		<property name="filePayloadDAO" ref="filePayloadDAO" />
+		<property name="parsingfile" ref="parsingfilebean" />
+	</bean>
+
+	<bean id="parsingfilebean" class="com.eastnets.service.filepayload.ParsingFileBean"
+		lazy-init="true">
+		<property name="filePayloadDAO" ref="filePayloadDAO" />
+	</bean>
+
+	<bean id="clientServerMonitorService" class="com.eastnets.service.csm.ClientServerMonitorServiceImp"
+		lazy-init="true">
+		<property name="clientServerMonitorDAO" ref="clientServerMonitorDAO" />
+	</bean>
+
+	<bean id="queryBuilder"
+		class="com.eastnets.service.viewer.helper.ViewerSearchQueryBuilder">
+		<property name="dbPortabilityHandler" ref="dbPortabilityHandler" />
+		<property name="applicationFeatures" ref="applicationFeatures" />
+		<property name="config" ref="config" />
+	</bean>
+
+	<bean id="serviceLocator" class="com.eastnets.service.ServiceLocator"
+		lazy-init="true">
+		<property name="commonService" ref="commonService" />
+		<property name="mailService" ref="mailService" />
+		<property name="securityService" ref="securityService" />
+		<property name="watchDogService" ref="watchDogService" />
+		<property name="swingService" ref="swingService" />
+		<property name="adminService" ref="adminService" />
+		<property name="archiveService" ref="archiveService" />
+		<property name="monitoringService" ref="monitoringService" />
+		<property name="jrnlService" ref="jrnlService" />
+		<property name="dashboardService" ref="dashboardService" />
+		<property name="licenseService" ref="licenseService" />
+		<property name="reportingService" ref="reportingService" />
+		<property name="config" ref="config" />
+		<property name="viewerService" ref="viewerService" />
+		<property name="reportService" ref="reportService" />
+		<property name="filePayloadService" ref="filePayloadService" />
+		<property name="clientServerMonitorService" ref="clientServerMonitorService" />
+		<property name="bicLoaderService" ref="bicLoaderService" />
+		<property name="dbCheckService" ref="dbCheckService" />
+
+	</bean>
+
+</beans>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<bean id="mailSender" class="com.eastnets.service.common.MailSenderEN"
+		lazy-init="true">
+		<property name="host" value="${mailHost}" />
+		<property name="port" value="${mailPort}" />
+		<property name="username" value="${mailUsername}" />
+		<property name="password" value="${mailPassword}" />
+		<property name="authenticationRequired" value="${mailAuthenticationRequired}" />
+
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">${mailAuthenticationRequired}</prop>
+			</props>
+		</property>
+	</bean>
+
+
+	<bean id="velocityEngine" lazy-init="true"
+		class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+		<property name="velocityProperties">
+			<props>
+				<prop key="resource.loader">file</prop>
+				<prop key="file.resource.loader.class">
+					org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+				</prop>
+				<prop key="file.resource.loader.path">/WebContent/velocity-templates</prop>
+				<prop key="file.resource.loader.cache">false</prop>
+			</props>
+		</property>
+	</bean>
+
+
+	<bean id="mailService" class="com.eastnets.service.common.MailServiceImpl"
+		lazy-init="true">
+		<property name="mailSender" ref="mailSender" />
+		<property name="simpleMailMessage" ref="customeMailMessage" />
+		<property name="velocityEngine" ref="velocityEngine" />
+	</bean>
+
+	<bean id="customeMailMessage" class="org.springframework.mail.SimpleMailMessage"
+		lazy-init="true">
+
+		<property name="from" value="${mailFrom}" />
+		<property name="to" value="${mailTo}" />
+		<property name="cc" value="${mailCc}" />
+		<property name="subject" value="${mailSubject}" />
+		<property name="text" value="${mailBody}" />
+	</bean>
+</beans>

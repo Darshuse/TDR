@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+                           http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.1.xsd">
+
+	<bean id="dbLoaderReader" class="com.eastnets.service.loader.DBLoaderReaderServiceImp"
+		lazy-init="true">
+		<property name="outputBlockingQueue" ref="ReaderOutQueue" />
+		<property name="baseServiceLocator" ref="serviceLocator" />
+		<property name="appConfigBean" ref="appConfigBean" />
+		<property name="dbLoaderDelegate" ref="dbLoaderDelegate" />
+		<property name="queueMessagesDelegate" ref="queueMessagesDelegate" />
+	</bean>
+
+	<bean id="mqLoaderReader" class="com.eastnets.service.loader.MQLoaderReaderServiceImp"
+		lazy-init="true">
+		<property name="outputBlockingQueue" ref="ReaderOutQueue" />
+		<property name="baseServiceLocator" ref="serviceLocator" />
+		<property name="appConfigBean" ref="appConfigBean" />
+		<property name="mqLoaderDelegate" ref="mqLoaderDelegate" />
+		<property name="queueMessagesDelegate" ref="queueMessagesDelegate" />
+		<property name="dmlc" ref="jmsContainer" />
+		<property name="moveToErrorQSender" ref="ibmMQJmsSender" />
+	</bean>
+
+	<bean id="dbLoaderDelegate"
+		class="com.eastnets.service.loader.loaderReaderServiceDelegates.DatabaseLoaderDelegate"
+		lazy-init="true">
+		<property name="loaderDAO" ref="LoaderDAO" />
+		<property name="reader" ref="dbReader" />
+	</bean>
+
+	<bean id="mqLoaderDelegate"
+		class="com.eastnets.service.loader.loaderReaderServiceDelegates.MQLoaderDelegate"
+		lazy-init="true">
+		<property name="loaderDAO" ref="LoaderDAO" />
+		<property name="reader" ref="mqReader" />
+	</bean>
+
+	<bean id="queueMessagesDelegate"
+		class="com.eastnets.service.loader.loaderReaderServiceDelegates.QueueMessagesDelegate"
+		lazy-init="true">
+		<property name="loaderDAO" ref="LoaderDAO" />
+		<property name="clusterManager" ref="clusterManager" />
+		<property name="appConfigBean" ref="appConfigBean" />
+	</bean>
+
+	<bean id="unqueueMessagesDelegate"
+		class="com.eastnets.service.loader.loaderReaderServiceDelegates.UnqueueMessagesDelegate"
+		lazy-init="true">
+		<property name="loaderDAO" ref="LoaderDAO" />
+	</bean>
+
+	<bean id="dbReader"
+		class="com.eastnets.service.loader.helper.DatabaseMessageReader"
+		init-method="init" lazy-init="true">
+		<property name="appConfigBean" ref="appConfigBean" />
+		<property name="loaderDAO" ref="LoaderDAO" />
+	</bean>
+
+	<bean id="mqReader" class="com.eastnets.service.loader.helper.MQMessageReader">
+		<property name="readerInQueue" ref="ReaderInQueue" />
+	</bean>
+
+	<bean id="ReaderInQueue" class="java.util.concurrent.LinkedBlockingQueue">
+		<constructor-arg type="int" value="1000" />
+	</bean>
+
+	<!-- <import resource="${mqVendor}-jms-config.xml"/> -->
+	<!-- <import resource="ibm-jms-config.xml"/> -->
+	<!-- <import resource="apache-jms-config.xml"/> -->
+	<import resource="${mqVendor}-jms-source.xml" />
+</beans>

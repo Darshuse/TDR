@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="urn:t2s:MktSpcfcAttrDel.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="urn:t2s:MktSpcfcAttrDel.xsd"
+    elementFormDefault="qualified">
+  <xs:element name="Document" type="Document"/>
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element name="MktSpcfcAttr" type="MarketSpecificAttribute1" maxOccurs="10"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MarketSpecificAttribute1">
+    <xs:sequence>
+      <xs:element name="Nm" type="RestrictedFINXMax35Text"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="RestrictedFINXMax35Text">
+    <xs:annotation>
+      <xs:documentation>RestrictedFINXMax35Text</xs:documentation>
+      <xs:documentation>Specifies a character string with a maximum length of 35 characters. It has a pattern that disables the use of characters that is not part of the character set X, that is, that is not a-z A-Z / - ? : ( ) . , ‘ + , and disable the use of slash "/" at the beginning and end of line and double slash "//" within the line.</xs:documentation>
+      <xs:documentation source="T2S-Coexistence">True</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="35"/>
+      <xs:pattern value="([0-9a-zA-Z\-\?:\(\)\.,&apos;\+ ]([0-9a-zA-Z\-\?:\(\)\.,&apos;\+ ]*(/[0-9a-zA-Z\-\?:\(\)\.,&apos;\+ ])?)*)"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

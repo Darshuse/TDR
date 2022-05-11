@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<enCSM>
+	<!-- <ListenAddress>enamdev110</ListenAddress> -->
+	<Port>9876</Port><!-- optional, default is 6100-->
+	<Timeout>10</Timeout><!-- optional, default is 10-->
+	<Database>
+		<Type>Oracle</Type><!-- optional, default is Oracle-->
+		<Server>192.168.100.222</Server>
+		<DatabaseName>ORCL</DatabaseName>
+		<Port>1525</Port><!-- optional, default is 1433 for SQLServer, and 1521 for Oracle-->
+		<UserName>side</UserName>
+		<Password>edis</Password><!-- can be plain text, or encrypted -->
+	</Database>
+
+	<!-- HandleClass is an optional list of classes that will be triggered each time the status of a client-server set is changed, each has its won Config  child tag -->
+	<HandleClass>
+		<Class>com.eastnets.resilience.toolmonitor.handlers.EmailNotificationHandler</Class>
+		<Config><!-- optional -->
+			<MailServer>192.168.240.13</MailServer>
+			<MailPort>25</MailPort><!-- optional, default is 25-->
+			<!-- <MailSubject>Hello</MailSubject> --><!-- optional, default is some information about the configurtation that is being notified-->
+			<MailUser>projectserver</MailUser>
+			<MailPassword>projectserver</MailPassword><!-- can be plain text, or encrypted -->
+			<MailFrom>projectserver@eastnets.com</MailFrom>
+			<MailTo>SAlababneh@eastnets.com</MailTo><!-- comma separated list of recipients -->
+			<!-- <MailCC></MailCC> --><!-- optional -->
+			<!-- <TemplateFile>C:\mailTemplate.htm</TemplateFile> --><!-- optional, and i dont suggest it to be exposed to customers/QA -->
+		</Config>
+	</HandleClass>
+	
+
+</enCSM>

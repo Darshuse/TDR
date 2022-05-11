@@ -1,0 +1,6 @@
+2021-07-12 12:44:25.256  INFO 11700 --- [main] c.e.e.DataExtractionApplication          : Starting DataExtractionApplication using Java 1.8.0_241 on ENEGDEV05 with PID 11700 (F:\programing\TDR\TDR\enTDRjava\DataExtraction\target\classes started by MAhmed in F:\programing\TDR\TDR\enTDRjava\DataExtraction)
+2021-07-12 12:44:25.259  INFO 11700 --- [main] c.e.e.DataExtractionApplication          : No active profile set, falling back to default profiles: default
+2021-07-12 12:44:26.599  INFO 11700 --- [main] c.e.extraction.config.DataSourceConfig   : Database password already decrypted
+2021-07-12 12:44:26.602  INFO 11700 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-12 12:44:29.916  INFO 11700 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-12 12:44:33.171  INFO 11700 --- [main] c.e.e.controller.ExtractorController     : Extractor tool started

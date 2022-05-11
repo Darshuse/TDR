@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Services>
+	<Service>
+		<Name>SWIFTNet System Messages</Name>
+		<Description>SWIFTNet System Messages Release 7.4</Description>
+		<CreationDate>2019-06-21</CreationDate>
+		<ServiceCode>swift.snf.system</ServiceCode>
+		<MessageFormat>MX</MessageFormat>
+		<ApplicationHeader>
+			<Schema>$ahV10.xsd</Schema>
+			<Expansions>$ahV10</Expansions>
+			<Mandatory>true</Mandatory>
+		</ApplicationHeader>
+		<Header application="SAA">
+			<Schema>XMLHeaderSchemaMandatoryAppHeader.xsd</Schema>
+			<Expansions>XMLHeaderSchemaMandatoryAppHeader</Expansions>
+		</Header>
+		<PresentationFile>MX_mappings.xml</PresentationFile>
+		<MessageTypes>
+			<MessageType>
+				<UID>xsys.001.001</UID>
+				<DisplayName>SystemAuthorisationV01</DisplayName>
+				<Description>System Authorisation V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.001.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.001.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.001.001.01</Namespace>
+				<Schema>xsys.001.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.002.001</UID>
+				<DisplayName>AuthorisationNotificationV01</DisplayName>
+				<Description>Authorisation Notification V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.002.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.002.001.01</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>swi</Prefix>
+						<Namespace>urn:swift:snl:ns.SwInt</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>sw</Prefix>
+						<Namespace>urn:swift:snl:ns.Sw</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:xsys.002.001.01/d:AuthstnNtfctn/swi:RequestHeader/swi:RequestRef</Path>
+						<Path>d:Document/d:xsys.002.001.01/d:AuthstnNtfctn/sw:FileRequestHeader/swi:RequestRef</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.002.001.01</Namespace>
+				<Schema>xsys.002.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.003.001</UID>
+				<DisplayName>RefusalNotificationV01</DisplayName>
+				<Description>Refusal Notification V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.003.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.003.001.01</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>swi</Prefix>
+						<Namespace>urn:swift:snl:ns.SwInt</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>sw</Prefix>
+						<Namespace>urn:swift:snl:ns.Sw</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:xsys.003.001.01/d:AuthstnRfslNtfctn/swi:RequestHeader/swi:RequestRef</Path>
+						<Path>d:Document/d:xsys.003.001.01/d:AuthstnRfslNtfctn/sw:FileRequestHeader/swi:RequestRef</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.003.001.01</Namespace>
+				<Schema>xsys.003.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.004.001</UID>
+				<DisplayName>GetUndeliveredMessagesRequestV01</DisplayName>
+				<Description>Get Undelivered Messages Request V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.004.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<ResponderDN>cn=system,o=swift,o=swift</ResponderDN>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.004.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:swift:xsd:xsys.004.001.01</Namespace>
+				<Schema>xsys.004.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.005.001</UID>
+				<DisplayName>UndeliveredMessagesReportV01</DisplayName>
+				<Description>Undelivered Messages Report V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.005.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.005.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.005.001.01</Namespace>
+				<Schema>xsys.005.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.005.002</UID>
+				<DisplayName>UnsolicitedUndeliveredTrafficReportV01</DisplayName>
+				<Description>Unsolicited Undelivered Traffic Report V01</Description>
+				<VariantID>002</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.005.002.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.005.002.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.005.002.01</Namespace>
+				<Schema>xsys.005.002.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.005.002</UID>
+				<DisplayName>UnsolicitedUndeliveredTrafficReportV02</DisplayName>
+				<Description>Unsolicited Undelivered Traffic Report V02</Description>
+				<VariantID>002</VariantID>
+				<Version>02</Version>
+				<RequestType>xsys.005.002.02</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.005.002.02</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.005.002.02</Namespace>
+				<Schema>xsys.005.002.02.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.006.001</UID>
+				<DisplayName>GetInputChannelsListRequestV01</DisplayName>
+				<Description>Get Input Channels List Request V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.006.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<ResponderDN>cn=system,o=swift,o=swift</ResponderDN>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.006.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:swift:xsd:xsys.006.001.01</Namespace>
+				<Schema>xsys.006.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.007.001</UID>
+				<DisplayName>InputChannelReportV01</DisplayName>
+				<Description>Input Channel Report V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.007.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.007.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.007.001.01</Namespace>
+				<Schema>xsys.007.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.008.001</UID>
+				<DisplayName>QueueStatusReportRequestV01</DisplayName>
+				<Description>Queue Status Report Request V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.008.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<ResponderDN>cn=system,o=swift,o=swift</ResponderDN>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.008.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:swift:xsd:xsys.008.001.01</Namespace>
+				<Schema>xsys.008.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.008.001</UID>
+				<DisplayName>QueueStatusReportRequestV02</DisplayName>
+				<Description>Queue Status Report Request V02</Description>
+				<VariantID>001</VariantID>
+				<Version>02</Version>
+				<RequestType>xsys.008.001.02</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<ResponderDN>cn=system,o=swift,o=swift</ResponderDN>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.008.001.02</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:swift:xsd:xsys.008.001.02</Namespace>
+				<Schema>xsys.008.001.02.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.009.001</UID>
+				<DisplayName>QueueStatusReportV01</DisplayName>
+				<Description>Queue Status Report V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.009.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.009.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.009.001.01</Namespace>
+				<Schema>xsys.009.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.009.001</UID>
+				<DisplayName>QueueStatusReportV02</DisplayName>
+				<Description>Queue Status Report V02</Description>
+				<VariantID>001</VariantID>
+				<Version>02</Version>
+				<RequestType>xsys.009.001.02</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.009.001.02</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.009.001.02</Namespace>
+				<Schema>xsys.009.001.02.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.009.001</UID>
+				<DisplayName>QueueStatusReportV03</DisplayName>
+				<Description>Queue Status Report V03</Description>
+				<VariantID>001</VariantID>
+				<Version>03</Version>
+				<RequestType>xsys.009.001.03</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.009.001.03</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.009.001.03</Namespace>
+				<Schema>xsys.009.001.03.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.010.001</UID>
+				<DisplayName>Non-deliveryWarningV01</DisplayName>
+				<Description>Non-delivery Warning V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.010.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.010.001.01</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>swi</Prefix>
+						<Namespace>urn:swift:snl:ns.SwInt</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>sw</Prefix>
+						<Namespace>urn:swift:snl:ns.Sw</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:xsys.010.001.01/d:OvrdueWrng/swi:RequestHeader/swi:RequestRef</Path>
+						<Path>d:Document/d:xsys.010.001.01/d:OvrdueWrng/sw:FileRequestHeader/swi:RequestRef</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.010.001.01</Namespace>
+				<Schema>xsys.010.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.010.001</UID>
+				<DisplayName>Non-deliveryWarningV02</DisplayName>
+				<Description>Non-delivery Warning V02</Description>
+				<VariantID>001</VariantID>
+				<Version>02</Version>
+				<RequestType>xsys.010.001.02</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.010.001.02</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>swi</Prefix>
+						<Namespace>urn:swift:snl:ns.SwInt</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>sw</Prefix>
+						<Namespace>urn:swift:snl:ns.Sw</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:xsys.010.001.02/d:OvrdueWrng/swi:RequestHeader/swi:RequestRef</Path>
+						<Path>d:Document/d:xsys.010.001.02/d:OvrdueWrng/sw:FileRequestHeader/swi:RequestRef</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.010.001.02</Namespace>
+				<Schema>xsys.010.001.02.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.011.001</UID>
+				<DisplayName>DeliveryNotificationV01</DisplayName>
+				<Description>Delivery Notification V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.011.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.011.001.01</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>swi</Prefix>
+						<Namespace>urn:swift:snl:ns.SwInt</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>sw</Prefix>
+						<Namespace>urn:swift:snl:ns.Sw</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:xsys.011.001.01/d:DlvryNtfctn/swi:RequestHeader/swi:RequestRef</Path>
+						<Path>d:Document/d:xsys.011.001.01/d:DlvryNtfctn/sw:FileRequestHeader/swi:RequestRef</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.011.001.01</Namespace>
+				<Schema>xsys.011.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.011.001</UID>
+				<DisplayName>DeliveryNotificationV02</DisplayName>
+				<Description>Delivery Notification V02</Description>
+				<VariantID>001</VariantID>
+				<Version>02</Version>
+				<RequestType>xsys.011.001.02</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.011.001.02</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>swi</Prefix>
+						<Namespace>urn:swift:snl:ns.SwInt</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>sw</Prefix>
+						<Namespace>urn:swift:snl:ns.Sw</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:xsys.011.001.02/d:DlvryNtfctn/swi:RequestHeader/swi:RequestRef</Path>
+						<Path>d:Document/d:xsys.011.001.02/d:DlvryNtfctn/sw:FileRequestHeader/swi:RequestRef</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.011.001.02</Namespace>
+				<Schema>xsys.011.001.02.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.012.001</UID>
+				<DisplayName>FailedDeliveryNotificationV01</DisplayName>
+				<Description>Failed Delivery Notification V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.012.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.012.001.01</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>swi</Prefix>
+						<Namespace>urn:swift:snl:ns.SwInt</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>sw</Prefix>
+						<Namespace>urn:swift:snl:ns.Sw</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:xsys.012.001.01/d:DlvryNtfctn/swi:RequestHeader/swi:RequestRef</Path>
+						<Path>d:Document/d:xsys.012.001.01/d:DlvryNtfctn/sw:FileRequestHeader/swi:RequestRef</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.012.001.01</Namespace>
+				<Schema>xsys.012.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.012.001</UID>
+				<DisplayName>FailedDeliveryNotificationV02</DisplayName>
+				<Description>Failed Delivery Notification V02</Description>
+				<VariantID>001</VariantID>
+				<Version>02</Version>
+				<RequestType>xsys.012.001.02</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.012.001.02</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>swi</Prefix>
+						<Namespace>urn:swift:snl:ns.SwInt</Namespace>
+					</Namespaces>
+					<Namespaces>
+						<Prefix>sw</Prefix>
+						<Namespace>urn:swift:snl:ns.Sw</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2">
+						<Path>d:Document/d:xsys.012.001.02/d:DlvryNtfctn/swi:RequestHeader/swi:RequestRef</Path>
+						<Path>d:Document/d:xsys.012.001.02/d:DlvryNtfctn/sw:FileRequestHeader/swi:RequestRef</Path>
+					</Keyword>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.012.001.02</Namespace>
+				<Schema>xsys.012.001.02.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.013.001</UID>
+				<DisplayName>BulkRetrievalRequestV01</DisplayName>
+				<Description>Bulk Retrieval Request V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.013.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<ResponderDN>cn=system,o=swift,o=swift</ResponderDN>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.013.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:swift:xsd:xsys.013.001.01</Namespace>
+				<Schema>xsys.013.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.014.001</UID>
+				<DisplayName>BulkRetrievalReportV01</DisplayName>
+				<Description>Bulk Retrieval Report V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.014.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.014.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.014.001.01</Namespace>
+				<Schema>xsys.014.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.015.001</UID>
+				<DisplayName>RetrievalRequestV01</DisplayName>
+				<Description>Retrieval Request V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.015.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<ResponderDN>cn=system,o=swift,o=swift</ResponderDN>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.015.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:swift:xsd:xsys.015.001.01</Namespace>
+				<Schema>xsys.015.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.016.001</UID>
+				<DisplayName>RetrievalReportV01</DisplayName>
+				<Description>Retrieval Report V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.016.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.016.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.016.001.01</Namespace>
+				<Schema>xsys.016.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.018.001</UID>
+				<DisplayName>SessionHistoryReportRequestV01</DisplayName>
+				<Description>Session History Report Request V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.018.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<ResponderDN>cn=system,o=swift,o=swift</ResponderDN>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.018.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:swift:xsd:xsys.018.001.01</Namespace>
+				<Schema>xsys.018.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.019.001</UID>
+				<DisplayName>SessionHistoryReportV01</DisplayName>
+				<Description>Session History Report V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.019.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.019.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.019.001.01</Namespace>
+				<Schema>xsys.019.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.026.001</UID>
+				<DisplayName>OutputChannelListReportRequestV01</DisplayName>
+				<Description>Output Channel List Report Request V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.026.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<ResponderDN>cn=system,o=swift,o=swift</ResponderDN>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.026.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:swift:xsd:xsys.026.001.01</Namespace>
+				<Schema>xsys.026.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.027.001</UID>
+				<DisplayName>OutputChannelListReportV01</DisplayName>
+				<Description>Output Channel List Report V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.027.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.027.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>false</Enterable>
+				<Namespace>urn:swift:xsd:xsys.027.001.01</Namespace>
+				<Schema>xsys.027.001.01.xsd</Schema>
+			</MessageType>
+			<MessageType>
+				<UID>xsys.028.001</UID>
+				<DisplayName>UpdateQueueSharingModeRequestV01</DisplayName>
+				<Description>Update Queue Sharing Mode Request V01</Description>
+				<VariantID>001</VariantID>
+				<Version>01</Version>
+				<RequestType>xsys.028.001.01</RequestType>
+				<DeliveryMode>SnF</DeliveryMode>
+				<NonRepudiation>false</NonRepudiation>
+				<Signed>false</Signed>
+				<ResponderDN>cn=system,o=swift,o=swift</ResponderDN>
+				<NamespaceDef>
+					<Namespaces>
+						<Prefix>d</Prefix>
+						<Namespace>urn:swift:xsd:xsys.028.001.01</Namespace>
+					</Namespaces>
+				</NamespaceDef>
+				<Keywords>
+					<Keyword name="MX Keyword1"/>
+					<Keyword name="MX Keyword2"/>
+					<Keyword name="MX Keyword3"/>
+				</Keywords>
+				<Enterable>true</Enterable>
+				<Namespace>urn:swift:xsd:xsys.028.001.01</Namespace>
+				<Schema>xsys.028.001.01.xsd</Schema>
+			</MessageType>
+		</MessageTypes>
+		<References>
+			<ImportedSchemas>
+				<ImportedSchema>
+					<Schema>Sw.xsd</Schema>
+					<SchemaLocation>Sw.xsd</SchemaLocation>
+					<Namespace>urn:swift:snl:ns.Sw</Namespace>
+				</ImportedSchema>
+				<ImportedSchema>
+					<Schema>SwInt.xsd</Schema>
+					<SchemaLocation>SwInt.xsd</SchemaLocation>
+					<Namespace>urn:swift:snl:ns.SwInt</Namespace>
+				</ImportedSchema>
+				<ImportedSchema>
+					<Schema>SwSec.xsd</Schema>
+					<SchemaLocation>SwSec.xsd</SchemaLocation>
+					<Namespace>urn:swift:snl:ns.SwSec</Namespace>
+				</ImportedSchema>
+				<ImportedSchema>
+					<Schema>SwGbl.xsd</Schema>
+					<SchemaLocation>SwGbl.xsd</SchemaLocation>
+					<Namespace>urn:swift:snl:ns.SwGbl</Namespace>
+				</ImportedSchema>
+				<ImportedSchema>
+					<Schema>Doc.xsd</Schema>
+					<SchemaLocation>Doc.xsd</SchemaLocation>
+					<Namespace>urn:swift:snl:ns.Doc</Namespace>
+				</ImportedSchema>
+			</ImportedSchemas>
+		</References>
+	</Service>
+</Services>

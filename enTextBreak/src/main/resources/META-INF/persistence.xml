@@ -1,0 +1,16 @@
+<persistence-unit name="persistenceUnit"
+	transaction-type="RESOURCE_LOCAL">
+	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+	<exclude-unlisted-classes>false</exclude-unlisted-classes>
+	<properties>
+		<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@10.12.26.22:1521/TDR31" />
+		<property name="eclipselink.ddl-generation" value="create-tables" />
+		<property name="eclipselink.ddl-generation.output-mode"
+			value="database" />
+		<property name="eclipselink.weaving" value="false" />
+		<!-- <property name="eclipselink.logging.level.sql" value="FINE" /> -->
+		<property name="eclipselink.jdbc.batch-writing.size" value="1000" />
+		<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+	</properties>
+</persistence-unit>

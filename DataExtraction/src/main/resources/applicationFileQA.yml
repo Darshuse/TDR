@@ -1,0 +1,69 @@
+#-------------------------DB Connection
+Aid: 4
+dbUsername: tarekdb
+dbPassword: 123123
+databaseName: sidedb
+serverName: 10.12.36.36
+portNumber: 1521
+dbType: oracle
+dbServiceName: PART32
+partitioned: true
+#dbType: mssql
+#serverName: 10.12.36.22
+#instanceName: KANBAN32
+#portNumber: 1438
+
+tnsPath:
+enableTnsName: false
+ecfPath: 
+
+
+#LogFile
+logging:
+ file:
+  name: F:/programing/HandOver/DataExtraction/config/DataExtraction/DataExtractionLogs.log
+ pattern:                                                   
+    console: "%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n"             
+    file: "%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n"
+ level:
+    springframework: ERROR
+    extraction: DEBUG
+    com.eastnets.extraction: DEBUG
+
+
+#--------------------OutPut Files Configuration
+#fileName: "%Y_%M_%D_%H_%m_%s_%a_%t_TDR"       
+filePath: F:/Devlopment/Main-Spaces-TDR/Kanban/DataExtraction/output
+fileSize: 1                                                
+                                                  
+mode: 4                                                   #Mode 1 RJE/MX/fileformat / Mode 2 PrintingFormat / Mode 4 XML Customizable / Default 7
+                                                            
+expand: true                                              
+history: true                                            
+flag: true                                                 
+extractFlagged: true                                       
+#previous: false                                           
+#mesgIsLive: false                                         
+mesgFormat: Any                                
+#BICFile: #D:\TDR\TDR3.2\Application_Tools\Extractor\BICFILE.txt 
+#------------------------Date Ranges 
+#dayNumber: 60                                           
+#skipWeeks:  0                                          
+fromDate: 2021/06/01T00:00:00                            
+toDate:    2021/06/29T23:23:59                          
+date: rMesg.mesg_crea_date_time                                      
+#---------------------Messages' Criteria to Extract
+mesgType:                                      
+#identifier:                                             
+#senderBIC:                                              
+#receiverBIC:                                            
+direction:    input                                     
+messageNumber: 5                                                          
+rulesFile: F:/Devlopment/Main-Spaces-TDR/Kanban/DataExtraction/XML_Rules.xml
+templateFile: F:/Devlopment/Main-Spaces-TDR/Kanban/DataExtraction/temp/example_File.xml
+source: EXTRACT_File_VIEW                           #EXTRACT_File_VIEW or EXTRACT_FIN_Internal_VIEW or EXTRACT_MX_AnyXML_VIEW
+threadLevel: 0                                           
+enableDebug: true                
+dryRun: false                                               
+enableDebugFull: true                                           
+scheduler: '-'                                              

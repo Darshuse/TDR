@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="jpaPersitant"
+		transaction-type="RESOURCE_LOCAL">
+		<mapping-file>META-INF/defultORM.xml</mapping-file>
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<shared-cache-mode>NONE</shared-cache-mode>
+		<properties>
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+			<property name="eclipselink.jdbc.batch-writing.size" value="1000" />
+			<property name="eclipselink.cache.shared.default" value="false" />
+		</properties>
+		<!-- <class>com.me.samples.io.xml.Mesg</class> <class>com.me.samples.io.xml.MesgPK</class> 
+			<class>com.me.samples.io.xml.Inst</class> <class>com.me.samples.io.xml.InstPK</class> 
+			<class>com.me.samples.io.xml.Text</class> <class>com.me.samples.io.xml.TextPK</class> 
+			<class>com.me.samples.io.xml.Appe</class> <class>com.me.samples.io.xml.AppePK</class> 
+			<properties> <property name="eclipselink.jdbc.batch-writing" value="JDBC"/> 
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.100.154:1522:ORCL"/> 
+			<property name="javax.persistence.jdbc.user" value="side"/> <property name="javax.persistence.jdbc.password" 
+			value="edis"/> <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/> 
+			</properties> -->
+	</persistence-unit>
+
+	<persistence-unit name="jpaPersitantSQL"
+		transaction-type="RESOURCE_LOCAL">
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<shared-cache-mode>NONE</shared-cache-mode>
+
+		<properties>
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+			<property name="eclipselink.jdbc.batch-writing.size" value="1000" />
+			<property name="eclipselink.cache.shared.default" value="false" />
+		</properties>
+		<!-- <class>com.me.samples.io.xml.Mesg</class> <class>com.me.samples.io.xml.MesgPK</class> 
+			<class>com.me.samples.io.xml.Inst</class> <class>com.me.samples.io.xml.InstPK</class> 
+			<class>com.me.samples.io.xml.Text</class> <class>com.me.samples.io.xml.TextPK</class> 
+			<class>com.me.samples.io.xml.Appe</class> <class>com.me.samples.io.xml.AppePK</class> 
+			<properties> <property name="eclipselink.jdbc.batch-writing" value="JDBC"/> 
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.100.154:1522:ORCL"/> 
+			<property name="javax.persistence.jdbc.user" value="side"/> <property name="javax.persistence.jdbc.password" 
+			value="edis"/> <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/> 
+			</properties> -->
+	</persistence-unit>
+</persistence>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enreportingloader>
+	<mqreader>apacheMqconnection
+		 	 <ibmMqconnection> <ip>192.168.100.151</ip> <port>1414</port> <username></username> 
+			<password></password> <channel>con123</channel> <queueManager>QM</queueManager> 
+			<inputQueueName>InputQueue</inputQueueName> <errorQueueName>ErrorQueue</errorQueueName> 
+			<bulksize>1000</bulksize> <formatType>MT</formatType> </ibmMqconnection>  
+			
+	</mqreader>
+	<!-- <dbreader>
+			<dbconnection>
+				<ip>192.168.100.223</ip>
+				<dbtype>mssql</dbtype>
+				<dbServiceName>SideDB</dbServiceName>
+				<servicename>REP2</servicename>
+				<port>1433</port>
+				<username>side</username>
+				<password>edis</password>
+				<bulksize>1000</bulksize>
+			</dbconnection>
+		<queryconfig>
+			<queryname>normal-fetch-process</queryname>
+			<tablename>WCS_TMB_SIBES_SWIFT_MESSAGES</tablename>
+			<sequencenumber>ID_TMB_SIBES_SWIFT_MESSAGES</sequencenumber>
+			<textcolum>L_text</textcolum>
+			<messagetype>C_MESSAGE_TYPE_ORIG</messagetype>
+			<unitname>C_SECTOR_CODE</unitname>
+			<creationdate>D_EXTRACTION_DATE</creationdate>
+			<creationoperator>C_CRE_USER_DWH</creationoperator>
+			<historycolum>L_HISTORY</historycolum>
+			<wherestatment>and  C_SECTOR_CODE= '90600'  and  ID_TMB_SIBES_SWIFT_MESSAGES &gt; ?  order by ID_TMB_SIBES_SWIFT_MESSAGES ASC</wherestatment>
+		</queryconfig>
+		<queryconfig>
+			<queryname>restore-query</queryname>
+			<tablename>WCS_TMB_SIBES_SWIFT_MESSAGES</tablename>
+			<sequencenumber>ID_TMB_SIBES_SWIFT_MESSAGES</sequencenumber>
+			<textcolum>L_text</textcolum>
+			<messagetype>C_MESSAGE_TYPE_ORIG</messagetype>
+			<unitname>C_SECTOR_CODE</unitname>
+			<creationdate>D_EXTRACTION_DATE</creationdate>
+			<creationoperator>C_CRE_USER_DWH</creationoperator>
+			<historycolum>L_HISTORY</historycolum>
+			<wherestatment>and  ID_TMB_SIBES_SWIFT_MESSAGES IN (%s) order by ID_TMB_SIBES_SWIFT_MESSAGES ASC</wherestatment>
+		</queryconfig>
+	</dbreader> -->
+</enreportingloader>

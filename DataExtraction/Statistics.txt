@@ -1,0 +1,19 @@
+Starting Time: 2021.04.10 at 14:49:59
+Finishing Time: 2021.04.10 at 14:50:24
+     ----------------------
+Number of generated messages: 0
+     ----------------------
+Number of generated messages in RJE format: 0
+Number of generated messages in Exit point format: 0
+Number of generated messages in MX format: 0
+Number of empty MX messages: 0
+     ----------------------
+Generated File Names: 
+ 
+Selected Date: From  Sun Feb 07 00:00:00 EET 2021    To   Wed Apr 07 00:00:00 EEST 2021
+Selected Direction: 
+Generated files path: D:\enTDR\enTDRjava\DataExtraction
+Generated files size: 0
+Selected Mode: 7
+Selected Date: mesg_crea_date_time
+Selected Direction: 

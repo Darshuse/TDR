@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<bean id="messagePerCountryProperties" lazy-init="true"
+		class="com.eastnets.service.dashboard.chartsproperties.ColumnChartProperties">
+		<property name="reportName" value="" />
+		<property name="xAxisName" value="Country Name" />
+		<property name="yAxisName" value="Number of messages" />
+		<property name="showNames" value="1" />
+		<property name="showValues" value="0" />
+		<property name="decimalPrecision" value="0" />
+		<property name="rotateNames" value="1" />
+		<property name="numberScaleValue" value="1000,1000,1000" />
+		<property name="numberScaleUnit" value="K,M,B" />
+	</bean>
+
+	<bean id="messagePerCurrencyProperties" lazy-init="true"
+		class="com.eastnets.service.dashboard.chartsproperties.ColumnChartProperties">
+		<property name="reportName" value="" />
+		<property name="xAxisName" value="Currency" />
+		<property name="yAxisName" value="Number of messages" />
+		<property name="showNames" value="1" />
+		<property name="showValues" value="0" />
+		<property name="decimalPrecision" value="0" />
+		<property name="rotateNames" value="1" />
+		<property name="numberScaleValue" value="1000,1000,1000" />
+		<property name="numberScaleUnit" value="K,M,B" />
+	</bean>
+
+	<bean id="amountPerCategoryProperties" lazy-init="true"
+		class="com.eastnets.service.dashboard.chartsproperties.ColumnChartProperties">
+		<property name="reportName" value="" />
+		<property name="xAxisName" value="Category" />
+		<property name="yAxisName" value="Amount" />
+		<property name="showNames" value="1" />
+		<property name="showValues" value="0" />
+		<property name="decimalPrecision" value="0" />
+		<property name="rotateNames" value="1" />
+		<property name="numberScaleValue" value="1000,1000,1000" />
+		<property name="numberScaleUnit" value="K,M,B" />
+	</bean>
+
+	<bean id="sentReceivedMessagesPerLogicalTerminalProperties" lazy-init="true"
+		class="com.eastnets.service.dashboard.chartsproperties.ColumnChartProperties">
+		<property name="reportName" value="" />
+		<property name="xAxisName" value="Logical terminal" />
+		<property name="yAxisName" value="Number of messages" />
+		<property name="showNames" value="1" />
+		<property name="showValues" value="0" />
+		<property name="decimalPrecision" value="0" />
+		<property name="rotateNames" value="1" />
+		<property name="numberScaleValue" value="1000,1000,1000" />
+		<property name="numberScaleUnit" value="K,M,B" />
+	</bean>
+
+	<bean id="messagesCountPerValueDateProperties" lazy-init="true"
+		class="com.eastnets.service.dashboard.chartsproperties.ColumnChartProperties">
+		<property name="reportName" value="" />
+		<property name="xAxisName" value="Message category(s)" />
+		<property name="yAxisName" value="Number of messages" />
+		<property name="showNames" value="1" />
+		<property name="showValues" value="0" />
+		<property name="decimalPrecision" value="0" />
+		<property name="rotateNames" value="1" />
+		<property name="numberScaleValue" value="1000,1000,1000" />
+		<property name="numberScaleUnit" value="K,M,B" />
+	</bean>
+
+	<bean id="notificationsProperties" lazy-init="true"
+		class="com.eastnets.service.dashboard.chartsproperties.ColumnChartProperties">
+		<property name="reportName" value="" />
+		<property name="xAxisName" value="Date" />
+		<property name="yAxisName" value="Number of notifications" />
+		<property name="showNames" value="1" />
+		<property name="showValues" value="0" />
+		<property name="decimalPrecision" value="0" />
+		<property name="rotateNames" value="1" />
+		<property name="numberScaleValue" value="1000,1000,1000" />
+		<property name="numberScaleUnit" value="K,M,B" />
+	</bean>
+
+	<bean id="loaderNewMessagesProperties" lazy-init="true"
+		class="com.eastnets.service.dashboard.chartsproperties.ColumnChartProperties">
+		<property name="reportName" value="" />
+		<property name="xAxisName" value="Loading Hour" />
+		<property name="yAxisName" value="Number of loaded messages" />
+		<property name="showNames" value="1" />
+		<property name="showValues" value="0" />
+		<property name="decimalPrecision" value="0" />
+		<property name="rotateNames" value="1" />
+		<property name="numberScaleValue" value="1000,1000,1000" />
+		<property name="numberScaleUnit" value="K,M,B" />
+	</bean>
+
+	<bean id="loaderNewEventsProperties" lazy-init="true"
+		class="com.eastnets.service.dashboard.chartsproperties.ColumnChartProperties">
+		<property name="reportName" value="" />
+		<property name="xAxisName" value="Loading Hour" />
+		<property name="yAxisName" value="Number of loaded events" />
+		<property name="showNames" value="1" />
+		<property name="showValues" value="0" />
+		<property name="decimalPrecision" value="0" />
+		<property name="rotateNames" value="1" />
+		<property name="numberScaleValue" value="1000,1000,1000" />
+		<property name="numberScaleUnit" value="K,M,B" />
+	</bean>
+
+	<bean id="loaderUpdatedMessagesProperties" lazy-init="true"
+		class="com.eastnets.service.dashboard.chartsproperties.ColumnChartProperties">
+		<property name="reportName" value="" />
+		<property name="xAxisName" value="Loading Hour" />
+		<property name="yAxisName" value="Number of loaded updated messages" />
+		<property name="showNames" value="1" />
+		<property name="showValues" value="0" />
+		<property name="decimalPrecision" value="0" />
+		<property name="rotateNames" value="1" />
+		<property name="numberScaleValue" value="1000,1000,1000" />
+		<property name="numberScaleUnit" value="K,M,B" />
+	</bean>
+
+</beans>

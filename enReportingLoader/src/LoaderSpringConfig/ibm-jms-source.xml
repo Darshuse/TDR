@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+                           http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.1.xsd">
+
+
+	<bean id="cachedConnectionFactory"
+		class="com.eastnets.service.loader.helper.jms.CustomCachingConnectionFactory"
+		lazy-init="true">
+		<property name="targetConnectionFactory" ref="mqConnectionFactory" />
+		<property name="sessionCacheSize" value="10" />
+	</bean>
+
+	<bean id="jmsTransactionManager"
+		class="org.springframework.jms.connection.JmsTransactionManager"
+		lazy-init="true">
+		<property name="connectionFactory" ref="cachedConnectionFactory" />
+	</bean>
+
+	<!-- Sender configuration -->
+	<bean id="senderJmsTemplate" class="org.springframework.jms.core.JmsTemplate"
+		lazy-init="true">
+		<property name="connectionFactory" ref="cachedConnectionFactory" />
+		<property name="defaultDestination" ref="jmsErrorQueue" />
+		<property name="pubSubDomain" value="false" />
+		
+	</bean>
+
+	<bean id="ibmMQJmsSender" class="com.eastnets.service.loader.helper.jms.JMSSender"
+		lazy-init="true" >
+		<property name="jmsTemplate" ref="senderJmsTemplate" />
+		<property name="loaderDAO" ref="LoaderDAO" />
+	</bean>
+	<!-- End Of Sender configuration -->
+
+	<!-- Reader configuration -->
+	<bean id="connectionFactoryAdapter"
+		class="org.springframework.jms.connection.UserCredentialsConnectionFactoryAdapter"
+		lazy-init="true">
+		<property name="targetConnectionFactory" ref="cachedConnectionFactory" />
+		<property name="username" value="${IbmMqUsername}" />
+		<property name="password" value="${IbmMqPassword}" />
+	</bean>
+
+	<bean id="ibmMQJmsReader" class="com.eastnets.service.loader.helper.jms.JMSReader" init-method="initReader"
+		lazy-init="true">
+		<property name="readerOutQueue" ref="ReaderOutQueue" />
+		<property name="moveToErrorQSender" ref="ibmMQJmsSender" />
+		<property name="queueMessagesDelegate" ref="queueMessagesDelegate" />
+		<property name="appConfigBean"  ref="appConfigBean"/>
+		<property name="loaderDAO" ref="LoaderDAO"/>
+		 <property name="serviceLocator" ref="serviceLocator"/>
+	</bean>
+
+	<bean id="jmsContainer"
+		class="org.springframework.jms.listener.DefaultMessageListenerContainer"
+		lazy-init="true">
+		<!-- <property name="connectionFactory" ref="connectionFactoryAdapter" 
+			/> -->
+		<property name="connectionFactory" ref="cachedConnectionFactory" />
+		<property name="destination" ref="jmsInputQueue" />
+		<property name="messageListener" ref="ibmMQJmsReader" />
+		<property name="sessionTransacted" value="true" /> 
+	</bean>
+	<!-- End Of Reader configuration -->
+
+	<bean id="jmsInputQueue" class="com.ibm.mq.jms.MQQueue" lazy-init="true">
+		<property name="baseQueueName" value="${IbmInputQueueName}" />
+	</bean>
+
+	<bean id="jmsErrorQueue" class="com.ibm.mq.jms.MQQueue">
+		<property name="baseQueueName" value="${IbmErrorQueueName}" />
+	</bean>
+</beans>

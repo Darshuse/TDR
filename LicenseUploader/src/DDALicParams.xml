@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<licparams>
+	<title>EastNets en.DDA 3.1 License Uploader</title>
+	<products enabled="1">
+		<product id="81">Full Duplicates</product>
+		<product id="82">Full and partial Duplicate</product>
+		<product id="83">Recovery Only FIN</product>
+	</products>
+	<traffics enabled="1">
+		<traffic id="13">MX Messages</traffic>
+		<!-- <traffic id="15">FILE Messages</traffic> -->
+		<!-- FIN MESSAGES SHOULD ALWAYS BE MANDATORY! DO NOT INCLUDE! <traffic id="00">FIN Messages</traffic> -->
+	</traffics>
+	<bics enabled="1" />
+	<servers enabled="0" />
+	<schemaname>DDA</schemaname>
+</licparams>

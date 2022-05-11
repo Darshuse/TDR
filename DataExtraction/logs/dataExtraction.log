@@ -1,0 +1,7 @@
+2021-07-10 22:22:21 INFO  HV000001: Hibernate Validator 6.1.7.Final
+2021-07-10 22:22:21 INFO  Starting DataExtractionApplication using Java 1.8.0_241 on ENEGDEV05 with PID 26152 (F:\programing\TDR\TDR\enTDRjava\DataExtraction\target\classes started by MAhmed in F:\programing\TDR\TDR\enTDRjava\DataExtraction)
+2021-07-10 22:22:21 INFO  No active profile set, falling back to default profiles: default
+2021-07-10 22:22:22 INFO  Database password already decrypted
+2021-07-10 22:22:22 INFO  HikariPool-1 - Starting...
+2021-07-10 22:22:24 INFO  HikariPool-1 - Start completed.
+2021-07-10 22:22:28 INFO  Extractor tool started

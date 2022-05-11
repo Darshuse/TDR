@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="copy the enCSMConfig.xml file to the build directory" basedir="." default="copy">
+
+	
+	<!-- Clear the generated files directory, so that we dont get any old files due to any error -->
+	<target name="copy">
+		<copy todir="./bin" overwrite="true">
+			<fileset dir=".">
+				<include name="enCSMConfig.xml" />
+			</fileset>
+		</copy>
+	</target>	
+</project>

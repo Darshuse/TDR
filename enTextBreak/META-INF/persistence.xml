@@ -1,0 +1,40 @@
+
+<persistence-unit name="leopersistencePU"
+	transaction-type="RESOURCE_LOCAL">
+	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> 
+	<exclude-unlisted-classes>false</exclude-unlisted-classes>
+	<properties>
+		<property name="eclipselink.weaving" value="false" />
+		<property name="eclipselink.logging.level" value="FINEST" />
+		<property name="eclipselink.target-database" value="MYSQL" />
+		<property name="eclipselink.target-server" value="None" />
+		<property name="show-sql" value="true" />
+
+		<property name="eclipselink.cache.shared.default" value="false" />
+
+		<property name="eclipselink.jdbc.read-connections.min" value="1" />
+		<property name="eclipselink.jdbc.write-connections.min"
+			value="1" />
+		<!-- <property name="eclipselink.logging.logger" value="com.leofund.leoserver.utils.Log4JEclipseLinkLogger"/> 
+			<property name="eclipselink.cache.type.default" value="SoftWeak"/> <property 
+			name="eclipselink.cache.size.default" value="0"/> -->
+		<property name="eclipselink.logging.thread" value="true" />
+		<property name="eclipselink.logging.session" value="true" />
+		<property name="eclipselink.logging.timestamp" value="true" />
+		<property name="eclipselink.logging.exceptions" value="true" />
+		<property name="eclipselink.logging.level.WEAVER" value="INFO" />
+
+		<property name="eclipselink.orm.throw.exceptions" value="true" />
+
+		<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+		<property name="eclipselink.jdbc.batch-writing.size" value="1000" />
+		<property name="eclipselink.jdbc.bind-parameters" value="true" />
+
+		<property name="eclipselink.jdbc.cache-statements" value="true" />
+		<property name="eclipselink.jdbc.cache-statements.size"
+			value="10000" />
+
+		<property name="eclipselink.persistence-context.close-on-commit"
+			value="true" />
+	</properties>
+</persistence-unit>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+                           http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.1.xsd">
+	
+	<!-- JMS Reader Configuration -->
+	<bean id="activeMQJmsReader" class="com.eastnets.service.loader.helper.jms.JMSReader"
+		lazy-init="false" init-method="initReader">
+	<property name="readerOutQueue" ref="ReaderOutQueue" />
+	<property name="moveToErrorQSender" ref="activeMQJmsSender" />
+	<property name="queueMessagesDelegate" ref="queueMessagesDelegate" />
+	<property name="appConfigBean" ref="appConfigBean" /> 
+	</bean>
+	
+	<bean id="jmsContainer"
+		class="org.springframework.jms.listener.DefaultMessageListenerContainer" lazy-init="true">
+		<property name="connectionFactory" ref="amqConnectionFactory" />
+		<property name="destinationName" value="${apacheInputQueueName}" />
+		<property name="messageListener" ref="activeMQJmsReader" />
+		<property name="sessionTransacted" value="true"/>
+	</bean>
+	<!-- End of JMS Reader Configuration -->
+	
+	<!-- JMS Sender Configuration -->
+	<bean id="activeMQJmsSender" class="com.eastnets.service.loader.helper.jms.JMSSender" lazy-init="true">
+		<property name="jmsTemplate" ref="senderJmsTemplate" />
+		<property name="loaderDAO" ref="LoaderDAO" />
+	</bean>
+	
+	<bean id="senderJmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="queueConnectionFactory" />
+		<property name="defaultDestinationName" value="${apacheErrorQueueName}" />
+		<property name="pubSubDomain" value="false" />
+	</bean>
+	<!-- End of JMS Sender Configuration -->
+	
+	<!-- JMS Configuration -->
+
+	<bean id="queueConnectionFactory"
+		class="org.springframework.jms.connection.CachingConnectionFactory">
+		<property name="targetConnectionFactory" ref="amqConnectionFactory" />
+		<property name="sessionCacheSize" value="10" />
+	</bean>
+	
+    <bean id="amqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <constructor-arg index="0" value="tcp://${apacheMqIp}:${apacheMqPort}"/>
+    </bean>
+	
+	<bean id="jmsTransactionManager"
+		class="org.springframework.jms.connection.JmsTransactionManager">
+		<property name="connectionFactory" ref="queueConnectionFactory" />
+	</bean>   
+	<!-- End of JMS Configuration -->
+</beans>

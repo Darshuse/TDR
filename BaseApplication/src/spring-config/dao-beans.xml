@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+                           http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.1.xsd">
+
+	<bean id="commonDAO" class="com.eastnets.dao.common.Common${DBType}DAOImp"
+		lazy-init="true">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="dbPortabilityHandler" ref="dbPortabilityHandler" />
+		<property name="setProfileProcedure" ref="setProfileProcedure" />
+		<property name="getUserSettingsProcedure" ref="getUserSettingsProcedure" />
+		<property name="sCheckAdmitProcedure" ref="sCheckAdmitProcedure" />
+		<property name="vwGetCorrInfoProcedure" ref="vwGetCorrInfoProcedure" />
+		<property name="getActiveSyntaxVersionProcedure" ref="getActiveSyntaxVersionProcedure" />
+		<property name="config" ref="config" />
+		<property name="loadDbVersion" value="true" />
+	</bean>
+
+	<bean id="watchDogDAO" class="com.eastnets.dao.watchdog.WatchDog${DBType}DAOImp"
+		lazy-init="true">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="dbPortabilityHandler" ref="dbPortabilityHandler" />
+		<property name="wdDeleteNotificationProcedure" ref="wdDeleteNotificationProcedure" />
+		<property name="wdGetLastIDs21" ref="wdGetLastIDs21" />
+	</bean>
+								   
+	<bean id="bicLoaderDAO" class="com.eastnets.dao.bicloader.BICLoader${DBType}DAOImp"
+		lazy-init="true">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="dbPortabilityHandler" ref="dbPortabilityHandler" />
+	</bean>
+
+	<bean id="dbconsistencycheckDAO" class="com.eastnets.dao.dbconsistencycheck.DBConsistencyCheck${DBType}DAOImp"
+		lazy-init="true">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="dbPortabilityHandler" ref="dbPortabilityHandler" />
+	</bean>
+
+	<bean id="swingDAO" class="com.eastnets.dao.swing.SwingDAOImp"
+		lazy-init="true">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+        <property name="dbPortabilityHandler" ref="dbPortabilityHandler"/>
+		<property name="vwSearchEAIProcedure" ref="vwSearchEAIProcedure" />
+	</bean>
+
+		<bean id="securityDAO" class="com.eastnets.dao.security.Security${DBType}DAOImp"
+		lazy-init="true">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+        <property name="dbPortabilityHandler" ref="dbPortabilityHandler"/>
+		<property name="dbUrl"
+			value="#{'${DBType}'=='Sql' ? 'jdbc:sqlserver://${serverName}:${portNumber};databaseName=${databaseName};instanceName=${instanceName}' : '${tnsEnabled}' ? 'jdbc:oracle:thin:@${DBServiceName}': '${DBServiceName}'!='' ?
+        								'jdbc:oracle:thin:@${serverName}:${portNumber}/${DBServiceName}':'jdbc:oracle:thin:@${serverName}:${portNumber}:${databaseName}'}" />
+        			
+        <property name="adminHelperUserProcedure" ref="adminHelperUserProcedure" />
+	</bean>
+	<bean id="viewerDAO" class="com.eastnets.dao.viewer.Viewer${DBType}DAOImp"
+		lazy-init="true" init-method="init">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="forceMessageUpdateProcedure" ref="forceMessageUpdateProcedure" />
+		<property name="printInstanceTransmissionGetProcedure" ref="printInstanceTransmissionGetProcedure" />
+		<property name="mtExpantionGetProcedure" ref="mtExpantionGetProcedure" />
+		<property name="config" ref="config" />
+		<property name="dbPortabilityHandler" ref="dbPortabilityHandler" />
+		<property name="partitioned" value="${Partitioned}" />
+		<property name="applicationFeatures" ref="applicationFeatures" />
+	</bean>
+
+	<bean id="dashboardDAO" class="com.eastnets.dao.dashboard.DashboardDAOImp"
+		lazy-init="true">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="dbPortabilityHandler" ref="dbPortabilityHandler" />
+	</bean>
+
+	<bean id="jrnlDAO" class="com.eastnets.dao.jrnl.Jrnl${DBType}DAOImp"
+		lazy-init="true">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="dbPortabilityHandler" ref="dbPortabilityHandler" />
+	</bean>
+
+	<bean id="archiveDAOBase" lazy-init="true">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+        <property name="dbPortabilityHandler" ref="dbPortabilityHandler"/>
+	</bean>
+	<bean id="archiveOracleDAO" parent="archiveDAOBase" class="com.eastnets.dao.archive.ArchiveOracleDAOImp"
+		lazy-init="true">
+		<property name="lobHandler" ref="lobHandler" />
+	</bean>
+	<bean id="archiveSqlDAO" parent="archiveDAOBase" class="com.eastnets.dao.archive.ArchiveSqlDAOImp"
+		lazy-init="true">		
+	</bean>
+
+	<bean id="adminDAOBase" lazy-init="true">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="dbPortabilityHandler" ref="dbPortabilityHandler" />
+		<property name="config" ref="config" />
+		<property name="applicationFeatures" ref="applicationFeatures" />
+
+		<property name="adminInsertConnectionProcedure" ref="adminInsertConnectionProcedure" />
+	</bean>
+	
+	<bean id="adminOracleDAO" parent="adminDAOBase" class="com.eastnets.dao.admin.AdminOracleDAOImp" lazy-init="true">
+	</bean>
+	
+	<bean id="adminSqlDAO" parent="adminDAOBase" class="com.eastnets.dao.admin.AdminSqlDAOImp" lazy-init="true">
+		<property name="adminRevokeDBAccessProcedure" ref="adminRevokeDBAccessProcedure" />
+		<property name="adminRevokeLoginProcedure" ref="adminRevokeLoginProcedure" />
+		<property name="adminDropLoginProcedure" ref="adminDropLoginProcedure" />
+		<property name="adminGrantLoginProcedure" ref="adminGrantLoginProcedure" />
+		<property name="adminDefaultDBProcedure" ref="adminDefaultDBProcedure" />
+		<property name="adminAddLoginProcedure" ref="adminAddLoginProcedure" />
+		<property name="adminGrantDBAccessProcedure" ref="adminGrantDBAccessProcedure" />
+		<property name="adminAddSRVRoleMemberProcedure" ref="adminAddSRVRoleMemberProcedure" />
+		<property name="adminAddRoleMemberProcedure" ref="adminAddRoleMemberProcedure" />
+		<property name="adminHelperUserProcedure" ref="adminHelperUserProcedure" />
+		<property name="adminDropRoleMemberProcedure" ref="adminDropRoleMemberProcedure" />
+		<property name="adminDropSRVRoleMemberProcedure" ref="adminDropSRVRoleMemberProcedure" />
+		<property name="adminHelperSRVRoleMemberProcedure" ref="adminHelperSRVRoleMemberProcedure" />
+	</bean>
+
+	<bean id="monitoringDAO" class="com.eastnets.dao.monitoring.Monitoring${DBType}DAOImp"
+		lazy-init="true">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="dbPortabilityHandler" ref="dbPortabilityHandler" />
+		<property name="ldGetCountersProcedure" ref="ldGetCountersProcedure" />
+	</bean>
+
+	<bean id="licenseDAO" class="com.eastnets.dao.license.License${DBType}DAOImpl"
+		lazy-init="true">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="checkLicenseSP" ref="checkLicenseSP" />
+		<property name="checkProductSP" ref="checkProductSP" />
+		<property name="dbPortabilityHandler" ref="dbPortabilityHandler" />
+	</bean>
+
+	<bean id="reportingDAO" class="com.eastnets.dao.reporting.Reporting${DBType}DAOImp"
+		lazy-init="true">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="reportingAddReportSetProcedure" ref="reportingAddReportSetProcedure" />
+		<property name="reportingAddReportSetValuesProcedure" ref="reportingAddReportSetValuesProcedure" />
+		<property name="reportingDeleteReportSetProcedure" ref="reportingDeleteReportSetProcedure" />
+		<property name="reportingISNGapProcedure" ref="reportingISNGapProcedure" />
+		<property name="reportingOSNGapProcedure" ref="reportingOSNGapProcedure" />
+        <property name="dbPortabilityHandler" ref="dbPortabilityHandler"/>
+	</bean>
+
+	<bean id="filePayloadDAO" class="com.eastnets.dao.filepayload.FilePayload${DBType}DAOImp"
+		lazy-init="true">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="dbPortabilityHandler" ref="dbPortabilityHandler" />
+		<property name="insertSepaMsg" ref="insertSepaMsg" />
+	</bean>
+	
+	<bean id="clientServerMonitorDAO" class="com.eastnets.dao.csm.ClientServerMonitor${DBType}DAOImp"
+		lazy-init="true">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="dbPortabilityHandler" ref="dbPortabilityHandler" />
+	</bean>
+
+</beans>

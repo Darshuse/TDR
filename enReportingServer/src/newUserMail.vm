@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC \-//W3C//DTD XHTML 1.0 Transitional//EN\ \http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\>
+<html xmlns=\http://www.w3.org/1999/xhtml\ >
+    <head>
+	     <title>enReporting</title>
+	</head>
+	<body>
+			Dear $fullName,<br />
+			An Eastnets Reporting user has been created and assigned to your email. You can use the following details to login to the enReporting system.<br />
+		<table>
+			<tr>
+				<td> User name </td>
+				<td> : </td>
+				<td><pre>$userName</pre></td>
+			</tr>
+			<tr>
+				<td> Password </td>
+				<td> : </td>
+				<td><pre>$password</pre></td>
+			</tr>
+			<tr>
+				<td> Authentication Method </td>
+				<td> : </td>
+				<td><pre>$authMethod</pre></td>
+			</tr>
+		</table>
+		#if ($mustReset) 
+			You need to login to the Reporting application and reset your password within a day so that your account will not get disabled.
+		#end
+	</body>
+</html>

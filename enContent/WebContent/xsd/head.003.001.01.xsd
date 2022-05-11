@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="urn:iso:std:iso:20022:tech:xsd:head.003.001.01"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="urn:iso:std:iso:20022:tech:xsd:head.003.001.01"
+    elementFormDefault="qualified">
+  <xs:element name="BizData" type="BusinessDataHeaderV01">
+    <xs:annotation>
+      <xs:documentation source="T2S-use">The business data element will be used as wrapper within the head.002.                                               18/07/2011</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="BusinessDataHeaderV01">
+    <xs:sequence>
+      <xs:any namespace="urn:iso:std:iso:20022:tech:xsd:head.001.001.01">
+        <xs:annotation>
+          <xs:documentation>First element is the business application header</xs:documentation>
+        </xs:annotation>
+      </xs:any>
+      <xs:any>
+        <xs:annotation>
+          <xs:documentation>Second element is any business document.</xs:documentation>
+        </xs:annotation>
+      </xs:any>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

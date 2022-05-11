@@ -1,0 +1,1 @@
+@start en.LicGen.jar DDALicParams.xml

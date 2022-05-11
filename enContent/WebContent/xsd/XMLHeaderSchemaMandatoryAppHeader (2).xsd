@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://SAM/200/XMLMessageHeader/MandatoryAppHeader" targetNamespace="http://SAM/200/XMLMessageHeader/MandatoryAppHeader" elementFormDefault="qualified">
+ <xs:element name="IMessage" type="Message_Type">
+  <xs:annotation>
+   <xs:documentation source="Name" xml:lang="EN">IMessage</xs:documentation>
+  </xs:annotation>
+ </xs:element>
+ <xs:element name="OMessage" type="Message_Type">
+  <xs:annotation>
+   <xs:documentation source="Name" xml:lang="EN">OMessage</xs:documentation>
+  </xs:annotation>
+ </xs:element>
+ <xs:element name="RMessage" type="Response_Type">
+  <xs:annotation>
+   <xs:documentation source="Name" xml:lang="EN">RMessage</xs:documentation>
+  </xs:annotation>
+ </xs:element>
+ <xs:complexType name="Response_Type">
+  <xs:annotation>
+   <xs:documentation source="Name" xml:lang="EN">Response_Type</xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+   <xs:element name="AppHeader" type="AppHeader_Type">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Application Header</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+   <xs:element name="Body" type="Body_Type">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Body</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+  </xs:sequence>
+ </xs:complexType>
+ <xs:complexType name="Message_Type">
+  <xs:annotation>
+   <xs:documentation source="Name" xml:lang="EN">Message_Type</xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+   <xs:element name="Header" type="Header_Type">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Header</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+   <xs:element name="AppHeader" type="AppHeader_Type">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Application Header</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+   <xs:element name="Body" type="Body_Type">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Body</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+   <xs:element name="Comments" type="Comments_Type">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Comments</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+  </xs:sequence>
+ </xs:complexType>
+ <xs:complexType name="Header_Type">
+  <xs:annotation>
+   <xs:documentation source="Name" xml:lang="EN">Header_Type</xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+   <xs:element name="Unit" type="Unit_Type">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Unit</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+   <xs:element name="RequestorDN" type="string100">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Requestor DN</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+   <xs:element name="ResponderDN" type="string100">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Responder DN</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+   <xs:element name="Service" type="string30">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Service Name</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+   <xs:element name="MessageIdentifier" type="string20">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Identifier</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+   <xs:element name="UserRef" type="string30" minOccurs="0">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">User Ref</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+   <xs:element name="Priority" type="Priority_Type">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Priority</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+   <xs:element name="Signed" type="xs:boolean" minOccurs="0">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Signed</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+   <xs:element name="Non-Repudiation" type="xs:boolean" minOccurs="0">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Non-Repudiation</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+   <xs:element name="DeliveryMode" type="DeliveryMode_Type">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Delivery Mode</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+   <xs:element name="PossibleDuplicate" type="xs:boolean" minOccurs="0">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Possible Duplicate</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+   <xs:element name="NotifRequired" type="xs:boolean" minOccurs="0">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Notification Required</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+   <xs:element name="OverdueWarning" type="OverdueWarningChoice_Type" minOccurs="0">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Overdue Warning</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+   <xs:element name="SnFCopy" type="SnFCopy_Type" minOccurs="0">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">SnF Copy</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+  </xs:sequence>
+ </xs:complexType>
+ <xs:simpleType name="Priority_Type">
+  <xs:annotation>
+   <xs:documentation source="Name" xml:lang="EN">Priority_Type</xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="Normal">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Normal</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="Urgent">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Urgent</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name="DeliveryMode_Type">
+  <xs:annotation>
+   <xs:documentation source="Name" xml:lang="EN">DeliveryMode_Type</xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+   <xs:maxLength value="17"/>
+   <xs:enumeration value="Real-time">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Real-time</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+   <xs:enumeration value="Store-and-forward">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Store-and-forward</xs:documentation>
+    </xs:annotation>
+   </xs:enumeration>
+  </xs:restriction>
+ </xs:simpleType>
+ <xs:complexType name="OverdueWarningChoice_Type">
+  <xs:annotation>
+   <xs:documentation source="Name" xml:lang="EN">OverdueWarningChoice_Type</xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+   <xs:choice>
+    <xs:element name="Time" type="xs:string" minOccurs="0">
+     <xs:annotation>
+      <xs:documentation source="Name" xml:lang="EN">Overdue Warning Time</xs:documentation>
+     </xs:annotation>
+    </xs:element>
+    <xs:element name="Delay" type="xs:string" minOccurs="0">
+     <xs:annotation>
+      <xs:documentation source="Name" xml:lang="EN">Overdue Warning Delay</xs:documentation>
+     </xs:annotation>
+    </xs:element>
+   </xs:choice>
+  </xs:sequence>
+ </xs:complexType>
+ <xs:complexType name="SnFCopy_Type">
+  <xs:annotation>
+   <xs:documentation source="Name" xml:lang="EN">SnFCopy_Type</xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+   <xs:element name="ThirdPartyDN" type="string100" minOccurs="0" maxOccurs="unbounded">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Third Party DNs</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+   <xs:element name="AuthNotif" type="xs:boolean" minOccurs="0">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Authorisation Notif</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+  </xs:sequence>
+ </xs:complexType>
+ <xs:complexType name="Body_Type">
+  <xs:annotation>
+   <xs:documentation source="Name" xml:lang="EN">Body_Type</xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+   <xs:any/>
+  </xs:sequence>
+ </xs:complexType>
+ <xs:complexType name="AppHeader_Type">
+  <xs:annotation>
+   <xs:documentation source="Name" xml:lang="EN">AppHeader_Type</xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+   <xs:any/>
+  </xs:sequence>
+ </xs:complexType>
+ <xs:complexType name="Comments_Type">
+  <xs:annotation>
+   <xs:documentation source="Name" xml:lang="EN">Comments_Type</xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+   <xs:element name="OperatorComment" type="Comment_Type" minOccurs="0">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Operator Comments</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+   <xs:element name="ReactivationComment" type="Comment_Type" minOccurs="0">
+    <xs:annotation>
+     <xs:documentation source="Name" xml:lang="EN">Reactivation Comments</xs:documentation>
+    </xs:annotation>
+   </xs:element>
+  </xs:sequence>
+ </xs:complexType>
+ <xs:simpleType name="Comment_Type">
+  <xs:annotation>
+   <xs:documentation source="Name" xml:lang="EN">Comment_Type</xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+   <xs:minLength value="0"/>
+   <xs:maxLength value="500"/>
+  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name="string20">
+  <xs:annotation>
+   <xs:documentation source="Name" xml:lang="EN">string20</xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+   <xs:minLength value="1"/>
+   <xs:maxLength value="20"/>
+  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name="string30">
+  <xs:annotation>
+   <xs:documentation source="Name" xml:lang="EN">string30</xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+   <xs:minLength value="1"/>
+   <xs:maxLength value="30"/>
+  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name="string40">
+  <xs:annotation>
+   <xs:documentation source="Name" xml:lang="EN">string40</xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+   <xs:minLength value="1"/>
+   <xs:maxLength value="40"/>
+  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name="string100">
+  <xs:annotation>
+   <xs:documentation source="Name" xml:lang="EN">string100</xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+   <xs:minLength value="1"/>
+   <xs:maxLength value="100"/>
+  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name="Unit_Type">
+  <xs:annotation>
+   <xs:documentation source="Name" xml:lang="EN">Unit_Type</xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+   <xs:minLength value="1"/>
+   <xs:maxLength value="24"/>
+  </xs:restriction>
+ </xs:simpleType>
+</xs:schema>

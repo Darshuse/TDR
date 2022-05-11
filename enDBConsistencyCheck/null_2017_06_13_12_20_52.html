@@ -1,0 +1,238 @@
+<html><head><style>body{font-family: "Helvetica Neue]", Helvetica, Arial, sans-serif;font-size: 14px;width: 99%;}.page-header{padding-bottom: 9px;margin: 20px 0 30px;border-bottom: 1px solid #004882;padding-top: 1%;padding-left: 10px;left: 1%;color:#004882;}#Summary{padding-left: 10px; color:#004882;}th{background-color: #004882;color:white;border-style: outset;font-size:12px;border-width: 1px;}table {max-width: 100%;background-color: transparent;border-collapse: collapse;border-spacing: 0;}#tdSpecific{border-width: 1px;border-style: inset;border-color: black;font-size:11px;white-space: nowrap;}#columnRight{float: right;width: 200px;font-size:12px}#footer{padding-right: 2px;padding-left: 10px; overflow-x:auto;}textarea {overflow: auto;vertical-align: top;border-style: groove;border-top: 0;border-bottom: 0;background-color : #F3F3F3;width: 100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}hr {border: 0;border-top: 1px solid #eeeeee;border-bottom: 1px solid #ffffff;}#mesgList{text-align:center;}</style></head><body><div class="page-header"><h1>en.TDR - Database Consistency Check Report<img src="http://www.eastnets.com/img/logo-eastnets.jpg"align="right"/></h1></div><hr/><div id="columnRight">Report date : 13-Jun-2017 12:21:20</div><div id="Summary"><h3>Summary</h3><table><tr><td style="font-size:13px"> DB check period </td><td>:</td><td style="font-size:12px"> Start : 14-Apr-17 00:00:00</td><td width= 10%></td><td style="font-size:12px"> End : 13-Jun-17 23:59:59</td></tr><tr><td style="font-size:13px">Status</td><td>:</td><td bgColor="ff0000" style="font-size:12px">Inconsistent</td></tr><tr><td style="font-size:13px">Number of messages in Alliance</td><td>:</td><td style="font-size:12px">302</td></tr><tr><td style="font-size:13px">Number of messages in en.TDR </td><td>:</td><td style="font-size:12px">335</td></tr><tr><td style="font-size:13px">Number of missing messages </td><td>:</td><td style="font-size:12px">33</td></tr></table></div><hr/><div id="footer"><h4><FONT COLOR="#004882">Missing messages list (present in en.TDR but not in Alliance Access)</FONT></h4><table id="mesgList"><tr><th>SUMID</th><th>Creation Date Time</th><th>Type</th><th>Format Name</th><th>Direction</th><th>Sender</th><th>Receiver</th><th>Reference</th><th>Amount</th><th>Currency</th><th>Value Date</th><th>Created By</th></tr><tr><td id="tdSpecific" style="width:120px;">26E65753FFFFFEC4</td><td id="tdSpecific" style="width:120px;">15-Apr-2017 16:05:49</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">kassab1</td><td id="tdSpecific" style="width:170px;">1200</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:kassab
+:23B:AAAA
+:32A:121212JOD1200,
+:50K:Test
+:59:Test
+:71A:AAA
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26F5139FFFFFFEDE</td><td id="tdSpecific" style="width:120px;">04-May-2017 11:50:41</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">Test1</td><td id="tdSpecific" style="width:170px;">1200</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:Test1
+:23B:AAAA
+:32A:121212JOD1200,
+:50K:Test
+:59:Test
+:71A:AAA
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26F5139BFFFFFEDD</td><td id="tdSpecific" style="width:120px;">04-May-2017 11:50:45</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26F11338FFFFFEDC</td><td id="tdSpecific" style="width:120px;">07-May-2017 12:41:28</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26EF8098FFFFFEDB</td><td id="tdSpecific" style="width:120px;">08-May-2017 17:19:20</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:13C:/12121212/1212+1212
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26ED26BFFFFFFEDA</td><td id="tdSpecific" style="width:120px;">10-May-2017 12:07:13</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">Test1</td><td id="tdSpecific" style="width:170px;">1200</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:Test1
+:23B:AAAA
+:32A:121212JOD1200,
+:50K:Test
+:59:Test
+:71A:AAA
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26ED26BBFFFFFED9</td><td id="tdSpecific" style="width:120px;">10-May-2017 12:07:17</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26ED23E4FFFFFED8</td><td id="tdSpecific" style="width:120px;">10-May-2017 12:19:24</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">Test1</td><td id="tdSpecific" style="width:170px;">1200</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:Test1
+:23B:AAAA
+:32A:121212JOD1200,
+:50K:Test
+:59:Test
+:71A:AAA
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26ED23E0FFFFFED7</td><td id="tdSpecific" style="width:120px;">10-May-2017 12:19:28</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26ECE3E0FFFFFED6</td><td id="tdSpecific" style="width:120px;">10-May-2017 16:52:32</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">mustafa2</td><td id="tdSpecific" style="width:170px;">1200</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:mustafa2
+:23B:AAAA
+:32A:121212JOD1200,
+:50K:TEST
+:59:TEST
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26ECDC94FFFFFED5</td><td id="tdSpecific" style="width:120px;">10-May-2017 17:23:40</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26EBEF2FFFFFFED4</td><td id="tdSpecific" style="width:120px;">11-May-2017 10:16:33</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">kk</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26EBE4FCFFFFFED3</td><td id="tdSpecific" style="width:120px;">11-May-2017 11:00:04</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26EBE4F8FFFFFED2</td><td id="tdSpecific" style="width:120px;">11-May-2017 11:00:08</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">Test1</td><td id="tdSpecific" style="width:170px;">1200</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:Test1
+:23B:AAAA
+:32A:121212JOD1200,
+:50K:Test
+:59:Test
+:71A:AAA
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26EBE41AFFFFFED1</td><td id="tdSpecific" style="width:120px;">11-May-2017 11:03:50</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26EBE129FFFFFED0</td><td id="tdSpecific" style="width:120px;">11-May-2017 11:16:23</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26EBE090FFFFFECF</td><td id="tdSpecific" style="width:120px;">11-May-2017 11:18:56</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26EBDE5DFFFFFECE</td><td id="tdSpecific" style="width:120px;">11-May-2017 11:28:19</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26EBDD0AFFFFFECD</td><td id="tdSpecific" style="width:120px;">11-May-2017 11:33:58</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26EBDB46FFFFFECC</td><td id="tdSpecific" style="width:120px;">11-May-2017 11:41:30</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26EBD6D8FFFFFECB</td><td id="tdSpecific" style="width:120px;">11-May-2017 12:00:24</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26E7B9E1FFFFFECA</td><td id="tdSpecific" style="width:120px;">14-May-2017 14:53:02</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26E7B15DFFFFFEC9</td><td id="tdSpecific" style="width:120px;">14-May-2017 15:29:23</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26E7B0DBFFFFFEC8</td><td id="tdSpecific" style="width:120px;">14-May-2017 15:31:33</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">120000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD120000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26E7B09CFFFFFEC7</td><td id="tdSpecific" style="width:120px;">14-May-2017 15:32:36</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26E79BC1FFFFFEC6</td><td id="tdSpecific" style="width:120px;">14-May-2017 17:01:35</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26E798D8FFFFFEC5</td><td id="tdSpecific" style="width:120px;">14-May-2017 17:14:00</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">100</td><td id="tdSpecific" style="width:170px;">12000</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:100
+:23B:ACSD
+:32A:121212JOD12000,
+:50K:Test
+:59:Test
+:71A:CCC
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26E6537BFFFFFEC2</td><td id="tdSpecific" style="width:120px;">15-May-2017 16:22:13</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">Test1</td><td id="tdSpecific" style="width:170px;">1200</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:Test1
+:23B:AAAA
+:32A:121212JOD1200,
+:50K:Test
+:59A:/546521456
+PTSABEM0XXX
+:71A:AAA
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26E6534CFFFFFEC1</td><td id="tdSpecific" style="width:120px;">15-May-2017 16:23:00</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">Test1</td><td id="tdSpecific" style="width:170px;">1200</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:Test1
+:23B:AAAA
+:32A:121212JOD1200,
+:50A:/56734564674
+PTSABEM0XXX
+:59:Test
+:71A:AAA
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26E6520CFFFFFEC0</td><td id="tdSpecific" style="width:120px;">15-May-2017 16:28:20</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">59A Test</td><td id="tdSpecific" style="width:170px;">1200</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:59A Test
+:23B:AAAA
+:32A:121212JOD1200,
+:50K:Test
+:59A:/1234672F
+PTSABEM0XXX
+:71A:AAA
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26E63B6BFFFFFEBF</td><td id="tdSpecific" style="width:120px;">15-May-2017 18:04:53</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">Test1 59</td><td id="tdSpecific" style="width:170px;">1200</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:Test1 59
+:23B:AAAA
+:32A:121212JOD1200,
+:50K:Test
+:59A:/6456YYFF
+PTSABEM0AXX
+:71A:AAA
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26E63975FFFFFEBE</td><td id="tdSpecific" style="width:120px;">15-May-2017 18:13:15</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">Test1</td><td id="tdSpecific" style="width:170px;">1200</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:Test1
+:23B:AAAA
+:32A:121212JOD1200,
+:50K:Test
+:59A:/jhgjyhg
+PTSABEM0XXX
+:71A:AAA
+-}{5:{PDE:}}</textarea></td></tr><tr><td id="tdSpecific" style="width:120px;">26E6395BFFFFFEBD</td><td id="tdSpecific" style="width:120px;">15-May-2017 18:13:41</td><td id="tdSpecific" style="width:100px;">fin.103</td><td id="tdSpecific" style="width:90px;">Swift</td><td id="tdSpecific" style="width:70px;">INPUT</td><td id="tdSpecific" style="width:100px;" >PTSABEM0XXX</td><td id="tdSpecific" style="width:100px;">PTSABEM0XXX</td><td id="tdSpecific" style="width:120px;">Test1</td><td id="tdSpecific" style="width:170px;">1200</td><td id="tdSpecific" style="width:70px;">JOD</td><td id="tdSpecific" style="width:90px;">12-Dec-2012</td><td id="tdSpecific" style="width:150px;">super                                                                                                                                                  </td></tr><tr><td colspan= 12><textarea readonly rows="5">{1:F01PTSABEM0AXXX0000000000}{2:I103PTSABEM0XXXXN}{4:
+:20:Test1
+:23B:AAAA
+:32A:121212JOD1200,
+:50K:Test
+:59:Test
+:71A:AAA
+-}{5:{PDE:}}</textarea></td></tr></table></div><hr/></body></html>

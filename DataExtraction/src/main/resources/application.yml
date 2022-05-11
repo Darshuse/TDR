@@ -1,0 +1,71 @@
+Aid: 
+
+dbUsername: side
+dbPassword: edis
+serverName: localhost
+databaseName: TDR32
+portNumber: 1521
+dbType: oracle
+dbServiceName: TDR32
+
+#instanceName: 
+#partitioned : true
+tnsPath:
+enableTnsName: false
+
+
+#dbUsername: side
+#dbPassword: edis
+#databaseName: SideDB
+#serverName: 10.12.26.21
+#portNumber: 1435
+#dbType: mssql
+#dbServiceName: KANBAN32
+#instanceName: TDR32
+
+
+ecfPath:
+fileName: "%Y_%M_%D_%H_%m_%s_TDR"
+filePath: D:\DataExtractor\Files
+fileSize: 5
+mode: 3
+expand: false
+history: true
+flag: false
+extractFlagged: true
+#previous: false
+#mesgIsLive: false
+mesgFormat: Any
+#BICFile:
+
+dayNumber:
+skipWeeks: 0
+fromDate: 2021/11/11T10:39:46 
+toDate: 2021/11/15T02:39:46
+date:
+
+
+
+logging:
+ file:
+  name: 
+ pattern:                                                   
+    console: "%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n"
+ level:
+    com.eastnets.extraction: INFO
+
+#mesgType:
+identifier:
+senderBIC: 
+receiverBIC:
+direction:
+messageNumber: 500
+rulesFile: D:\DataExtractor\XML_Rules.xml
+templateFile: D:\DataExtractor\Template\example_MX.xml
+source: EXTRACT_MX_AnyXML_VIEW                                                          #EXTRACT_File_VIEW or EXTRACT_FIN_Internal_VIEW or EXTRACT_MX_AnyXML_VIEW
+#threadLevel: 0
+#enableDebug: false
+dryRun: false
+enableDebugFull: false
+scheduler: "-"

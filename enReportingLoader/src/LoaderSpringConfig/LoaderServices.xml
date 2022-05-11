@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+                           http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.1.xsd">
+
+	<import resource="classpath*:/spring-config/applicationContext.xml" />
+	<import resource="loaderReaderService.xml" />
+	<import resource="cluster-config.xml" />
+	<import resource="workflow-queues.xml" />
+
+
+
+
+	<bean id="loaderParser" class="com.eastnets.service.loader.LoaderParserServiceImp"
+		lazy-init="true" init-method="init">
+		<property name="inputBlockingQueue" ref="ReaderOutQueue" />
+		<property name="outputBlockingQueue" ref="ParserOutQueue" />
+		<property name="baseServiceLocator" ref="serviceLocator" />
+		<property name="appConfigBean" ref="appConfigBean" />
+		<property name="moveToErrorQSender" ref="ibmMQJmsSender" />
+		<property name="loaderDAO" ref="LoaderDAO" />
+		<property name="serviceLocator" ref="serviceLocator" />
+	</bean>
+	
+	
+	
+
+	<bean id="loaderDumper" class="com.eastnets.service.loader.LoaderDumperServiceImp"
+		lazy-init="true" init-method="init">
+		<property name="inputBlockingQueue" ref="ParserOutQueue" />
+		<property name="loaderDAO" ref="LoaderDAO" />
+		<property name="licenseDAO" ref="licenseDAO" />
+		<property name="appConfigBean" ref="appConfigBean" />
+		<property name="baseServiceLocator" ref="serviceLocator" />
+			<property name="moveToErrorQSender" ref="ibmMQJmsSender" />
+		<property name="unqueueMessagesDelegate" ref="unqueueMessagesDelegate" />
+		<property name="insertXmlMsg" ref="insertXmlMsg" />
+		
+		<property name="observerList">
+			<list value-type="Observer">
+				<ref bean="lookupsHander" />
+				<ref bean="msgStatistics" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="serviceLauncher" class="com.eastnets.enReportingLoader.ServiceLauncher"
+		init-method="init" destroy-method="destroy" lazy-init="true">
+		<property name="appConfigBean" ref="appConfigBean" />
+		<property name="serviceLocator" ref="serviceLocator" />
+		<property name="clusterManager" ref="clusterManager" />
+		<property name="serviceList">
+			<list value-type="Runnable">
+				<ref bean="mqLoaderReader" />
+				<ref bean="dbLoaderReader" />
+				<ref bean="loaderParser" />
+				<ref bean="loaderDumper" />
+				<ref bean="msgStatistics" />
+			</list>
+		</property>
+	</bean>
+
+
+
+
+
+
+	<bean id="appConfigBean" class="com.eastnets.enReportingLoader.config.AppConfigBean"
+		lazy-init="true">
+		<property name="databaseName" value="${databaseName}" />
+		<property name="schemaName" value="${schemaName}" />
+		<property name="tableSpace" value="${tableSpace}" />
+		<property name="serverName" value="${serverName}" />
+		<property name="portNumber" value="${portNumber}" />
+		<property name="username" value="${username}" />
+		<property name="password" value="${password}" />
+		<property name="instanceName" value="${instanceName}" />
+		<property name="aid" value="${aid}" />
+		<property name="dbConfigFilePath" value="${dbConfigFilePath}" />
+		<property name="dbServiceName" value="${DBServiceName}"></property>
+		<property name="enableDebugMode" value="${enableDebugMode}" />
+		<property name="clusteringEnabled" value="false"></property>
+		<property name="clustername" value="${clustername}" />
+		
+		<property name="queueManager" value="${IbmQueueManager}" />
+		<property name="channelName" value="${IbmMqChannel}" />
+		<property name="hostName" value="${IbmMqIP}" />
+		<property name="ibmPort" value="${IbmMqPort}" />
+		<property name="mqUserName" value="${IbmMqUsername}" />
+		<property name="mqPassword" value="${IbmMqPassword}" />
+		<property name="sslKeyStoreType" value="${sslKeyStoreType}" />
+		<property name="sslKeyStore" value="${sslKeyStore}" />
+		<property name="sslKeyStorePassword" value="${sslKeyStorePassword}" />
+		<property name="sslTrustStoreType" value="${sslTrustStoreType}" />
+		<property name="sslTrustStore" value="${sslTrustStore}" />
+		<property name="sslTrustStorePassword" value="${sslTrustStorePassword}" />
+		<property name="sslCipherSuite" value="${sslCipherSuite}" />
+		<property name="sslPeerName" value="${sslPeerName}" />
+		<property name="SSLCipherSpec" value="${SSLCipherSpec}" />
+		<property name="useIBMCipherMappings" value="${useIBMCipherMappings}" />
+		<property name="noAuthentication" value="${noAuthentication}" />
+		<property name="enableFIPS" value="${enableFIPS}" />
+		
+	</bean>
+
+	<bean id="LoaderDAO" class="com.eastnets.dao.loader.Loader${DBType}DAOImp"
+		lazy-init="true">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="dbPortabilityHandler" ref="dbPortabilityHandler" />
+		<property name="appConfigBean" ref="appConfigBean" />
+		 
+
+	</bean>
+
+	<bean id="msgStatistics" class="com.eastnets.observers.loader.MessagesStatistics">
+		<property name="loaderDAO" ref="LoaderDAO" />
+		<property name="appConfigBean" ref="appConfigBean" />
+	</bean>
+	<bean id="lookupsHander" class="com.eastnets.observers.loader.LookupsHander"
+		init-method="init" lazy-init="true">
+		<property name="loaderDaoImp" ref="LoaderDAO" />
+
+		<property name="mesgFormatList">
+			<list value-type="String" />
+		</property>
+		<property name="mesgNatureList">
+			<list value-type="String" />
+		</property>
+		<property name="mesgQualifierList">
+			<list value-type="String" />
+		</property>
+		<property name="unitNameList">
+			<list value-type="String" />
+		</property>
+		<property name="rpNameList">
+			<list value-type="String" />
+		</property>
+	</bean>
+</beans>

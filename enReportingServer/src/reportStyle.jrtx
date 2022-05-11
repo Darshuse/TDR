@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperTemplate PUBLIC "-//JasperReports//DTD Template//EN" "http://jasperreports.sourceforge.net/dtds/jaspertemplate.dtd">
+
+<jasperTemplate>
+	<style name="base" isDefault="true" mode="Transparent" forecolor="#4F4F4F" vAlign="Middle" isBlankWhenNull="true" fontName="Arial" fontSize="8" pdfFontName="ARIAL.TTF" isPdfEmbedded="true"/>
+	<style name="header_param_box" style="base" mode="Opaque" forecolor="#999999" backcolor="#6E8EA4">
+		<pen lineWidth="0.0"/>
+		<box>
+			<topPen lineWidth="1.0"/>
+		</box>
+	</style>
+	<style name="header_report_name" style="base" forecolor="#333639" backcolor="#FFFFFF" markup="styled" pattern="" isBlankWhenNull="true" fontName="Arial" fontSize="18" isBold="true" isItalic="true" pdfFontName="ARIALBI.TTF" isPdfEmbedded="true"/>
+	<style name="header_param_label" style="base" forecolor="#FFFFFF" backcolor="#FFFFFF" hAlign="Right" isBlankWhenNull="false" fontName="Arial" fontSize="10" isBold="true" pdfFontName="ARIALBD.TTF" isPdfEmbedded="true"/>
+	<style name="header_param_value" style="base" forecolor="#FFFFFF" backcolor="#FFFFFF" hAlign="Left" fontName="Arial" fontSize="9" pdfFontName="ARIALBD.TTF" isPdfEmbedded="true"/>
+	<style name="detail_field_label" style="base" hAlign="Right" isBold="true" pdfFontName="ARIALBD.TTF" isPdfEmbedded="true"/>
+	<style name="detail_field_label_italic" style="base" hAlign="Right" isBold="true" isItalic="true" pdfFontName="ARIALBI.TTF" isPdfEmbedded="true"/>
+	<style name="detail_field_label_left" style="base" hAlign="Left" isBold="true" pdfFontName="ARIALBD.TTF" isPdfEmbedded="true"/>
+	<style name="detail_field_label_left_italic" style="base" hAlign="Left" isBold="true" isItalic="true" pdfFontName="ARIALBI.TTF" isPdfEmbedded="true"/>
+	<style name="detail_field_value" hAlign="Left" vAlign="Middle" isBlankWhenNull="true" fontName="Arial" fontSize="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="ARIAL.TTF" isPdfEmbedded="true"/>
+	<style name="detail_highlighted_block" style="base" mode="Opaque" forecolor="#FFFFFF" backcolor="#E8E9E9">
+		<pen lineColor="#FFFFFF"/>
+		<box>
+			<topPen lineWidth="0.0"/>
+		</box>
+	</style>
+    <style name="bold_text" style="base" isBold="true" pdfFontName="ARIALBD.TTF" isPdfEmbedded="true"/>
+    <style name="italic_text" style="base" isBold="true" pdfFontName="ARIALI.TTF" isPdfEmbedded="true"/>
+    <style name="bold_italic_text" style="base" isBold="true" pdfFontName="ARIALBI.TTF" isPdfEmbedded="true"/>
+    <style name="no_data_text" style="base" isBold="true" pdfFontName="ARIALBD.TTF" isPdfEmbedded="true"/>
+	<style name="page_border" style="base" mode="Transparent" forecolor="#DBE4F4" backcolor="#FFFFFF" fill="Solid" radius="5">
+		<pen lineWidth="0.25"/>
+	</style>
+	<style name="footer_text" forecolor="#CCCCCC" fontSize="7" pdfFontName="ARIAL.TTF" isPdfEmbedded="true"/>
+	<style name="header_report_subtitle" fontName="Arial" fontSize="12" pdfFontName="ARIALBI.TTF" isPdfEmbedded="true"/>
+</jasperTemplate>

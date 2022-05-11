@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<names>
+	<element shortName="AppHdr" longName="ApplicationHeader" type="AppHdr"/>
+	<type shortName="AppHdr" longName="AppHdr">
+		<element shortName="From" longName="From" type="EntityIdentification">
+			<definition>The entity being the business responsible for submitting this message. The type of identification must be determined when defining the Standards.</definition>
+		</element>
+		<element shortName="To" longName="To" type="EntityIdentification">
+			<definition>The entity that the "From" business entity has chosen to be the business receiver of the message. The type of identification must be determined when defining the Standards. </definition>
+		</element>
+		<element shortName="SvcName" longName="ServiceName" type="Max30Text">
+			<definition>The SWIFTNet service name. </definition>
+		</element>
+		<element shortName="MsgName" longName="MessageName" type="Max30Text">
+			<definition>Identifies the type of business transaction described in the payload. </definition>
+		</element>
+		<element shortName="MsgRef" longName="MessageReference" type="Max30Text">
+			<definition>It uniquely identifies a Message from a business application standpoint. It
+must be unique between a "From" and a "To". </definition>
+		</element>
+		<element shortName="CrDate" longName="CreationDateTime" type="ISODateTime">
+			<definition>Time when the message was created. This is the time the "From" claims to have created the message.</definition>
+		</element>
+		<element shortName="Dup" longName="Dup" type="DuplicateIndication">
+			<definition>Indicates this message is a duplicate. </definition>
+		</element>
+	</type>
+	<type shortName="DuplicateIndication" longName="DuplicateIndication">
+		<element shortName="Ref" longName="Reference" type="Max30Text">
+			<definition>The reference of the original message, in case this is a duplicate</definition>
+		</element>
+		<element shortName="Info" longName="Justification" type="Max140Text">
+			<definition>Information about the duplicate. </definition>
+		</element>
+	</type>
+	<type shortName="EntityIdentification" longName="EntityIdentification">
+		<definition>To identify a business entity (corporate, financial institution, ...)</definition>
+		<element shortName="Type" longName="Type" type="Max4Text">
+			<definition>The type of identifier. This can be the URI of the registrar of the names.</definition>
+		</element>
+		<element shortName="Id" longName="EntityIdentifier" type="Max30Text">
+			<definition>Information about the duplicate.</definition>
+		</element>
+	</type>
+	<type shortName="ISODateTime" longName="ISODateTime"/>
+	<type shortName="Max140Text" longName="Max140Text"/>
+	<type shortName="Max30Text" longName="Max30Text"/>
+	<type shortName="Max4Text" longName="Max4Text"/>
+</names>
